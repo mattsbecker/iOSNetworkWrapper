@@ -1,0 +1,289 @@
+13:17:12.737 Xcode[73139:868194] Beginning test session B460FBAE-2CDD-4B09-BF6B-7C1BD5BB0BBC with Xcode 7D1014 on target <DVTiPhoneSimulator: 0x7fd8c0e54890> {
+		SimDevice: SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }
+} (9.3 (13E230))
+13:17:12.738 Xcode[73139:868194] Launching with Xcode.DebuggerFoundation.Launcher.LLDB
+13:17:12.738 Xcode[73139:868194] Initializing test infrastructure.
+13:17:12.738 Xcode[73139:1979054] 686336CB-C74C-4486-83E7-6091A9A9CC11: Registered for sim device notification, got token 56
+13:17:12.738 Xcode[73139:1979054] 686336CB-C74C-4486-83E7-6091A9A9CC11: Unregistering for sim device notification with token 56
+13:17:12.738 Xcode[73139:1979054] Sim iPhone 6s Plus is booted (state = 3)
+13:17:12.738 Xcode[73139:1979054] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+13:17:12.739 Xcode[73139:1979054] Returning /private/tmp/com.apple.launchd.FqbwgrFOjS/com.apple.testmanagerd.unix-domain.socket for TESTMANAGERD_SIM_SOCK
+13:17:12.739 Xcode[73139:1979054] Sim iPhone 6s Plus has testmanagerd socket at /private/tmp/com.apple.launchd.FqbwgrFOjS/com.apple.testmanagerd.unix-domain.socket
+13:17:12.739 Xcode[73139:1979054] Connected to testmanagerd socket for Sim iPhone 6s Plus
+13:17:12.739 Xcode[73139:1979054] Creating the connection.
+13:17:12.739 Xcode[73139:1979054] Listening for proxy connection request from the test bundle (all platforms)
+13:17:12.739 Xcode[73139:1979054] Resuming the connection.
+13:17:12.739 Xcode[73139:1979054] Test connection requires daemon assistance.
+13:17:12.746 Xcode[73139:868194] Received Ready from iPhoneSimulator
+13:17:12.746 Xcode[73139:868194] Sending notification: NSConcreteNotification 0x7fd8c1ed15b0 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "686336CB-C74C-4486-83E7-6091A9A9CC11";
+}}
+13:17:12.783 Xcode[73139:868194] Checking test manager availability..., will wait up to 120s
+13:17:12.783 Xcode[73139:868194] Starting test session with ID <__NSConcreteUUID 0x7fd8ba325a80> B460FBAE-2CDD-4B09-BF6B-7C1BD5BB0BBC
+13:17:12.815 Xcode[73139:1981972] testmanagerd handled session request.
+13:17:12.815 Xcode[73139:868194] Waiting for test process to launch.
+13:17:12.983 Xcode[73139:868194] Launch session started, setting a disallow-finish-token on the run operation.
+13:17:13.019 Xcode[73139:868194] Adding console adaptor <IDEConsoleAdaptor: 0x7fd8a9811660 'target'> for test session B460FBAE-2CDD-4B09-BF6B-7C1BD5BB0BBC.
+13:17:13.023 Xcode[73139:1981972] 686336CB-C74C-4486-83E7-6091A9A9CC11: Registered for sim device notification, got token 57
+13:17:13.023 Xcode[73139:1982249] 686336CB-C74C-4486-83E7-6091A9A9CC11: Unregistering for sim device notification with token 57
+13:17:13.023 Xcode[73139:1982249] 686336CB-C74C-4486-83E7-6091A9A9CC11: Spawning executable at path: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest and options: {
+    arguments =     (
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest",
+        "-NSTreatUnknownArgumentsAsOpen",
+        NO,
+        "-ApplePersistenceIgnoreState",
+        YES
+    );
+    binpref = "x86_64";
+    environment =     {
+        "DTX_CONNECTION_SERVICES_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks/DTXConnectionServices.framework";
+        "DYLD_FRAMEWORK_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+        "DYLD_LIBRARY_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+        NSUnbufferedIO = YES;
+        "OBJC_DISABLE_GC" = YES;
+        "XCODE_DBG_XPC_EXCLUSIONS" = "com.apple.dt.xctestSymbolicator";
+        XCTestConfigurationFilePath = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator/NetworkWrapperTests.xctest/NetworkWrapperTests-B460FBAE-2CDD-4B09-BF6B-7C1BD5BB0BBC.xctestconfiguration";
+    };
+    stderr = 198;
+    stdin = 194;
+    stdout = 196;
+    "wait_for_debugger" = 1;
+}
+13:17:13.032 Xcode[73139:868194] Received Ready from iPhoneSimulator
+13:17:13.032 Xcode[73139:868194] Sending notification: NSConcreteNotification 0x7fd8cb137490 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "686336CB-C74C-4486-83E7-6091A9A9CC11";
+}}
+13:17:13.032 Xcode[73139:868194] Received Ready from iPhoneSimulator
+13:17:13.032 Xcode[73139:868194] Sending notification: NSConcreteNotification 0x7fd8ba565100 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "686336CB-C74C-4486-83E7-6091A9A9CC11";
+}}
+13:17:13.078 Xcode[73139:1982267] 686336CB-C74C-4486-83E7-6091A9A9CC11: Spawned executable at path: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest with options: {
+    arguments =     (
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest",
+        "-NSTreatUnknownArgumentsAsOpen",
+        NO,
+        "-ApplePersistenceIgnoreState",
+        YES
+    );
+    binpref = "x86_64";
+    environment =     {
+        "DTX_CONNECTION_SERVICES_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks/DTXConnectionServices.framework";
+        "DYLD_FRAMEWORK_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+        "DYLD_LIBRARY_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+        NSUnbufferedIO = YES;
+        "OBJC_DISABLE_GC" = YES;
+        "XCODE_DBG_XPC_EXCLUSIONS" = "com.apple.dt.xctestSymbolicator";
+        XCTestConfigurationFilePath = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator/NetworkWrapperTests.xctest/NetworkWrapperTests-B460FBAE-2CDD-4B09-BF6B-7C1BD5BB0BBC.xctestconfiguration";
+    };
+    stderr = 198;
+    stdin = 194;
+    stdout = 196;
+    "wait_for_debugger" = 1;
+} (pid = 23513)
+13:17:13.078 Xcode[73139:1982267] Tracking pid 23513 for simulator <DVTiPhoneSimulator: 0x7fd8c0e54890> {
+		SimDevice: SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }
+}
+13:17:13.078 Xcode[73139:1982267] Checking to see if pid 23513 is valid: kill(pid, 0) = 0 (YES, it's still running)
+13:17:13.078 Xcode[73139:1982267] Setting up DVTNotifyOnProcDeath for pid 23513
+13:17:14.688 Xcode[73139:868194] Launch session finished initial intensive file IO.
+13:17:14.688 Xcode[73139:868194] Waiting for test process to check in..., will wait up to 120s
+13:17:14.967 Xcode[73139:1982267] Got proxy channel request from test bundle
+13:17:14.967 Xcode[73139:1982267] Test bundle is ready, running protocol 16, requires at least version 8. IDE is running 16 and requires at least 8
+13:17:14.967 Xcode[73139:1980343] Creating secondary transport and connection for whitelisting test process PID.
+13:17:14.967 Xcode[73139:1980343] 686336CB-C74C-4486-83E7-6091A9A9CC11: Registered for sim device notification, got token 58
+13:17:14.967 Xcode[73139:1980343] 686336CB-C74C-4486-83E7-6091A9A9CC11: Unregistering for sim device notification with token 58
+13:17:14.967 Xcode[73139:1980343] Sim iPhone 6s Plus is booted (state = 3)
+13:17:14.967 Xcode[73139:1980343] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+13:17:14.968 Xcode[73139:1980343] Returning /private/tmp/com.apple.launchd.FqbwgrFOjS/com.apple.testmanagerd.unix-domain.socket for TESTMANAGERD_SIM_SOCK
+13:17:14.968 Xcode[73139:1980343] Sim iPhone 6s Plus has testmanagerd socket at /private/tmp/com.apple.launchd.FqbwgrFOjS/com.apple.testmanagerd.unix-domain.socket
+13:17:14.968 Xcode[73139:1980343] Connected to testmanagerd socket for Sim iPhone 6s Plus
+13:17:14.968 Xcode[73139:1980343] Creating the connection.
+13:17:14.968 Xcode[73139:1980343] Resuming the secondary connection.
+13:17:14.968 Xcode[73139:1980343] Whitelisting test process ID 23513
+13:17:14.971 Xcode[73139:1982249] Got whitelisting response and daemon protocol version 16
+13:17:14.814 xctest[23513:1982269] Linked XCTest.framework from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/XCTest, built at Tuesday, March 15, 2016 at 8:32:00 PM Eastern Daylight Time
+13:17:14.815 xctest[23513:1982269] Process arguments: (
+    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest",
+    "-NSTreatUnknownArgumentsAsOpen",
+    NO,
+    "-ApplePersistenceIgnoreState",
+    YES
+)
+13:17:14.815 xctest[23513:1982269] Process environment: {
+    "CFFIXED_USER_HOME" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data";
+    "CUPS_SERVER" = "/private/tmp/com.apple.launchd.d5AYpxLR86/Listeners";
+    "DTX_CONNECTION_SERVICES_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks/DTXConnectionServices.framework";
+    "DYLD_FALLBACK_FRAMEWORK_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks";
+    "DYLD_FALLBACK_LIBRARY_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/lib";
+    "DYLD_FRAMEWORK_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+    "DYLD_LIBRARY_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+    "DYLD_ROOT_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk";
+    "DYLD_SHARED_REGION" = avoid;
+    HOME = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data";
+    "IOS_SIMULATOR_SYSLOG_SOCKET" = "/private/tmp/com.apple.CoreSimulator.SimDevice.686336CB-C74C-4486-83E7-6091A9A9CC11.launchd_sim/syslogsock";
+    "IPHONE_SHARED_RESOURCES_DIRECTORY" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data";
+    "IPHONE_SIMULATOR_CLASS" = N66;
+    "IPHONE_SIMULATOR_DEVICE" = iPhone;
+    "IPHONE_SIMULATOR_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk";
+    "IPHONE_TVOUT_EXTENDED_PROPERTIES" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Library/Application Support/iPhone Simulator/com.apple.iphonesimulator/extended_display.plist";
+    NSUnbufferedIO = YES;
+    "OBJC_DISABLE_GC" = YES;
+    PATH = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/sbin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/sbin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/local/bin";
+    "SIMULATOR_CAPABILITIES" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/CoreSimulator/Profiles/DeviceTypes/iPhone 6s Plus.simdevicetype/Contents/Resources/capabilities.plist";
+    "SIMULATOR_DEVICE_NAME" = "iPhone 6s Plus";
+    "SIMULATOR_EXTENDED_DISPLAY_PROPERTIES" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Library/Application Support/iPhone Simulator/com.apple.iphonesimulator/extended_display.plist";
+    "SIMULATOR_HOST_HOME" = "/Users/matt";
+    "SIMULATOR_LEGACY_ASSET_SUFFIX" = iphone;
+    "SIMULATOR_LOG_ROOT" = "/Users/matt/Library/Logs/CoreSimulator/686336CB-C74C-4486-83E7-6091A9A9CC11";
+    "SIMULATOR_MAINSCREEN_HEIGHT" = 2208;
+    "SIMULATOR_MAINSCREEN_PITCH" = "461.000000";
+    "SIMULATOR_MAINSCREEN_SCALE" = "3.000000";
+    "SIMULATOR_MAINSCREEN_WIDTH" = 1242;
+    "SIMULATOR_MEMORY_WARNINGS" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/var/run/memory_warning_simulation";
+    "SIMULATOR_MODEL_IDENTIFIER" = "iPhone8,2";
+    "SIMULATOR_PLATFORM_RUNTIME_OVERLAY_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/CoreSimulator/RuntimeOverlay";
+    "SIMULATOR_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk";
+    "SIMULATOR_RUNTIME_BUILD_VERSION" = 13E230;
+    "SIMULATOR_RUNTIME_VERSION" = "9.3";
+    "SIMULATOR_SHARED_RESOURCES_DIRECTORY" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data";
+    "SIMULATOR_UDID" = "686336CB-C74C-4486-83E7-6091A9A9CC11";
+    "SIMULATOR_VERSION_INFO" = "CoreSimulator 209.19 - Device: iPhone 6s Plus - Runtime: iOS 9.3 (13E230) - DeviceType: iPhone 6s Plus";
+    "TESTMANAGERD_SIM_SOCK" = "/private/tmp/com.apple.launchd.FqbwgrFOjS/com.apple.testmanagerd.unix-domain.socket";
+    TMPDIR = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/tmp";
+    "XCODE_DBG_XPC_EXCLUSIONS" = "com.apple.dt.xctestSymbolicator";
+    XCTestConfigurationFilePath = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator/NetworkWrapperTests.xctest/NetworkWrapperTests-B460FBAE-2CDD-4B09-BF6B-7C1BD5BB0BBC.xctestconfiguration";
+    "XPC_FLAGS" = 0x0;
+    "XPC_SERVICE_NAME" = "com.apple.xpc.launchd.oneshot.0x10000011.xctest";
+    "XPC_SIMULATOR_LAUNCHD_NAME" = "com.apple.CoreSimulator.SimDevice.686336CB-C74C-4486-83E7-6091A9A9CC11.launchd_sim";
+}
+13:17:14.815 xctest[23513:1982269] Loading DTXConnectionServices from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks/DTXConnectionServices.framework
+13:17:14.822 xctest[23513:1982269] Session ID <__NSConcreteUUID 0x7fe109d01dd0> B460FBAE-2CDD-4B09-BF6B-7C1BD5BB0BBC
+13:17:14.822 xctest[23513:1982269] Registering for testmanagerd availability notify post.
+13:17:14.822 xctest[23513:1982269] testmanagerd availability confirmed via notify_get_state.
+13:17:14.822 xctest[23513:1982269] Initiating connection to testmanagerd to request socket for IDE connection.
+13:17:14.964 xctest[23513:1982345] Got socket 6 from daemon, making connection to IDE
+13:17:14.965 xctest[23513:1982345] Creating connection with transport
+13:17:14.966 xctest[23513:1982345] Resuming connection
+13:17:14.966 xctest[23513:1982345] Messaging IDE proxy - _XCT_testBundleReadyWithProtocolVersion:16 minimumVersion:8
+13:17:14.973 Xcode[73139:868194] Starting test plan, clearing initialization timeout timer.
+13:17:14.973 xctest[23513:1982269] -[XCTestDriver _runSuite]
+13:17:14.973 xctest[23513:1982269] Loading test suite...
+13:17:15.066 xctest[23513:1982269] Finished loading test suite, took 0.093s
+13:17:15.067 xctest[23513:1982269] -[_XCTestDriverTestObserver testBundleWillStart:]
+13:17:15.067 xctest[23513:1982269] Running suite...
+13:17:15.067 xctest[23513:1982269] -[_XCTestDriverTestObserver testSuiteWillStart:]
+13:17:15.106 Xcode[73139:1981972] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.110 Xcode[73139:1981972] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.431 Xcode[73139:1982263] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.431 Xcode[73139:1982268] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.431 Xcode[73139:1982251] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.431 Xcode[73139:1982268] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.432 Xcode[73139:1982251] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.502 Xcode[73139:1982251] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.505 Xcode[73139:1982252] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.508 Xcode[73139:1982252] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.511 Xcode[73139:1982266] (LOG ARBITER) Dumping buffered message data; 0 messages.
+13:17:15.070 Xcode[73139:868194] _XCT_testSuite:All tests didStartAt:2016-06-01 17:17:15 +0000
+13:17:15.068 xctest[23513:1982269] -[_XCTestDriverTestObserver testSuiteWillStart:]
+13:17:15.070 Xcode[73139:868194] _XCT_testSuite:NetworkWrapperTests.xctest didStartAt:2016-06-01 17:17:15 +0000
+13:17:15.068 xctest[23513:1982269] -[_XCTestDriverTestObserver testSuiteWillStart:]
+13:17:15.070 Xcode[73139:868194] _XCT_testSuite:NetworkWrapperTests didStartAt:2016-06-01 17:17:15 +0000
+13:17:15.068 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testCreateNetworkWrapper
+13:17:15.070 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testCreateNetworkWrapper
+13:17:14.967 xctest[23513:1982337] _XCT_testBundleReadyWithProtocolVersion:minimumVersion: reply received
+13:17:14.971 xctest[23513:1982337] _IDE_startExecutingTestPlanWithProtocolVersion:16
+Test Suite 'All tests' started at 2016-06-01 13:17:15.067
+Test Suite 'NetworkWrapperTests.xctest' started at 2016-06-01 13:17:15.068
+Test Suite 'NetworkWrapperTests' started at 2016-06-01 13:17:15.068
+Test Case '-[NetworkWrapperTests testCreateNetworkWrapper]' started.
+Test Case '-[NetworkWrapperTests testCreateNetworkWrapper]' passed (0.002 seconds).
+Test Case '-[NetworkWrapperTests testExample]' started.
+Test Case '-[NetworkWrapperTests testExample]' passed (0.000 seconds).
+13:17:15.071 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.106 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testCreateNetworkWrapper withStatus:passed duration:0.002489030361175537
+13:17:15.071 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testExample
+13:17:15.108 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testExample
+13:17:15.071 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.110 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testExample withStatus:passed duration:0.0003019571304321289
+13:17:15.072 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testPerformanceExample
+13:17:15.111 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testPerformanceExample
+13:17:15.426 xctest[23513:1982269] -[_XCTestDriverTestObserver _testCase:didMeasureValues:forPerformanceMetricID:name:unitsOfMeasurement:baselineName:baselineAverage:maxPercentRegression:maxPercentRelativeStandardDeviation:maxRegression:maxStandardDeviation:file:line:]
+Test Case '-[NetworkWrapperTests testPerformanceExample]' started.
+13:17:15.430 Xcode[73139:868194] -[_IDETestManagerAPIMediator _XCT_testMethod:ofClass:didMeasureMetric:file:line:]
+13:17:15.427 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.431 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testPerformanceExample withStatus:passed duration:0.3548650145530701
+13:17:15.427 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetInvalidHostLength
+13:17:15.431 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetInvalidHostLength
+13:17:15.427 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.431 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetInvalidHostLength withStatus:passed duration:0.0003350377082824707
+13:17:15.428 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetInvalidSchemeLength
+13:17:15.431 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetInvalidSchemeLength
+13:17:15.428 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.431 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetInvalidSchemeLength withStatus:passed duration:0.000326991081237793
+13:17:15.428 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetNilHost
+13:17:15.431 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetNilHost
+13:17:15.429 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.431 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetNilHost withStatus:passed duration:0.0002790093421936035
+13:17:15.429 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetNilPort
+13:17:15.432 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetNilPort
+13:17:15.429 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.432 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetNilPort withStatus:passed duration:0.0004779696464538574
+/Users/matt/Projects/Personal/NetworkWrapper/NetworkWrapperTests/NetworkWrapperTests.m:82: Test Case '-[NetworkWrapperTests testPerformanceExample]' measured [Time, seconds] average: 0.000, relative standard deviation: 126.866%, values: [0.000004, 0.000001, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000], performanceMetricID:com.apple.XCTPerformanceMetric_WallClockTime, baselineName: "", baselineAverage: , maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.100, maxStandardDeviation: 0.100
+Test Case '-[NetworkWrapperTests testPerformanceExample]' passed (0.355 seconds).
+Test Case '-[NetworkWrapperTests testSetInvalidHostLength]' started.
+Test Case '-[NetworkWrapperTests testSetInvalidHostLength]' passed (0.000 seconds).
+Test Case '-[NetworkWrapperTests testSetInvalidSchemeLength]' started.
+Test Case '-[NetworkWrapperTests testSetInvalidSchemeLength]' passed (0.000 seconds).
+Test Case '-[NetworkWrapperTests testSetNilHost]' started.
+Test Case '-[NetworkWrapperTests testSetNilHost]' passed (0.000 seconds).
+Test Case '-[NetworkWrapperTests testSetNilPort]' started.
+Test Case '-[NetworkWrapperTests testSetNilPort]' passed (0.000 seconds).
+Test Case '-[NetworkWrapperTests testSetNilScheme]' started.
+Test Case '-[NetworkWrapperTests testSetNilScheme]' passed (0.034 seconds).
+Test Case '-[NetworkWrapperTests testSetValidHost]' started.
+Test Case '-[NetworkWrapperTests testSetValidHost]' passed (0.000 seconds).
+Test Case '-[NetworkWrapperTests testSetValidPort]' started.
+Test Case '-[NetworkWrapperTests testSetValidPort]' passed (0.000 seconds).
+Test Case '-[NetworkWrapperTests testSetValidScheme]' started.
+Test Case '-[NetworkWrapperTests testSetValidScheme]' passed (0.000 seconds).
+Test Suite 'NetworkWrapperTests' passed at 2016-06-01 13:17:15.466.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.394 (0.398) seconds
+Test Suite 'NetworkWrapperTests.xctest' passed at 2016-06-01 13:17:15.468.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.394 (0.400) seconds
+13:17:15.430 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetNilScheme
+13:17:15.498 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetNilScheme
+13:17:15.464 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.501 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetNilScheme withStatus:passed duration:0.03417098522186279
+13:17:15.464 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetValidHost
+13:17:15.503 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetValidHost
+13:17:15.465 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.505 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetValidHost withStatus:passed duration:0.000384986400604248
+13:17:15.465 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetValidPort
+13:17:15.506 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetValidPort
+13:17:15.465 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.508 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetValidPort withStatus:passed duration:0.0003200173377990723
+13:17:15.466 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetValidScheme
+13:17:15.509 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetValidScheme
+13:17:15.466 xctest[23513:1982269] -[_XCTestDriverTestObserver testCaseDidFinish:]
+13:17:15.511 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetValidScheme withStatus:passed duration:0.0003569722175598145
+13:17:15.467 xctest[23513:1982269] -[_XCTestDriverTestObserver testSuiteDidFinish:]
+13:17:15.511 Xcode[73139:868194] _XCT_testSuite:NetworkWrapperTests didFinishAt:2016-06-01 17:17:15 +0000 runCount:11 withFailures:0 unexpected:0 testDuration:0.3943079710006714 totalDuration:0.3984889984130859
+13:17:15.468 xctest[23513:1982269] -[_XCTestDriverTestObserver testSuiteDidFinish:]
+13:17:15.512 Xcode[73139:868194] _XCT_testSuite:NetworkWrapperTests.xctest didFinishAt:2016-06-01 17:17:15 +0000 runCount:11 withFailures:0 unexpected:0 testDuration:0.3943079710006714 totalDuration:0.399832010269165
+13:17:15.468 xctest[23513:1982269] -[_XCTestDriverTestObserver testSuiteDidFinish:]
+13:17:15.549 Xcode[73139:868194] _XCT_testSuite:All tests didFinishAt:2016-06-01 17:17:15 +0000 runCount:11 withFailures:0 unexpected:0 testDuration:0.3943079710006714 totalDuration:0.4010809659957886
+13:17:15.514 xctest[23513:1982269] Finished running suite.
+13:17:15.514 xctest[23513:1982269] -[_XCTestDriverTestObserver testBundleDidFinish:], Flushing connection to IDE...
+13:17:15.549 Xcode[73139:868194] -[_IDETestManagerAPIMediator _XCT_didFinishExecutingTestPlan]
+13:17:15.549 Xcode[73139:868194] _finishWithError:(null) didCancel: 0
+13:17:15.569 Xcode[73139:1982266] 686336CB-C74C-4486-83E7-6091A9A9CC11: Executable terminated at path: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest (status = 0)
+13:17:15.575 Xcode[73139:868194] Launch session expired.
+13:17:15.564 xctest[23513:1982269] Calling completion.
+13:17:15.565 testmanagerd[23218:1982347] Test process connection invalidated or interrupted, closing test session <XCTestSession: 0x7fb1e3630810>.
+13:17:15.565 testmanagerd[23218:1982245] Closed <XCTestSession: 0x7fb1e3630810>, removing from (
+    "<XCTestSession: 0x7fb1e3630810>"
+)
+13:17:15.565 testmanagerd[23218:1982245] Tearing down test session <XCTestSession: 0x7fb1e3630810>.
+13:17:15.565 testmanagerd[23218:1982245] Considering exiting, 0 test sessions, 1 sessions with identifiers, 0 unidentified sessions...
+13:17:15.603 Xcode[73139:868194] Got death notice for pid 23513, removing from SimulatorSessionMap
+13:17:15.571 com.apple.CoreSimulator.SimDevice.686336CB-C74C-4486-83E7-6091A9A9CC11.launchd_sim[87500] Could not resolve origin of domain. XPC services in this domain's bundle will not be bootstrapped: error = 3: No such process, taint = (untainted)

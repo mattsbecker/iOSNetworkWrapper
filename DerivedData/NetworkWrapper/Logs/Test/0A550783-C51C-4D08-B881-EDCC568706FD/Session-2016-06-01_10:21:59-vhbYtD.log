@@ -1,0 +1,831 @@
+10:21:59.898 Xcode[73139:868194] Beginning test session 488BB40D-F47E-40BD-BA19-6ACBCA3CFB86 with Xcode 7D1014 on target <DVTiPhoneSimulator: 0x7fd8c0e54890> {
+		SimDevice: SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Shutdown } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }
+} (9.3 (13E230))
+10:21:59.898 Xcode[73139:868194] Launching with Xcode.DebuggerFoundation.Launcher.LLDB
+10:21:59.899 Xcode[73139:868194] Initializing test infrastructure.
+10:21:59.899 Xcode[73139:1787683] 686336CB-C74C-4486-83E7-6091A9A9CC11: Registered for sim device notification, got token 3
+10:21:59.899 Xcode[73139:1787683] Sim iPhone 6s Plus is not booted, will wait up to 120 seconds.
+10:22:00.066 Xcode[73139:868194] Received Ready from iPhoneSimulator
+10:22:00.066 Xcode[73139:868194] Sending notification: NSConcreteNotification 0x7fd8c4aed6d0 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "686336CB-C74C-4486-83E7-6091A9A9CC11";
+}}
+10:22:00.094 Xcode[73139:1786671] 686336CB-C74C-4486-83E7-6091A9A9CC11: Received sim device notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.094 Xcode[73139:1787881] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.094 Xcode[73139:1788645] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.094 Xcode[73139:1788485] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.094 Xcode[73139:1788339] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.094 Xcode[73139:1788646] 686336CB-C74C-4486-83E7-6091A9A9CC11: Received sim device notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.094 Xcode[73139:1787220] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.094 Xcode[73139:1788363] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.094 Xcode[73139:1788645] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.094 Xcode[73139:1786671] Got a sim device notification for iPhone 6s Plus: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.095 Xcode[73139:1787881] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.095 Xcode[73139:1788485] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.095 Xcode[73139:1788339] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.095 Xcode[73139:1788646] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.095 Xcode[73139:1787220] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.095 Xcode[73139:1788679] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.095 Xcode[73139:1788645] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.095 Xcode[73139:1788680] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.095 Xcode[73139:1786671] Sim iPhone 6s Plus state changed to 2
+10:22:00.095 Xcode[73139:1788363] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booting } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 2;
+    notification = "device_state";
+    "prev_state" = 1;
+}
+10:22:00.549 Xcode[73139:1787220] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1786671] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788680] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1787881] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788679] 686336CB-C74C-4486-83E7-6091A9A9CC11: Received sim device notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788646] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788678] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788485] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788339] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788680] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788645] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1787220] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788485] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1786671] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788710] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788363] 686336CB-C74C-4486-83E7-6091A9A9CC11: Received sim device notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788679] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788711] /Users/matt/Library/Developer/CoreSimulator/Devices: Received sim device set notification: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.549 Xcode[73139:1788363] Got a sim device notification for iPhone 6s Plus: {
+    device = "SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }";
+    "new_state" = 3;
+    notification = "device_state";
+    "prev_state" = 2;
+}
+10:22:00.550 Xcode[73139:1788363] Sim iPhone 6s Plus state changed to 3
+10:22:00.550 Xcode[73139:1787683] 686336CB-C74C-4486-83E7-6091A9A9CC11: Unregistering for sim device notification with token 3
+10:22:00.550 Xcode[73139:1787683] Sim iPhone 6s Plus is booted (state = 3)
+10:22:00.550 Xcode[73139:1787683] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+10:22:00.665 Xcode[73139:1787683] Returning /private/tmp/com.apple.launchd.FqbwgrFOjS/com.apple.testmanagerd.unix-domain.socket for TESTMANAGERD_SIM_SOCK
+10:22:00.665 Xcode[73139:1787683] Sim iPhone 6s Plus has testmanagerd socket at /private/tmp/com.apple.launchd.FqbwgrFOjS/com.apple.testmanagerd.unix-domain.socket
+10:22:00.665 Xcode[73139:1787683] Connected to testmanagerd socket for Sim iPhone 6s Plus
+10:22:00.666 Xcode[73139:1787683] Creating the connection.
+10:22:00.667 Xcode[73139:1787683] Listening for proxy connection request from the test bundle (all platforms)
+10:22:00.667 Xcode[73139:1787683] Resuming the connection.
+10:22:00.667 Xcode[73139:1787683] Test connection requires daemon assistance.
+10:22:00.667 Xcode[73139:868194] Checking test manager availability..., will wait up to 120s
+10:22:00.668 Xcode[73139:868194] Starting test session with ID <__NSConcreteUUID 0x7fd8c1b8d4f0> 488BB40D-F47E-40BD-BA19-6ACBCA3CFB86
+10:22:06.302 Xcode[73139:868194] Launch session started, setting a disallow-finish-token on the run operation.
+10:22:06.319 Xcode[73139:868194] Adding console adaptor <IDEConsoleAdaptor: 0x7fd8b353e1e0 'target'> for test session 488BB40D-F47E-40BD-BA19-6ACBCA3CFB86.
+10:22:06.322 Xcode[73139:1788710] 686336CB-C74C-4486-83E7-6091A9A9CC11: Registered for sim device notification, got token 4
+10:22:06.322 Xcode[73139:1788645] 686336CB-C74C-4486-83E7-6091A9A9CC11: Unregistering for sim device notification with token 4
+10:22:06.322 Xcode[73139:1788645] 686336CB-C74C-4486-83E7-6091A9A9CC11: Spawning executable at path: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest and options: {
+    arguments =     (
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest",
+        "-NSTreatUnknownArgumentsAsOpen",
+        NO,
+        "-ApplePersistenceIgnoreState",
+        YES
+    );
+    binpref = "x86_64";
+    environment =     {
+        "DTX_CONNECTION_SERVICES_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks/DTXConnectionServices.framework";
+        "DYLD_FRAMEWORK_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+        "DYLD_LIBRARY_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+        NSUnbufferedIO = YES;
+        "OBJC_DISABLE_GC" = YES;
+        "XCODE_DBG_XPC_EXCLUSIONS" = "com.apple.dt.xctestSymbolicator";
+        XCTestConfigurationFilePath = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator/NetworkWrapperTests.xctest/NetworkWrapperTests-488BB40D-F47E-40BD-BA19-6ACBCA3CFB86.xctestconfiguration";
+    };
+    stderr = 145;
+    stdin = 143;
+    stdout = 144;
+    "wait_for_debugger" = 1;
+}
+10:22:06.325 Xcode[73139:868194] Received Ready from iPhoneSimulator
+10:22:06.325 Xcode[73139:868194] Sending notification: NSConcreteNotification 0x7fd89e75b5c0 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "686336CB-C74C-4486-83E7-6091A9A9CC11";
+}}
+10:22:06.325 Xcode[73139:868194] Received Ready from iPhoneSimulator
+10:22:06.325 Xcode[73139:868194] Sending notification: NSConcreteNotification 0x7fd8caec3c50 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "686336CB-C74C-4486-83E7-6091A9A9CC11";
+}}
+10:22:06.340 Xcode[73139:1787220] 686336CB-C74C-4486-83E7-6091A9A9CC11: Spawned executable at path: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest with options: {
+    arguments =     (
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest",
+        "-NSTreatUnknownArgumentsAsOpen",
+        NO,
+        "-ApplePersistenceIgnoreState",
+        YES
+    );
+    binpref = "x86_64";
+    environment =     {
+        "DTX_CONNECTION_SERVICES_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks/DTXConnectionServices.framework";
+        "DYLD_FRAMEWORK_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+        "DYLD_LIBRARY_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+        NSUnbufferedIO = YES;
+        "OBJC_DISABLE_GC" = YES;
+        "XCODE_DBG_XPC_EXCLUSIONS" = "com.apple.dt.xctestSymbolicator";
+        XCTestConfigurationFilePath = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator/NetworkWrapperTests.xctest/NetworkWrapperTests-488BB40D-F47E-40BD-BA19-6ACBCA3CFB86.xctestconfiguration";
+    };
+    stderr = 145;
+    stdin = 143;
+    stdout = 144;
+    "wait_for_debugger" = 1;
+} (pid = 87583)
+10:22:06.340 Xcode[73139:1787220] Tracking pid 87583 for simulator <DVTiPhoneSimulator: 0x7fd8c0e54890> {
+		SimDevice: SimDevice : iPhone 6s Plus (686336CB-C74C-4486-83E7-6091A9A9CC11) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus } runtime={ SimRuntime : 9.3 (13E230) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 }
+}
+10:22:06.340 Xcode[73139:1787220] Checking to see if pid 87583 is valid: kill(pid, 0) = 0 (YES, it's still running)
+10:22:06.340 Xcode[73139:1787220] Setting up DVTNotifyOnProcDeath for pid 87583
+10:22:06.353 Xcode[73139:1786671] Checking to see if pid 87583 is valid: kill(pid, 0) = 0 (YES, it's still running)
+10:22:06.356 Xcode[73139:1786671] 686336CB-C74C-4486-83E7-6091A9A9CC11: Registered for sim device notification, got token 5
+10:22:06.357 Xcode[73139:1788710] 686336CB-C74C-4486-83E7-6091A9A9CC11: Unregistering for sim device notification with token 5
+10:22:06.730 Xcode[73139:868194] Received Ready from iPhoneSimulator
+10:22:06.730 Xcode[73139:868194] Sending notification: NSConcreteNotification 0x7fd8c0594840 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "686336CB-C74C-4486-83E7-6091A9A9CC11";
+}}
+10:22:07.354 Xcode[73139:1788679] testmanagerd handled session request.
+10:22:07.354 Xcode[73139:868194] Waiting for test process to launch.
+10:22:10.065 Xcode[73139:868194] Launch session finished initial intensive file IO.
+10:22:10.065 Xcode[73139:868194] Waiting for test process to check in..., will wait up to 120s
+10:22:10.351 Xcode[73139:1788679] Got proxy channel request from test bundle
+10:22:10.351 Xcode[73139:1788679] Test bundle is ready, running protocol 16, requires at least version 8. IDE is running 16 and requires at least 8
+10:22:10.352 Xcode[73139:1789531] Creating secondary transport and connection for whitelisting test process PID.
+10:22:10.352 Xcode[73139:1789531] 686336CB-C74C-4486-83E7-6091A9A9CC11: Registered for sim device notification, got token 6
+10:22:10.352 Xcode[73139:1789531] 686336CB-C74C-4486-83E7-6091A9A9CC11: Unregistering for sim device notification with token 6
+10:22:10.352 Xcode[73139:1789531] Sim iPhone 6s Plus is booted (state = 3)
+10:22:10.352 Xcode[73139:1789531] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+10:22:10.352 Xcode[73139:1789531] Returning /private/tmp/com.apple.launchd.FqbwgrFOjS/com.apple.testmanagerd.unix-domain.socket for TESTMANAGERD_SIM_SOCK
+10:22:10.352 Xcode[73139:1789531] Sim iPhone 6s Plus has testmanagerd socket at /private/tmp/com.apple.launchd.FqbwgrFOjS/com.apple.testmanagerd.unix-domain.socket
+10:22:10.352 Xcode[73139:1789531] Connected to testmanagerd socket for Sim iPhone 6s Plus
+10:22:10.353 Xcode[73139:1789531] Creating the connection.
+10:22:10.353 Xcode[73139:1789531] Resuming the secondary connection.
+10:22:10.353 Xcode[73139:1789531] Whitelisting test process ID 87583
+10:22:07.344 testmanagerd[87526:1788757] Launched testmanagerd from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/libexec/testmanagerd, built at Friday, March 4, 2016 at 6:23:46 PM Eastern Standard Time
+10:22:07.346 testmanagerd[87526:1789537] IDE connected over socket 6 (__47-[XCTestManagerIDEServer initWithListenSocket:]_block_invoke)
+10:22:07.346 testmanagerd[87526:1788757] Setting availability state.
+10:22:07.346 testmanagerd[87526:1789537] Created session with socket 6
+10:22:07.346 testmanagerd[87526:1788757] Posting availability to test bundles...
+10:22:07.353 testmanagerd[87526:1789538] Handled a proxy request from the IDE with session <XCIDESession: 0x7fa239b02380> proxy <_DTXProxy: 0x7fa239503e10>
+10:22:07.353 testmanagerd[87526:1788757] __84-[XCIDESession _IDE_initiateSessionWithIdentifier:forClient:atPath:protocolVersion:]_block_invoke <__NSConcreteUUID 0x7fa23950d2a0> 488BB40D-F47E-40BD-BA19-6ACBCA3CFB86 1 6 from client C5EA0B47-C901-4B45-AA2B-56F27D18AD42-73139-0000405AF26AC35C (/Applications/Xcode.app)
+10:22:07.353 testmanagerd[87526:1789538] __45-[XCTestManager setIDESession:forIdentifier:]_block_invoke <XCIDESession: 0x7fa239b02380> -> <__NSConcreteUUID 0x7fa23950d2a0> 488BB40D-F47E-40BD-BA19-6ACBCA3CFB86
+10:22:07.353 testmanagerd[87526:1789538] -[XCTestManager _handleRequestForSessionWithIdentifier:]
+10:22:10.147 testmanagerd[87526:1789537] Received new test session connection (-[XCTestManager listener:shouldAcceptNewConnection:])
+10:22:10.147 testmanagerd[87526:1788757] Initial orientation 0
+10:22:10.149 testmanagerd[87526:1789538] Test session <__NSConcreteUUID 0x7fa239914c90> 488BB40D-F47E-40BD-BA19-6ACBCA3CFB86 requested socket (-[XCTestSession _XCT_requestSocketForSessionIdentifier:reply:])
+10:22:10.149 testmanagerd[87526:1789536] Test session <__NSConcreteUUID 0x7fa239914c90> 488BB40D-F47E-40BD-BA19-6ACBCA3CFB86 requested socket (__57-[XCTestManager requestSocketForSessionIdentifier:reply:]_block_invoke)
+10:22:10.149 testmanagerd[87526:1789536] -[XCTestManager _handleRequestForSessionWithIdentifier:]
+10:22:10.149 testmanagerd[87526:1789536] Closing IDE connection before sending socket 8 to test host.
+10:22:10.149 testmanagerd[87526:1789536] -[XCIDESession closeIDEConnection:] sending barrier
+10:22:10.149 testmanagerd[87526:1788757] barrier flushed, closing DTXConnection to IDE, socket will not be closed
+10:22:10.149 testmanagerd[87526:1789538] Socket disconnected
+10:22:10.149 testmanagerd[87526:1789536] __33-[XCTestManager closeIDESession:]_block_invoke <XCIDESession: 0x7fa239b02380>
+10:22:10.149 testmanagerd[87526:1789536] Considering exiting, 1 test sessions, 0 sessions with identifiers, 0 unidentified sessions...
+10:22:10.347 testmanagerd[87526:1788757] Sending socket 8 to test host
+10:22:10.347 testmanagerd[87526:1789536] __33-[XCTestManager closeIDESession:]_block_invoke <XCIDESession: 0x7fa239b02380>
+10:22:10.348 testmanagerd[87526:1789536] Considering exiting, 1 test sessions, 0 sessions with identifiers, 0 unidentified sessions...
+10:22:10.352 testmanagerd[87526:1789536] IDE connected over socket 7 (__47-[XCTestManagerIDEServer initWithListenSocket:]_block_invoke)
+10:22:10.353 testmanagerd[87526:1789536] Created session with socket 7
+10:22:10.354 testmanagerd[87526:1789538] Handled a proxy request from the IDE with session <XCIDESession: 0x7fa239809320> proxy <_DTXProxy: 0x7fa239806d60>
+10:22:10.354 testmanagerd[87526:1789538] -[XCIDESession _IDE_initiateControlSessionForTestProcessID:protocolVersion:] 87583 16
+10:22:10.354 testmanagerd[87526:1788757] Set control session <XCIDESession: 0x7fa239809320> with proto 16 and proxy <_DTXProxy: 0x7fa239806d60>
+10:22:10.358 Xcode[73139:1789531] Got whitelisting response and daemon protocol version 16
+10:22:10.127 xctest[87583:1789443] Linked XCTest.framework from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/XCTest, built at Tuesday, March 15, 2016 at 8:32:00 PM Eastern Daylight Time
+10:22:10.128 xctest[87583:1789443] Process arguments: (
+    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest",
+    "-NSTreatUnknownArgumentsAsOpen",
+    NO,
+    "-ApplePersistenceIgnoreState",
+    YES
+)
+10:22:10.128 xctest[87583:1789443] Process environment: {
+    "CFFIXED_USER_HOME" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data";
+    "CUPS_SERVER" = "/private/tmp/com.apple.launchd.d5AYpxLR86/Listeners";
+    "DTX_CONNECTION_SERVICES_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks/DTXConnectionServices.framework";
+    "DYLD_FALLBACK_FRAMEWORK_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks";
+    "DYLD_FALLBACK_LIBRARY_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/lib";
+    "DYLD_FRAMEWORK_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+    "DYLD_LIBRARY_PATH" = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+    "DYLD_ROOT_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk";
+    "DYLD_SHARED_REGION" = avoid;
+    HOME = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data";
+    "IOS_SIMULATOR_SYSLOG_SOCKET" = "/private/tmp/com.apple.CoreSimulator.SimDevice.686336CB-C74C-4486-83E7-6091A9A9CC11.launchd_sim/syslogsock";
+    "IPHONE_SHARED_RESOURCES_DIRECTORY" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data";
+    "IPHONE_SIMULATOR_CLASS" = N66;
+    "IPHONE_SIMULATOR_DEVICE" = iPhone;
+    "IPHONE_SIMULATOR_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk";
+    "IPHONE_TVOUT_EXTENDED_PROPERTIES" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Library/Application Support/iPhone Simulator/com.apple.iphonesimulator/extended_display.plist";
+    NSUnbufferedIO = YES;
+    "OBJC_DISABLE_GC" = YES;
+    PATH = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/sbin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/sbin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/local/bin";
+    "SIMULATOR_CAPABILITIES" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/CoreSimulator/Profiles/DeviceTypes/iPhone 6s Plus.simdevicetype/Contents/Resources/capabilities.plist";
+    "SIMULATOR_DEVICE_NAME" = "iPhone 6s Plus";
+    "SIMULATOR_EXTENDED_DISPLAY_PROPERTIES" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Library/Application Support/iPhone Simulator/com.apple.iphonesimulator/extended_display.plist";
+    "SIMULATOR_HOST_HOME" = "/Users/matt";
+    "SIMULATOR_LEGACY_ASSET_SUFFIX" = iphone;
+    "SIMULATOR_LOG_ROOT" = "/Users/matt/Library/Logs/CoreSimulator/686336CB-C74C-4486-83E7-6091A9A9CC11";
+    "SIMULATOR_MAINSCREEN_HEIGHT" = 2208;
+    "SIMULATOR_MAINSCREEN_PITCH" = "461.000000";
+    "SIMULATOR_MAINSCREEN_SCALE" = "3.000000";
+    "SIMULATOR_MAINSCREEN_WIDTH" = 1242;
+    "SIMULATOR_MEMORY_WARNINGS" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/var/run/memory_warning_simulation";
+    "SIMULATOR_MODEL_IDENTIFIER" = "iPhone8,2";
+    "SIMULATOR_PLATFORM_RUNTIME_OVERLAY_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/CoreSimulator/RuntimeOverlay";
+    "SIMULATOR_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk";
+    "SIMULATOR_RUNTIME_BUILD_VERSION" = 13E230;
+    "SIMULATOR_RUNTIME_VERSION" = "9.3";
+    "SIMULATOR_SHARED_RESOURCES_DIRECTORY" = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data";
+    "SIMULATOR_UDID" = "686336CB-C74C-4486-83E7-6091A9A9CC11";
+    "SIMULATOR_VERSION_INFO" = "CoreSimulator 209.19 - Device: iPhone 6s Plus - Runtime: iOS 9.3 (13E230) - DeviceType: iPhone 6s Plus";
+    "TESTMANAGERD_SIM_SOCK" = "/private/tmp/com.apple.launchd.FqbwgrFOjS/com.apple.testmanagerd.unix-domain.socket";
+    TMPDIR = "/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/tmp";
+    "XCODE_DBG_XPC_EXCLUSIONS" = "com.apple.dt.xctestSymbolicator";
+    XCTestConfigurationFilePath = "/Users/matt/Projects/Personal/NetworkWrapper/DerivedData/NetworkWrapper/Build/Products/Debug-iphonesimulator/NetworkWrapperTests.xctest/NetworkWrapperTests-488BB40D-F47E-40BD-BA19-6ACBCA3CFB86.xctestconfiguration";
+    "XPC_FLAGS" = 0x0;
+    "XPC_SERVICE_NAME" = "com.apple.xpc.launchd.oneshot.0x10000000.xctest";
+    "XPC_SIMULATOR_LAUNCHD_NAME" = "com.apple.CoreSimulator.SimDevice.686336CB-C74C-4486-83E7-6091A9A9CC11.launchd_sim";
+}
+10:22:10.128 xctest[87583:1789443] Loading DTXConnectionServices from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks/DTXConnectionServices.framework
+10:22:10.145 xctest[87583:1789443] Session ID <__NSConcreteUUID 0x7fd4304014b0> 488BB40D-F47E-40BD-BA19-6ACBCA3CFB86
+10:22:10.145 xctest[87583:1789443] Registering for testmanagerd availability notify post.
+10:22:10.145 xctest[87583:1789443] testmanagerd availability confirmed via notify_get_state.
+10:22:10.145 xctest[87583:1789443] Initiating connection to testmanagerd to request socket for IDE connection.
+10:22:10.348 xctest[87583:1790054] Got socket 6 from daemon, making connection to IDE
+10:22:10.348 xctest[87583:1790054] Creating connection with transport
+10:22:10.350 xctest[87583:1790054] Resuming connection
+10:22:10.351 xctest[87583:1790054] Messaging IDE proxy - _XCT_testBundleReadyWithProtocolVersion:16 minimumVersion:8
+10:22:10.361 Xcode[73139:868194] Starting test plan, clearing initialization timeout timer.
+10:22:10.361 xctest[87583:1789443] -[XCTestDriver _runSuite]
+10:22:10.361 xctest[87583:1789443] Loading test suite...
+10:22:10.387 xctest[87583:1789443] Finished loading test suite, took 0.026s
+10:22:10.388 xctest[87583:1789443] -[_XCTestDriverTestObserver testBundleWillStart:]
+10:22:10.389 xctest[87583:1789443] Running suite...
+10:22:10.390 xctest[87583:1789443] -[_XCTestDriverTestObserver testSuiteWillStart:]
+10:22:10.393 Xcode[73139:1789531] (LOG ARBITER) Dumping buffered message data; 0 messages.
+10:22:10.458 Xcode[73139:1788712] (LOG ARBITER) Dumping buffered message data; 0 messages.
+10:22:10.928 Xcode[73139:1789531] (LOG ARBITER) Dumping buffered message data; 0 messages.
+10:22:10.391 Xcode[73139:868194] _XCT_testSuite:All tests didStartAt:2016-06-01 14:22:10 +0000
+10:22:10.352 xctest[87583:1790059] _XCT_testBundleReadyWithProtocolVersion:minimumVersion: reply received
+10:22:10.359 xctest[87583:1790059] _IDE_startExecutingTestPlanWithProtocolVersion:16
+10:22:10.391 xctest[87583:1789443] -[_XCTestDriverTestObserver testSuiteWillStart:]
+10:22:10.391 Xcode[73139:868194] _XCT_testSuite:NetworkWrapperTests.xctest didStartAt:2016-06-01 14:22:10 +0000
+Test Suite 'All tests' started at 2016-06-01 10:22:10.390
+10:22:10.391 xctest[87583:1789443] -[_XCTestDriverTestObserver testSuiteWillStart:]
+10:22:10.392 Xcode[73139:868194] _XCT_testSuite:NetworkWrapperTests didStartAt:2016-06-01 14:22:10 +0000
+Test Suite 'NetworkWrapperTests.xctest' started at 2016-06-01 10:22:10.391
+10:22:10.392 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testCreateNetworkWrapper
+10:22:10.392 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testCreateNetworkWrapper
+Test Suite 'NetworkWrapperTests' started at 2016-06-01 10:22:10.391
+10:22:10.392 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseDidFinish:]
+10:22:10.393 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testCreateNetworkWrapper withStatus:passed duration:0.0008770227432250977
+10:22:10.393 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testExample
+10:22:10.393 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testExample
+Test Case '-[NetworkWrapperTests testCreateNetworkWrapper]' started.
+Test Case '-[NetworkWrapperTests testCreateNetworkWrapper]' passed (0.001 seconds).
+Test Case '-[NetworkWrapperTests testExample]' started.
+Test Case '-[NetworkWrapperTests testExample]' passed (0.000 seconds).
+10:22:10.393 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseDidFinish:]
+10:22:10.458 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testExample withStatus:passed duration:0.0003859996795654297
+10:22:10.394 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testPerformanceExample
+10:22:10.459 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testPerformanceExample
+10:22:05.076 SpringBoard[87517] libMobileGestalt MobileGestalt.c:849: watch-companion is static and will never generate a notification
+10:22:05.076 SpringBoard[87517] libMobileGestalt MobileGestalt.c:849: stand-alone-contacts is static and will never generate a notification
+10:22:05.076 SpringBoard[87517] libMobileGestalt MobileGestalt.c:849: still-camera is static and will never generate a notification
+10:22:05.081 SpringBoard[87517] Installed apps did change.
+Added: {(
+    "com.apple.gamecenter",
+    "com.apple.SharedWebCredentialViewService",
+    "com.apple.FacebookAccountMigrationDialog",
+    "com.apple.mobilesafari",
+    "com.apple.AdSheetPhone",
+    "com.apple.share",
+    "com.apple.SafariViewService",
+    "com.apple.appleaccount.AACredentialRecoveryDialog",
+    "com.apple.CloudKit.ShareBear",
+    "com.apple.Preferences",
+    "com.apple.WebContentFilter.remoteUI.WebContentAnalysisUI",
+    "com.apple.iCloudDriveApp",
+    "com.apple.TrustMe",
+    "com.apple.mobileslideshow",
+    "com.apple.MailCompositionService",
+    "com.apple.CoreAuthUI",
+    "com.apple.Passbook",
+    "com.apple.WatchKitSettings",
+    "com.apple.AccountAuthenticationDialog",
+    "com.apple.TencentWeiboAccountMigrationDialog",
+    "com.apple.iad.iAdOptOut",
+    "com.apple.WebViewService",
+    "com.apple.MusicUIService",
+    "com.apple.mobilesms.compose",
+    "com.apple.social.SLYahooAuth",
+    "com.apple.Maps",
+    "com.Squirrels.ReflectorDirector",
+    "com.apple.PhotosViewService",
+    "com.apple.quicklook.quicklookd",
+    "com.apple.managedconfiguration.MDMRemoteAlertService",
+    "com.apple.LoginUI",
+    "com.apple.datadetectors.DDActionsService",
+    "com.apple.MobileAddressBook",
+    "com.apple.Health",
+    "com.apple.social.SLGoogleAuth",
+    "com.apple.DataActivation",
+    "com.apple.Home.HomeUIService",
+    "com.apple.ServerDocuments",
+    "com.apple.HealthPrivacyService",
+    "com.apple.WebSheet",
+    "com.apple.camera",
+    "com.apple.mobilecal",
+    "com.apple.news",
+    "com.apple.ios.StoreKitUIService",
+    "com.apple.gamecenter.GameCenterUIService",
+    "com.apple.reminders",
+    "com.apple.webapp",
+    "com.apple.PrintKit.Print-Center",
+    "com.apple.webapp1",
+    "com.apple.PassbookUIService"
+)}
+Removed: {(
+)}
+Modified: {(
+)}
+10:22:05.096 containermanagerd[87542] 0x700000117000 systemGroupContainerPath: com.apple.containermanagerd.internal is not entitled for system group identifier: systemgroup.com.apple.sharedpclogging
+10:22:05.115 SpringBoard[87517] adding observer to <NSUserDefaults: 0x7fcdb852b960> for key: SBMedusaEnabled
+10:22:05.129 SpringBoard[87517] adding observer to <NSUserDefaults: 0x7fcdb852b960> for key: SBShowBatteryPercentage
+10:22:05.129 SpringBoard[87517] adding observer to <NSUserDefaults: 0x7fcdb852b960> for key: SBShowBatteryLevel
+10:22:05.133 SpringBoard[87517] *** error reading settings archive file: <SBRootSettings: /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Documents/com.apple.springboard.settings/RootSettings.plist> 
+10:22:05.144 com.apple.accessibility.AccessibilityUIServer[87568] |AXIPC|warning| Could not find server for service: com.apple.accessibility.AXSpringBoardServer
+10:22:05.147 com.apple.accessibility.AccessibilityUIServer[87568] |AXSBServer|error| AX SpringBoardServer: Error: Domain:AXIPC Code:0 Reason:The operation couldn‚Äôt be completed. Could not find server for service: com.apple.accessibility.AXSpringBoardServer
+10:22:05.147 com.apple.accessibility.AccessibilityUIServer[87568] |AXIPC|warning| Could not verify connection. server port was nil
+10:22:05.153 com.apple.accessibility.AccessibilityUIServer[87568] assertion failed: 15F34 13E230: libxpc.dylib + 57882 [66C28065-C9DB-3C8E-926F-5A40210A6D1B]: 0x7d
+10:22:05.175 SpringBoard[87517] *** error reading settings archive file: <SBRootSettings: /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Documents/com.apple.springboard.settings/RootSettings.previous.plist> 
+10:22:05.333 SpringBoard[87517] Cannot get managed lost mode file on watch or simulator: -[FMDFMIPManager(Private) getManagedLostModeFileURL]
+10:22:05.346 SpringBoard[87517] Normal message received by listener connection. Ignoring.
+10:22:05.348 SpringBoard[87517] Normal message received by listener connection. Ignoring.
+10:22:05.349 SpringBoard[87517] Normal message received by listener connection. Ignoring.
+10:22:05.359 SpringBoard[87517] could not find icon for representation -> com.apple.MobileSMS
+10:22:05.360 SpringBoard[87517] throwing out icon because it isn't visible in the model : node=<SBApplicationIcon: 0x7fcdb8c193f0; nodeID: "com.apple.camera"> com.apple.camera
+10:22:05.360 SpringBoard[87517] could not find icon for representation -> com.apple.weather
+10:22:05.360 SpringBoard[87517] could not find icon for representation -> com.apple.mobiletimer
+10:22:05.360 SpringBoard[87517] could not find icon for representation -> com.apple.videos
+10:22:05.360 SpringBoard[87517] could not find icon for representation -> com.apple.mobilenotes
+10:22:05.360 SpringBoard[87517] could not find icon for representation -> com.apple.stocks
+10:22:05.360 SpringBoard[87517] could not find icon for representation -> com.apple.MobileStore
+10:22:05.361 SpringBoard[87517] could not find icon for representation -> com.apple.AppStore
+10:22:05.361 SpringBoard[87517] could not find icon for representation -> com.apple.iBooks
+10:22:05.361 SpringBoard[87517] could not find icon for representation -> com.apple.facetime
+10:22:05.362 SpringBoard[87517] could not find icon for representation -> com.apple.calculator
+10:22:05.362 SpringBoard[87517] could not find icon for representation -> com.apple.podcasts
+10:22:05.362 SpringBoard[87517] could not find icon for representation -> com.apple.Bridge
+10:22:05.362 SpringBoard[87517] could not find icon for representation -> com.apple.compass
+10:22:05.362 SpringBoard[87517] could not find icon for representation -> com.apple.tips
+10:22:05.362 SpringBoard[87517] could not find icon for representation -> com.apple.VoiceMemos
+10:22:05.362 SpringBoard[87517] could not find icon for representation -> com.apple.mobileme.fmf1
+10:22:05.362 SpringBoard[87517] could not find icon for representation -> com.apple.mobileme.fmip1
+10:22:05.363 SpringBoard[87517] could not find icon for representation -> com.apple.mobilephone
+10:22:05.363 SpringBoard[87517] could not find icon for representation -> com.apple.mobilemail
+10:22:05.363 SpringBoard[87517] could not find icon for representation -> com.apple.Music
+10:22:05.383 callservicesd[87543] Normal message received by listener connection. Ignoring.
+10:22:05.387 callservicesd[87543] Normal message received by listener connection. Ignoring.
+10:22:05.403 callservicesd[87543] CallHistory: Directory creation failed at location file:///var/mobile///Library/Logs/CallHistory error: Error Domain=NSCocoaErrorDomain Code=513 "You don‚Äôt have permission to save the file ‚ÄúCallHistory‚Äù in the folder ‚ÄúLogs‚Äù." UserInfo={NSFilePath=/var/mobile///Library/Logs/CallHistory, NSUnderlyingError=0x7fa933b05af0 {Error Domain=NSPOSIXErrorDomain Code=13 "Permission denied"}}
+10:22:05.412 SpringBoard[87517]  [SBFImageColorSpaceUtilities] failed to create copy with colorSpace=<CGColorSpace 0x7fcdb8800290> (kCGColorSpaceICCBased; kCGColorSpaceModelMonochrome; Generic Gray Gamma 2.2 Profile) of original CGImage=<CGImage 0x7fcdb84e8400> with colorSpace=<CGColorSpace 0x7fcdb8509df0> (kCGColorSpaceICCBased; kCGColorSpaceModelRGB; sRGB IEC61966-2.1)
+10:22:05.508 mediaremoted[87508] Normal message received by listener connection. Ignoring.
+10:22:05.552 medialibraryd[87570] (Error) MC: MobileContainerManager gave us a path we weren't expecting; file a radar against them
+Expected: /private/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Actual: /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Overriding MCM with the one true path
+10:22:05.694 mstreamd[87507] (Note ) mstreamd: mstreamd starting up.
+10:22:05.701 callservicesd[87543] --- Received com.apple.coreservices.useractivity.reconnection notification, and we had an active user activity, so reconnecting to server. (UAUserActivityManager.m #153)
+10:22:05.705 sharingd[87519] 10:22:05.703 : Starting Up...
+10:22:05.724 sharingd[87519] 10:22:05.724 : Device Capabilities (Handoff:YES, Instant Hotspot:YES, AirDrop:YES, Legacy AirDrop:NO, Remote Disc:NO)
+10:22:05.740 SpringBoard[87517] Unable to simultaneously satisfy constraints.
+	Probably at least one of the constraints in the following list is one you don't want. 
+	Try this: 
+		(1) look at each constraint and try to figure out which you don't expect; 
+		(2) find the code that added the unwanted constraint or constraints and fix it. 
+(
+    "<NSLayoutConstraint:0x7fcdb8c76a20 UILabel:0x7fcdb86b8070' '.leading == SPUISearchTableHeaderView:0x7fcdb86b54a0.leadingMargin>",
+    "<NSLayoutConstraint:0x7fcdb8c776c0 H:[UILabel:0x7fcdb86b8070' ']-(NSSpace(8))-[UIButton:0x7fcdb86bb380'Show More']>",
+    "<NSLayoutConstraint:0x7fcdb8c77710 SPUISearchTableHeaderView:0x7fcdb86b54a0.trailingMargin == UIButton:0x7fcdb86bb380'Show More'.trailing>",
+    "<NSLayoutConstraint:0x7fcdb8c76c80 'UIView-Encapsulated-Layout-Width' H:[SPUISearchTableHeaderView:0x7fcdb86b54a0(0)]>"
+)
+
+Will attempt to recover by breaking constraint 
+<NSLayoutConstraint:0x7fcdb8c776c0 H:[UILabel:0x7fcdb86b8070' ']-(NSSpace(8))-[UIButton:0x7fcdb86bb380'Show More']>
+
+Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKit/UIView.h> may also be helpful.
+10:22:05.740 SpringBoard[87517] Unable to simultaneously satisfy constraints.
+	Probably at least one of the constraints in the following list is one you don't want. 
+	Try this: 
+		(1) look at each constraint and try to figure out which you don't expect; 
+		(2) find the code that added the unwanted constraint or constraints and fix it. 
+(
+    "<NSLayoutConstraint:0x7fcdb86bc870 SPUISearchTableHeaderView:0x7fcdb86b54a0.bottom == UILabel:0x7fcdb86b8070' '.lastBaseline + 8>",
+    "<NSLayoutConstraint:0x7fcdb8c73870 UILabel:0x7fcdb86b8070' '.firstBaseline == SPUISearchTableHeaderView:0x7fcdb86b54a0.top + 36>",
+    "<NSLayoutConstraint:0x7fcdb8c76de0 'UIView-Encapsulated-Layout-Height' V:[SPUISearchTableHeaderView:0x7fcdb86b54a0(0)]>"
+)
+
+Will attempt to recover by breaking constraint 
+<NSLayoutConstraint:0x7fcdb8c73870 UILabel:0x7fcdb86b8070' '.firstBaseline == SPUISearchTableHeaderView:0x7fcdb86b54a0.top + 36>
+
+Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKit/UIView.h> may also be helpful.
+10:22:05.740 SpringBoard[87517] Unable to simultaneously satisfy constraints.
+	Probably at least one of the constraints in the following list is one you don't want. 
+	Try this: 
+		(1) look at each constraint and try to figure out which you don't expect; 
+		(2) find the code that added the unwanted constraint or constraints and fix it. 
+(
+    "<NSLayoutConstraint:0x7fcdb86bc870 SPUISearchTableHeaderView:0x7fcdb86b54a0.bottom == UILabel:0x7fcdb86b8070' '.lastBaseline + 8>",
+    "<NSLayoutConstraint:0x7fcdb8c75d80 V:|-(0)-[UIButton:0x7fcdb86bb380'Show More']   (Names: '|':SPUISearchTableHeaderView:0x7fcdb86b54a0 )>",
+    "<NSLayoutConstraint:0x7fcdb8c75b20 UIButton:0x7fcdb86bb380'Show More'.firstBaseline == UILabel:0x7fcdb86b8070' '.firstBaseline>",
+    "<NSLayoutConstraint:0x7fcdb8c76250 UIButton:0x7fcdb86bb380'Show More'.lastBaseline == UILabel:0x7fcdb86b8070' '.lastBaseline>",
+    "<NSLayoutConstraint:0x7fcdb8c79270 UIButtonLabel:0x7fcdb86bb890.centerY == UIButton:0x7fcdb86bb380'Show More'.centerY>",
+    "<NSLayoutConstraint:0x7fcdb8c76de0 'UIView-Encapsulated-Layout-Height' V:[SPUISearchTableHeaderView:0x7fcdb86b54a0(0)]>"
+)
+
+Will attempt to recover by breaking constraint 
+<NSLayoutConstraint:0x7fcdb8c79270 UIButtonLabel:0x7fcdb86bb890.centerY == UIButton:0x7fcdb86bb380'Show More'.centerY>
+
+Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKit/UIView.h> may also be helpful.
+10:22:05.741 SpringBoard[87517] Unable to simultaneously satisfy constraints.
+	Probably at least one of the constraints in the following list is one you don't want. 
+	Try this: 
+		(1) look at each constraint and try to figure out which you don't expect; 
+		(2) find the code that added the unwanted constraint or constraints and fix it. 
+(
+    "<NSLayoutConstraint:0x7fcdb86bc870 SPUISearchTableHeaderView:0x7fcdb86b54a0.bottom == UILabel:0x7fcdb86b8070' '.lastBaseline + 8>",
+    "<NSLayoutConstraint:0x7fcdb8c75d80 V:|-(0)-[UIButton:0x7fcdb86bb380'Show More']   (Names: '|':SPUISearchTableHeaderView:0x7fcdb86b54a0 )>",
+    "<NSLayoutConstraint:0x7fcdb8c75b20 UIButton:0x7fcdb86bb380'Show More'.firstBaseline == UILabel:0x7fcdb86b8070' '.firstBaseline>",
+    "<NSLayoutConstraint:0x7fcdb8c76250 UIButton:0x7fcdb86bb380'Show More'.lastBaseline == UILabel:0x7fcdb86b8070' '.lastBaseline>",
+    "<NSLayoutConstraint:0x7fcdb8c77f30 UIButtonLabel:0x7fcdb86bb890'Show More'.centerY == UIButton:0x7fcdb86bb380'Show More'.centerY>",
+    "<NSLayoutConstraint:0x7fcdb8c76de0 'UIView-Encapsulated-Layout-Height' V:[SPUISearchTableHeaderView:0x7fcdb86b54a0(0)]>"
+)
+
+Will attempt to recover by breaking constraint 
+<NSLayoutConstraint:0x7fcdb8c77f30 UIButtonLabel:0x7fcdb86bb890'Show More'.centerY == UIButton:0x7fcdb86bb380'Show More'.centerY>
+
+Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKit/UIView.h> may also be helpful.
+10:22:05.755 sharingd[87519] (Error) MC: MobileContainerManager gave us a path we weren't expecting; file a radar against them
+Expected: /private/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Actual: /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Overriding MCM with the one true path
+10:22:05.767 sharingd[87519] 10:22:05.767 : Failed to send SDURLSessionProxy startup message, error Error Domain=com.apple.identityservices.error Code=200 "(null)" UserInfo={NSUnderlyingError=0x7fb223b02920 {Error Domain=com.apple.idssimualtorsupport.errors Code=3 "No pair is active." UserInfo={NSLocalizedDescription=No pair is active.}}}
+10:22:05.783 searchd[87536] (Error) MC: MobileContainerManager gave us a path we weren't expecting; file a radar against them
+Expected: /private/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Actual: /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Overriding MCM with the one true path
+10:22:05.817 searchd[87536] (Error) IndexGeneral in si_playBackMobileRecords:2343: played back 0 records
+10:22:05.826 searchd[87536] (Error) IndexGeneral in si_playBackMobileRecords:2343: played back 0 records
+10:22:05.850 pkd[87554] assigning plug-in com.apple.MobileAddressBook.ContactsCoreSpotlightExtension(1.0) to plugin sandbox
+10:22:05.850 pkd[87554] enabling pid=87536 for plug-in com.apple.MobileAddressBook.ContactsCoreSpotlightExtension(1.0) 0CDC45A9-3A34-4BE7-9043-3219FBABBD4A /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Applications/Contacts.app/PlugIns/ContactsCoreSpotlightExtension.appex
+10:22:05.855 SpringBoard[87517] Cannot get managed lost mode file on watch or simulator: -[FMDFMIPManager(Private) getManagedLostModeFileURL]
+10:22:05.886 SpringBoard[87517] +[UNNotificationStore migratePushStore] Migrating push store: /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Library/SpringBoard/PushStore
+10:22:05.886 SpringBoard[87517] +[UNNotificationStore migratePushStore] Push store does not exist; no migration needed.
+10:22:05.890 SpringBoard[87517] -[BBObserver setDelegate:] Delegate implements addBulletin but does not implement noteInvalidatedBulletinIDs: <SBBulletinLocalObserverGateway: 0x7fcdb8814d20>
+10:22:05.891 SpringBoard[87517] -[SBAssistantController _loadPlugin] Assistant failed to load!
+10:22:05.904 backboardd[87518] Couldn't find the digitizer HID service, this is probably bad
+10:22:05.906 searchd[87536] tcp_connection_set_tfo 3 TFO is not yet supported on Simulator
+10:22:05.917 SpringBoard[87517] BTM: attaching to BTServer
+10:22:05.917 SpringBoard[87517] BTM: failed to attach with error 9
+10:22:05.917 SpringBoard[87517] BTM: attaching to BTServer
+10:22:05.917 SpringBoard[87517] BTM: failed to attach with error 9
+10:22:05.917 SpringBoard[87517] BTM: attaching to BTServer
+10:22:05.918 SpringBoard[87517] BTM: failed to attach with error 9
+10:22:05.919 SpringBoard[87517] ADDING LOCAL com.apple.mobilecal, <BBLocalDataProvider 0x7fcdb8e37950; com.apple.mobilecal>
+10:22:05.922 SpringBoard[87517] ADDING LOCAL com.apple.reminders, <BBLocalDataProvider 0x7fcdb8e3e350; com.apple.reminders>
+10:22:05.929 ContactsCoreSpotlightExtension[87576] PlugInKit subsystem NSSharingService_Subsystem not present
+10:22:05.933 SpringBoard[87517] ADDING LOCAL com.apple.mobilecal.today, <BBLocalDataProvider 0x7fcdb8e377f0; com.apple.mobilecal.today>
+10:22:05.935 SpringBoard[87517] ADDING LOCAL com.apple.cmas, <BBLocalDataProvider 0x7fcdb8e3e180; com.apple.cmas>
+10:22:05.942 SpringBoard[87517] ADDING REMOTE com.apple.Preferences, <BBRemoteDataProvider 0x7fcdb89351e0; com.apple.Preferences>
+10:22:05.942 SpringBoard[87517] ADDING REMOTE com.apple.AirDrop, <BBRemoteDataProvider 0x7fcdb8b95d50; com.apple.AirDrop>
+10:22:05.942 SpringBoard[87517] ADDING REMOTE com.apple.passbook.general, <BBRemoteDataProvider 0x7fcdb8a1f590; com.apple.passbook.general>
+10:22:05.944 assertiond[87521] assertion failed: 15F34 13E230: assertiond + 15801 [3C808658-78EC-3950-A264-79A64E0E463B]: 0x1
+10:22:05.944 assertiond[87521] assertion failed: 15F34 13E230: assertiond + 15801 [3C808658-78EC-3950-A264-79A64E0E463B]: 0x1
+10:22:05.954 assertiond[87521] assertion failed: 15F34 13E230: assertiond + 15801 [3C808658-78EC-3950-A264-79A64E0E463B]: 0x1
+10:22:05.954 syncdefaultsd[87575] (Note ) SYDAccount: no account
+10:22:05.956 assertiond[87521] assertion failed: 15F34 13E230: assertiond + 15801 [3C808658-78EC-3950-A264-79A64E0E463B]: 0x1
+10:22:05.956 SpringBoard[87517] ADDING LOCAL com.apple.mobileslideshow, <BBLocalDataProvider 0x7fcdb8d37900; com.apple.mobileslideshow>
+10:22:05.957 syncdefaultsd[87575] (Note ) SYDBootAccount: no account (null)
+10:22:05.958 syncdefaultsd[87575] (Note ) SYDPIMAccount: no account (null)
+10:22:05.960 syncdefaultsd[87575] (Note ) SYDAlwaysOnAccount: no account (null)
+10:22:05.961 SpringBoard[87517] ADDING LOCAL com.apple.MobileSMS, <BBLocalDataProvider 0x7fcdb8f0ce00; com.apple.MobileSMS>
+10:22:05.963 SpringBoard[87517] ADDING LOCAL com.apple.SocialBulletinBoardProvider, <BBLocalDataProvider 0x7fcdb8f1cf60; com.apple.SocialBulletinBoardProvider>
+10:22:05.965 sharingd[87519] 10:22:05.964 : SDAirDropAlertBBManager dataProviderDidLoad
+10:22:05.992 profiled[87548] (Note ) MC: Loaded MobileCoreServices.framework
+10:22:05.997 SpringBoard[87517] [MPUSystemMediaControls] Updating supported commands for now playing application.
+10:22:06.031 SpringBoard[87517] adding observer to <NSUserDefaults: 0x7fcdb852b960> for key: SBUseSystemGestures
+10:22:06.031 SpringBoard[87517] adding observer to <NSUserDefaults: 0x7fcdb852b960> for key: SBUseHardwareSwitchAsOrientationLock
+10:22:06.045 SpringBoard[87517] Application windows are expected to have a root view controller at the end of application launch
+10:22:06.045 SpringBoard[87517] Application windows are expected to have a root view controller at the end of application launch
+10:22:06.060 wcd[87516] libMobileGestalt MobileGestalt.c:2584: Failed to get battery level
+10:22:06.061 wcd[87516] libMobileGestalt MobileGestalt.c:2584: Failed to get battery level
+10:22:06.066 SpringBoard[87517] |GAXGeneral|info| whitelistedApps and appSelfLockIDs both nil.  No need to enable GAX (Single App Mode)
+10:22:06.092 calaccessd[87577] (Error) MC: MobileContainerManager gave us a path we weren't expecting; file a radar against them
+Expected: /private/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Actual: /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Overriding MCM with the one true path
+10:22:06.106 searchd[87536] tcp_connection_set_tfo 4 TFO is not yet supported on Simulator
+10:22:06.107 searchd[87536] tcp_connection_set_tfo 5 TFO is not yet supported on Simulator
+10:22:06.141 routined[87506] BTM: attaching to BTServer
+10:22:06.142 SpringBoard[87517] ADDING REMOTE com.apple.CoreRoutine, <BBRemoteDataProvider 0x7fcdb86b52c0; com.apple.CoreRoutine>
+10:22:06.142 routined[87506] BTM: failed to attach with error 9
+10:22:06.152 SpringBoard[87517] Cannot get managed lost mode file on watch or simulator: -[FMDFMIPManager(Private) getManagedLostModeFileURL]
+10:22:06.163 routined[87506] CoreLocation: Error occurred while trying to retrieve motion state update: CMErrorDomain Code:104
+10:22:06.171 SpringBoard[87517] 2016-06-01 10:22:06.170-0400|87517|0x7fcdb87abeb0|AlarmEngine: -[_EKAlarmEngine _rescheduleTimer] - refire date was nil and a new timer won't be scheduled, context was <EKSideTableContext: 0x7fcdb84f1360>
+10:22:06.178 mstreamd[87507] (Note ) PS: The subscription plugin class does not support push notification refreshing.
+10:22:06.179 mstreamd[87507] (Note ) PS: Media stream daemon starting...
+10:22:06.193 SpringBoard[87517] SMS Plugin initialized.
+10:22:06.202 SpringBoard[87517] Sharing Plugin initialized.
+10:22:06.210 SpringBoard[87517] Normal message received by listener connection. Ignoring.
+10:22:06.219 SpringBoard[87517] [MPUSystemMediaControls] Updating supported commands for now playing application.
+10:22:06.225 SpringBoard[87517] BBObserver: Unable to retrieve section parameters for <com.apple.Passbook>. Using default parameters.
+10:22:06.235 SpringBoard[87517] BUG in libdispatch: 15F34 - 3192 - 0x1a50b
+10:22:06.240 backboardd[87518] System app "com.apple.springboard" finished startup after 1.43s.
+10:22:06.247 searchd[87536] tcp_connection_set_tfo 7 TFO is not yet supported on Simulator
+10:22:06.247 carkitd[87581] BTM: attaching to BTServer
+10:22:06.248 carkitd[87581] BTM: failed to attach with error 9
+10:22:06.251 SpringBoard[87517] ADDING REMOTE com.apple.CarPlay, <BBRemoteDataProvider 0x7fcdb8c4c580; com.apple.CarPlay>
+10:22:06.448 AssetCacheLocatorService[87585] #5cf1a3e0 [W:AssetCacheLocatorService.queue] ignoring DNS error: Error Domain=NSPOSIXErrorDomain Code=22 "Invalid argument" UserInfo={com.apple.AssetCacheLocatorService.tag=#5cf1a3e0, NSLocalizedDescription=unable to parse DNS TXT record _aaplcache._tcp (a=361, n=2, e=0, b=0, u=1)}
+10:22:06.740 AssetCacheLocatorService[87585] #5cf1a3e0 [I:AssetCacheLocatorService.queue] found no caching servers
+10:22:06.751 itunesstored[87567] Normal message received by listener connection. Ignoring.
+10:22:06.791 itunesstored[87567] (Error) MC: MobileContainerManager gave us a path we weren't expecting; file a radar against them
+Expected: /private/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Actual: /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Overriding MCM with the one true path
+10:22:06.818 SpringBoard[87517] ADDING REMOTE com.apple.AppStore, <BBRemoteDataProvider 0x7fcdb85cad80; com.apple.AppStore>
+10:22:07.101 itunesstored[87567] iTunes Store environment is: ST11
+10:22:07.128 itunesstored[87567] Normal message received by listener connection. Ignoring.
+10:22:07.128 itunesstored[87567] Normal message received by listener connection. Ignoring.
+10:22:07.315 itunesstored[87567] libMobileGestalt MGIOKitSupport.c:387: value for udid-version property of IODeviceTree:/product is invalid ((null))
+10:22:07.315 itunesstored[87567] Normal message received by listener connection. Ignoring.
+10:22:07.315 itunesstored[87567] libMobileGestalt MGBasebandSupport.c:60: _CTServerConnectionCopyMobileEquipmentInfo: CommCenter error: 1:45 (Operation not supported)
+10:22:07.316 itunesstored[87567] libMobileGestalt MGBasebandSupport.c:189: No CT mobile equipment info dictionary while fetching kCTMobileEquipmentInfoIMEI
+10:22:07.498 itunesstored[87567] UpdateAssetsOperation: Error retriving asset index.js. manifest URL https://apps.itunes.com/files/ios-music-app/ manifest version 1622.4.0 asset URL https://apps.itunes.com/files/js/4f8e1a42270a0b85c211faeb3fb17ae1/index.js asset version 4f8e1a42270a0b85c211faeb3fb17ae1 asset file URL file:///Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Library/com.apple.Music/Updatable%20Assets/Assets/index.js.4f8e1a42270a0b85c211faeb3fb17ae1: Error Domain=SSErrorDomain Code=109 "Cannot connect to iTunes Store" UserInfo={NSLocalizedDescription=Cannot connect to iTunes Store, SSErrorHTTPStatusCodeKey=400}
+10:22:07.531 routined[87506] open on /var/mobile/Library/Caches/com.apple.routined/defaults.plist: No such file or directory
+10:22:07.542 routined[87506] 486483727.541034 (6/1/16, 10:22:07 AM EDT), [ASSETS]: Could not copy asset at path, /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Library/Assets/com_apple_MobileAsset_routined_defaults/a499000c8fa5157deac0d44f822e9d9797c5110a.asset/AssetData/defaults.plist, to path, /var/mobile/Library/Caches/com.apple.routined/defaults.plist, error, Error Domain=NSCocoaErrorDomain Code=4 "The file ‚Äúdefaults.plist‚Äù doesn‚Äôt exist." UserInfo={NSSourceFilePathErrorKey=/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Library/Assets/com_apple_MobileAsset_routined_defaults/a499000c8fa5157deac0d44f822e9d9797c5110a.asset/AssetData/defaults.plist, NSUserStringVariant=(
+    Copy
+), NSDestinationFilePath=/var/mobile/Library/Caches/com.apple.routined/defaults.plist, NSFilePath=/Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Library/Assets/com_apple_MobileAsset_routined_defaults/a499000c8fa5157deac0d44f822e9d9797c5110a.asset/AssetData/defaults.plist, NSUnderlyingError=0x7fab5861a640 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}.
+10:22:07.740 com.apple.CoreSimulator.SimDevice.686336CB-C74C-4486-83E7-6091A9A9CC11.launchd_sim[87500] Could not find and/or execute program specified by service: 2: No such file or directory: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/libexec/limitadtrackingd
+10:22:07.740 com.apple.CoreSimulator.SimDevice.686336CB-C74C-4486-83E7-6091A9A9CC11.launchd_sim[87500] Service setup event to handle failure and will not launch until it fires.
+10:22:08.053 bird[87533] (Error) MC: MobileContainerManager gave us a path we weren't expecting; file a radar against them
+Expected: /private/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Actual: /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Overriding MCM with the one true path
+10:22:08.063 tccd[87538] Refusing client without bundle identifier (/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/libexec/backboardd)
+10:22:08.437 healthd[87510] (Error) MC: MobileContainerManager gave us a path we weren't expecting; file a radar against them
+Expected: /private/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Actual: /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+Overriding MCM with the one true path
+10:22:08.498 healthd[87510] PairedSync, Debugging at level 0 for console and level 0 for log files
+10:22:08.500 healthd[87510] Error: Could not create service from plist at path: file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PairedSyncServices/com.apple.pairedsync.healthd.plist. Returning nil PSYSyncCoordinator for service name com.apple.pairedsync.healthd.  Please check that your plist exists and is in the correct format.
+10:22:08.504 healthd[87510] Error: failed to load bundle "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Health/Plugins/CompanionHealth.bundle": Error Domain=NSCocoaErrorDomain Code=4 "The bundle ‚ÄúCompanionHealth.bundle‚Äù couldn‚Äôt be loaded because its executable couldn‚Äôt be located." UserInfo={NSLocalizedFailureReason=The bundle‚Äôs executable couldn‚Äôt be located., NSLocalizedRecoverySuggestion=Try reinstalling the bundle., NSBundlePath=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Health/Plugins/CompanionHealth.bundle, NSLocalizedDescription=The bundle ‚ÄúCompanionHealth.bundle‚Äù couldn‚Äôt be loaded because its executable couldn‚Äôt be located.}
+10:22:08.505 assertiond[87521] assertion failed: 15F34 13E230: assertiond + 15801 [3C808658-78EC-3950-A264-79A64E0E463B]: 0x1
+10:22:08.505 assertiond[87521] assertion failed: 15F34 13E230: assertiond + 15801 [3C808658-78EC-3950-A264-79A64E0E463B]: 0x1
+10:22:08.510 SpringBoard[87517] [MPUSystemMediaControls] Updating supported commands for now playing application.
+10:22:08.530 assertiond[87521] assertion failed: 15F34 13E230: assertiond + 15801 [3C808658-78EC-3950-A264-79A64E0E463B]: 0x1
+10:22:08.530 assertiond[87521] assertion failed: 15F34 13E230: assertiond + 15801 [3C808658-78EC-3950-A264-79A64E0E463B]: 0x1
+10:22:08.530 fileproviderd[87505] plugin com.apple.ServerDocuments.ServerFileProvider invalidated
+10:22:08.533 ServerFileProvider[87560] host connection <NSXPCConnection: 0x7fd6f3406a80> connection from pid 87505 invalidated
+10:22:10.925 xctest[87583:1789443] -[_XCTestDriverTestObserver _testCase:didMeasureValues:forPerformanceMetricID:name:unitsOfMeasurement:baselineName:baselineAverage:maxPercentRegression:maxPercentRelativeStandardDeviation:maxRegression:maxStandardDeviation:file:line:]
+10:22:10.927 Xcode[73139:868194] -[_IDETestManagerAPIMediator _XCT_testMethod:ofClass:didMeasureMetric:file:line:]
+Test Case '-[NetworkWrapperTests testPerformanceExample]' started.
+10:22:10.927 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseDidFinish:]
+10:22:10.928 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testPerformanceExample withStatus:passed duration:0.533050000667572
+/Users/matt/Projects/Personal/NetworkWrapper/NetworkWrapperTests/NetworkWrapperTests.m:55: Test Case '-[NetworkWrapperTests testPerformanceExample]' measured [Time, seconds] average: 0.000, relative standard deviation: 124.514%, values: [0.000004, 0.000001, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000], performanceMetricID:com.apple.XCTPerformanceMetric_WallClockTime, baselineName: "", baselineAverage: , maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.100, maxStandardDeviation: 0.100
+10:22:10.927 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetInvalidHostLength
+10:22:10.929 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetInvalidHostLength
+10:22:10.928 xctest[87583:1789443] -[_XCTestDriverTestObserver testCase:didFailWithDescription:inFile:atLine:]
+10:22:10.929 Xcode[73139:868194] _XCT_testCaseDidFailForTestClass:NetworkWrapperTests method:testSetInvalidHostLength withMessage:(([[NetworkWrapper sharedWrapper] networkWrapperGetBaseURL]) == nil) failed: "" file:/Users/matt/Projects/Personal/NetworkWrapper/NetworkWrapperTests/NetworkWrapperTests.m line:25
+10:22:10.928 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseDidFinish:]
+10:22:10.929 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetInvalidHostLength withStatus:failed duration:0.000912010669708252
+10:22:10.929 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetNilHost
+10:22:10.929 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetNilHost
+Test Case '-[NetworkWrapperTests testPerformanceExample]' passed (0.533 seconds).
+Test Case '-[NetworkWrapperTests testSetInvalidHostLength]' started.
+/Users/matt/Projects/Personal/NetworkWrapper/NetworkWrapperTests/NetworkWrapperTests.m:25: error: -[NetworkWrapperTests testSetInvalidHostLength] : (([[NetworkWrapper sharedWrapper] networkWrapperGetBaseURL]) == nil) failed: ""
+Test Case '-[NetworkWrapperTests testSetInvalidHostLength]' failed (0.001 seconds).
+Test Case '-[NetworkWrapperTests testSetNilHost]' started.
+2016-06-01 10:22:10.929 xctest[87583:1789443] Could not create NetworkWrapper with nil baseURL or baseURL of zero length
+/Users/matt/Projects/Personal/NetworkWrapper/NetworkWrapperTests/NetworkWrapperTests.m:30: error: -[NetworkWrapperTests testSetNilHost] : (([[NetworkWrapper sharedWrapper] networkWrapperGetBaseURL]) == nil) failed: ""
+Test Case '-[NetworkWrapperTests testSetNilHost]' failed (0.002 seconds).
+Test Case '-[NetworkWrapperTests testSetNilPort]' started.
+2016-06-01 10:22:10.931 xctest[87583:1789443] Could not create NetworkWrapper with nil basePort
+Test Case '-[NetworkWrapperTests testSetNilPort]' passed (0.000 seconds).
+Test Suite 'NetworkWrapperTests' failed at 2016-06-01 10:22:10.932.
+	 Executed 6 tests, with 2 failures (0 unexpected) in 0.538 (0.541) seconds
+Test Suite 'NetworkWrapperTests.xctest' failed at 2016-06-01 10:22:10.932.
+	 Executed 6 tests, with 2 failures (0 unexpected) in 0.538 (0.542) seconds
+10:22:10.930 xctest[87583:1789443] -[_XCTestDriverTestObserver testCase:didFailWithDescription:inFile:atLine:]
+10:22:11.088 Xcode[73139:868194] _XCT_testCaseDidFailForTestClass:NetworkWrapperTests method:testSetNilHost withMessage:(([[NetworkWrapper sharedWrapper] networkWrapperGetBaseURL]) == nil) failed: "" file:/Users/matt/Projects/Personal/NetworkWrapper/NetworkWrapperTests/NetworkWrapperTests.m line:30
+10:22:10.930 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseDidFinish:]
+10:22:11.093 Xcode[73139:1788712] (LOG ARBITER) Dumping buffered message data; 0 messages.
+10:22:11.089 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetNilHost withStatus:failed duration:0.001791000366210938
+10:22:10.931 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseWillStart:] NetworkWrapperTests testSetNilPort
+10:22:11.092 Xcode[73139:868194] _XCT_testCaseDidStartForTestClass:NetworkWrapperTests method:testSetNilPort
+10:22:10.931 xctest[87583:1789443] -[_XCTestDriverTestObserver testCaseDidFinish:]
+10:22:11.092 Xcode[73139:868194] _XCT_testCaseDidFinishForTestClass:NetworkWrapperTests method:testSetNilPort withStatus:passed duration:0.0004870295524597168
+10:22:10.932 xctest[87583:1789443] -[_XCTestDriverTestObserver testSuiteDidFinish:]
+10:22:11.105 Xcode[73139:868194] _XCT_testSuite:NetworkWrapperTests didFinishAt:2016-06-01 14:22:10 +0000 runCount:6 withFailures:2 unexpected:0 testDuration:0.5375030636787415 totalDuration:0.5406500101089478
+10:22:10.932 xctest[87583:1789443] -[_XCTestDriverTestObserver testSuiteDidFinish:]
+10:22:11.105 Xcode[73139:868194] _XCT_testSuite:NetworkWrapperTests.xctest didFinishAt:2016-06-01 14:22:10 +0000 runCount:6 withFailures:2 unexpected:0 testDuration:0.5375030636787415 totalDuration:0.5415930151939392
+10:22:11.015 xctest[87583:1789443] -[_XCTestDriverTestObserver testSuiteDidFinish:]
+10:22:11.105 Xcode[73139:868194] _XCT_testSuite:All tests didFinishAt:2016-06-01 14:22:11 +0000 runCount:6 withFailures:2 unexpected:0 testDuration:0.5375030636787415 totalDuration:0.6252350211143494
+10:22:11.015 xctest[87583:1789443] Finished running suite.
+10:22:11.016 xctest[87583:1789443] -[_XCTestDriverTestObserver testBundleDidFinish:], Flushing connection to IDE...
+10:22:11.106 Xcode[73139:868194] -[_IDETestManagerAPIMediator _XCT_didFinishExecutingTestPlan]
+10:22:11.106 Xcode[73139:868194] _finishWithError:(null) didCancel: 0
+10:22:11.112 Xcode[73139:1788645] 686336CB-C74C-4486-83E7-6091A9A9CC11: Executable terminated at path: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/xctest (status = 256)
+10:22:11.149 Xcode[73139:868194] Launch session expired.
+10:22:11.107 xctest[87583:1789443] Calling completion.
+10:22:11.107 testmanagerd[87526:1789539] Test process connection invalidated or interrupted, closing test session <XCTestSession: 0x7fa23990cb00>.
+10:22:11.108 testmanagerd[87526:1789539] Closed <XCTestSession: 0x7fa23990cb00>, removing from (
+    "<XCTestSession: 0x7fa23990cb00>"
+)
+10:22:11.108 testmanagerd[87526:1789539] Tearing down test session <XCTestSession: 0x7fa23990cb00>.
+10:22:11.108 testmanagerd[87526:1789539] Considering exiting, 0 test sessions, 0 sessions with identifiers, 0 unidentified sessions...
+10:22:11.109 testmanagerd[87526:1789539] testmanagerd exiting, idle with no test activity.
+10:22:10.815 coresymbolicationd[87595] /Users/matt/Library/Developer/CoreSimulator/Devices/686336CB-C74C-4486-83E7-6091A9A9CC11/data/Library/Caches/com.apple.coresymbolicationd/data does not exist, resetting cache
+10:22:10.930 xctest[87583] Could not create NetworkWrapper with nil baseURL or baseURL of zero length
+10:22:10.931 xctest[87583] Could not create NetworkWrapper with nil basePort
+10:22:11.110 testmanagerd[87526] testmanagerd exiting, idle with no test activity.
+10:22:11.212 Xcode[73139:868194] Got death notice for pid 87583, removing from SimulatorSessionMap
