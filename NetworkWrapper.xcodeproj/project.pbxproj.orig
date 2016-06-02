@@ -256,7 +256,11 @@
 			targets = (
 				C9B3E7B31CFF0DFF000379C5 /* NetworkWrapper */,
 				C9B3E7C61CFF1781000379C5 /* NetworkWrapperTests */,
+<<<<<<< HEAD
 				C9F56E961D009AE700DD0F82 /* NetworkWrapper-TestProject */,
+=======
+				C95E342E1CFFAF5500F016A9 /* NetworkWrapperLib */,
+>>>>>>> 122a77b9b1ee2e7a7a4e5771f3a7af2f5217faaa
 			);
 		};
 /* End PBXProject section */
@@ -549,6 +553,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+<<<<<<< HEAD
 		};
 		C9F56EAD1D009AE700DD0F82 /* Build configuration list for PBXNativeTarget "NetworkWrapper-TestProject" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +562,8 @@
 				C9F56EAC1D009AE700DD0F82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+=======
+>>>>>>> 122a77b9b1ee2e7a7a4e5771f3a7af2f5217faaa
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NetworkWrapper : NSObject
+@interface NetworkWrapper : NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate>
 
 @property (nonatomic, retain) NSString *baseURL;
 @property (nonatomic, assign) NSInteger basePort;
@@ -20,5 +20,11 @@
 + (NetworkWrapper *)sharedWrapper;
 
 - (NSURL*)createWebRequestURLWithPath:(NSString *) path;
+- (BOOL)performHTTPRequestWithPath:(NSString *) path
+                           method:(NSString *) method
+                      requestBody:(NSString *) body
+                   requestHeaders:(NSDictionary *) headers
+                          context: (NSString *) context;
+
 
 @end
