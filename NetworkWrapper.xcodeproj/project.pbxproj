@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		C95E342E1CFFAF5500F016A9 /* NetworkWrapperLib */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C95E342F1CFFAF5500F016A9 /* Build configuration list for PBXAggregateTarget "NetworkWrapperLib" */;
+			buildPhases = (
+				C95E34321CFFAFA000F016A9 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = NetworkWrapperLib;
+			productName = NetworkWrapperLib;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		C9B3E7B81CFF0DFF000379C5 /* NetworkWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9B3E7B71CFF0DFF000379C5 /* NetworkWrapper.h */; };
 		C9B3E7BA1CFF0DFF000379C5 /* NetworkWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B3E7B91CFF0DFF000379C5 /* NetworkWrapper.m */; };
@@ -147,6 +161,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Matt S Becker";
 				TargetAttributes = {
+					C95E342E1CFFAF5500F016A9 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					C9B3E7B31CFF0DFF000379C5 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -169,6 +186,7 @@
 			targets = (
 				C9B3E7B31CFF0DFF000379C5 /* NetworkWrapper */,
 				C9B3E7C61CFF1781000379C5 /* NetworkWrapperTests */,
+				C95E342E1CFFAF5500F016A9 /* NetworkWrapperLib */,
 			);
 		};
 /* End PBXProject section */
@@ -182,6 +200,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C95E34321CFFAFA000F016A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# workaround for bitcode generation problem with Xcode 7.3\nunset TOOLCHAINS\n\n# configure directories for intermediate and final builds\nUNIVERSAL_OUTPUTFOLDER=${SRCROOT}/${PROJECT_NAME}-universal\necho ${UNIVERSAL_OUTPUTFOLDER}\n\n# build device and simulator versions\nxcodebuild -target ${PROJECT_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target ${PROJECT_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# create universal binary file using lipo\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\"\n\n# copy the header files to the final output folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/include\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# remove the build folder\nrm -rf ${SRCROOT}/build";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C9B3E7B01CFF0DFF000379C5 /* Sources */ = {
@@ -211,6 +245,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		C95E34301CFFAF5500F016A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C95E34311CFFAF5500F016A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		C9B3E7BB1CFF0DFF000379C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -334,6 +382,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C95E342F1CFFAF5500F016A9 /* Build configuration list for PBXAggregateTarget "NetworkWrapperLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C95E34301CFFAF5500F016A9 /* Debug */,
+				C95E34311CFFAF5500F016A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C9B3E7AF1CFF0DFF000379C5 /* Build configuration list for PBXProject "NetworkWrapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -350,6 +406,7 @@
 				C9B3E7BF1CFF0DFF000379C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9B3E7CF1CFF1781000379C5 /* Build configuration list for PBXNativeTarget "NetworkWrapperTests" */ = {
 			isa = XCConfigurationList;
@@ -358,6 +415,7 @@
 				C9B3E7D11CFF1781000379C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,4 +2,148 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkWrapperTests/NetworkWrapperTests.m"
+            timestampString = "486510757.381873"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-testPerformHTTPRequest"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NetworkWrapperTests testPerformHTTPRequest]"
+                  moduleName = "NetworkWrapperTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Projects/iOSNetworkWrapper/NetworkWrapperTests/NetworkWrapperTests.m"
+                  timestampString = "486511701.767967"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "222">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NetworkWrapperTests testPerformHTTPRequest]"
+                  moduleName = "NetworkWrapperTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Projects/iOSNetworkWrapper/NetworkWrapperTests/NetworkWrapperTests.m"
+                  timestampString = "486511701.768265"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "778">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NetworkWrapperTests testPerformHTTPRequest]"
+                  moduleName = "NetworkWrapperTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Projects/iOSNetworkWrapper/NetworkWrapperTests/NetworkWrapperTests.m"
+                  timestampString = "486511701.768539"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "832">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NetworkWrapperTests testPerformHTTPRequest]"
+                  moduleName = "NetworkWrapperTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Projects/iOSNetworkWrapper/NetworkWrapperTests/NetworkWrapperTests.m"
+                  timestampString = "486511701.768793"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "954">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkWrapper/NetworkWrapper.m"
+            timestampString = "486510849.838067"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-performHTTPRequestWithPath:method:requestBody:requestHeaders:context:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NetworkWrapper performHTTPRequestWithPath:method:requestBody:requestHeaders:context:]"
+                  moduleName = "NetworkWrapperTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Projects/iOSNetworkWrapper/NetworkWrapper/NetworkWrapper.m"
+                  timestampString = "486511701.769605"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "843">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__87-[NetworkWrapper performHTTPRequestWithPath:method:requestBody:requestHeaders:context:]_block_invoke"
+                  moduleName = "NetworkWrapperTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Projects/iOSNetworkWrapper/NetworkWrapper/NetworkWrapper.m"
+                  timestampString = "486511701.770044"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkWrapper/NetworkWrapper.m"
+            timestampString = "486510852.186347"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "-performHTTPRequestWithPath:method:requestBody:requestHeaders:context:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

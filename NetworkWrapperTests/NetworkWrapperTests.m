@@ -42,7 +42,7 @@
 }
 
 - (void)testSetNilPort {
-    self.networkWrapper.basePort = nil;
+    self.networkWrapper.basePort = nil; //basePort is an int and can't be nil, tested anyways
     XCTAssertEqual(self.networkWrapper.basePort, 0);
 }
 
@@ -72,6 +72,20 @@
     self.networkWrapper.scheme = @"https";
     NSString *requestString = [self.networkWrapper createWebRequestURLWithPath:@"testpath"].absoluteString;
     XCTAssertTrue([requestString isEqualToString:@"https://mattsbecker.com:80/testpath"]);
+}
+
+- (void)testPerformHTTPRequest {
+    self.networkWrapper.baseURL = @"mattsbecker.com";
+    self.networkWrapper.basePort = 80;
+    self.networkWrapper.scheme = @"http";
+    XCTAssertTrue([self.networkWrapper performHTTPRequestWithPath:@"/" method:@"GET" requestBody:nil requestHeaders:nil context:@""]);
+}
+
+- (void)testPerformHTTPRequestWithNilPath {
+    self.networkWrapper.baseURL = nil;
+    self.networkWrapper.basePort = 80;
+    self.networkWrapper.scheme = @"http";
+    XCTAssertFalse([self.networkWrapper performHTTPRequestWithPath:nil method:@"GET" requestBody:nil requestHeaders:nil context:@""]);
 }
 
 
