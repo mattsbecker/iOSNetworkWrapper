@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "NetworkWrapper.h"
 
+extern NSString *kTestNotification;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

@@ -84,19 +84,37 @@
 
     // Use an NSURLSession for our HTTP Request
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:sessionConfig delegate:self delegateQueue:nil];
+    //NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:sessionConfig delegate:self delegateQueue:nil];
+    NSURLSession *urlSession = [NSURLSession sharedSession];
 
     // perform the actual request with the session and the request that was created.
-    [urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        // post a notification that the request has been completed
-        if (context) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:context object:data];
+    NSURLSessionTask *task = [urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (!error) {
+            // post a notification that the request has been completed
+            char *responseData = (char*)data.bytes;
+            NSString *responseBody = [NSString stringWithUTF8String:responseData];
+            if (context) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:context object:responseBody];
+            }
+        } else {
+                [[NSNotificationCenter defaultCenter] postNotificationName:context object:error];
         }
     }];
-    
-    
+    [task resume];
     result = true;
     return result;
+}
+
+- (void)URLSession:(NSURLSession *)session
+didBecomeInvalidWithError:(NSError *)error {
+    NSLog(@"Hit invalidation delegate method");
+}
+
+- (void)URLSession:(NSURLSession *)session
+didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
+ completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition,
+                             NSURLCredential *credential))completionHandler {
+    NSLog(@"Hit invalidation delegate method");
 }
 
 #pragma mark --SETTERS--
