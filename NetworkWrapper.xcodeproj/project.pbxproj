@@ -6,31 +6,18 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		C95E342E1CFFAF5500F016A9 /* NetworkWrapperLib */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = C95E342F1CFFAF5500F016A9 /* Build configuration list for PBXAggregateTarget "NetworkWrapperLib" */;
-			buildPhases = (
-				C95E34321CFFAFA000F016A9 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = NetworkWrapperLib;
-			productName = NetworkWrapperLib;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		C9B3E7B81CFF0DFF000379C5 /* NetworkWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9B3E7B71CFF0DFF000379C5 /* NetworkWrapper.h */; };
 		C9B3E7BA1CFF0DFF000379C5 /* NetworkWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B3E7B91CFF0DFF000379C5 /* NetworkWrapper.m */; };
 		C9B3E7CA1CFF1781000379C5 /* NetworkWrapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B3E7C91CFF1781000379C5 /* NetworkWrapperTests.m */; };
 		C9B3E7CC1CFF1781000379C5 /* libNetworkWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B3E7B41CFF0DFF000379C5 /* libNetworkWrapper.a */; };
-		C9F56E9B1D009AE700DD0F82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56E9A1D009AE700DD0F82 /* main.m */; };
-		C9F56E9E1D009AE700DD0F82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56E9D1D009AE700DD0F82 /* AppDelegate.m */; };
-		C9F56EA11D009AE700DD0F82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EA01D009AE700DD0F82 /* ViewController.m */; };
-		C9F56EA41D009AE700DD0F82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F56EA21D009AE700DD0F82 /* Main.storyboard */; };
-		C9F56EA61D009AE700DD0F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F56EA51D009AE700DD0F82 /* Assets.xcassets */; };
-		C9F56EA91D009AE700DD0F82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F56EA71D009AE700DD0F82 /* LaunchScreen.storyboard */; };
+		C9F56EB81D00A18D00DD0F82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EB71D00A18D00DD0F82 /* main.m */; };
+		C9F56EBB1D00A18D00DD0F82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EBA1D00A18D00DD0F82 /* AppDelegate.m */; };
+		C9F56EBE1D00A18D00DD0F82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EBD1D00A18D00DD0F82 /* ViewController.m */; };
+		C9F56EC11D00A18D00DD0F82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F56EBF1D00A18D00DD0F82 /* Main.storyboard */; };
+		C9F56EC31D00A18D00DD0F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F56EC21D00A18D00DD0F82 /* Assets.xcassets */; };
+		C9F56EC61D00A18D00DD0F82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F56EC41D00A18D00DD0F82 /* LaunchScreen.storyboard */; };
+		C9F56ECB1D00A1E400DD0F82 /* NetworkWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B3E7B91CFF0DFF000379C5 /* NetworkWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,16 +50,16 @@
 		C9B3E7C71CFF1781000379C5 /* NetworkWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B3E7C91CFF1781000379C5 /* NetworkWrapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkWrapperTests.m; sourceTree = "<group>"; };
 		C9B3E7CB1CFF1781000379C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9F56E971D009AE700DD0F82 /* NetworkWrapper-TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NetworkWrapper-TestProject.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9F56E9A1D009AE700DD0F82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C9F56E9C1D009AE700DD0F82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C9F56E9D1D009AE700DD0F82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C9F56E9F1D009AE700DD0F82 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C9F56EA01D009AE700DD0F82 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C9F56EA31D009AE700DD0F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C9F56EA51D009AE700DD0F82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C9F56EA81D009AE700DD0F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C9F56EAA1D009AE700DD0F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9F56EB41D00A18D00DD0F82 /* NetworkWrapperExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkWrapperExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9F56EB71D00A18D00DD0F82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9F56EB91D00A18D00DD0F82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C9F56EBA1D00A18D00DD0F82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C9F56EBC1D00A18D00DD0F82 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C9F56EBD1D00A18D00DD0F82 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C9F56EC01D00A18D00DD0F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9F56EC21D00A18D00DD0F82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9F56EC51D00A18D00DD0F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C9F56EC71D00A18D00DD0F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +78,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9F56E941D009AE700DD0F82 /* Frameworks */ = {
+		C9F56EB11D00A18D00DD0F82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -106,7 +93,7 @@
 			children = (
 				C9B3E7B61CFF0DFF000379C5 /* NetworkWrapper */,
 				C9B3E7C81CFF1781000379C5 /* NetworkWrapperTests */,
-				C9F56E981D009AE700DD0F82 /* NetworkWrapper-TestProject */,
+				C9F56EB51D00A18D00DD0F82 /* NetworkWrapperExample */,
 				C9B3E7B51CFF0DFF000379C5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,7 +103,7 @@
 			children = (
 				C9B3E7B41CFF0DFF000379C5 /* libNetworkWrapper.a */,
 				C9B3E7C71CFF1781000379C5 /* NetworkWrapperTests.xctest */,
-				C9F56E971D009AE700DD0F82 /* NetworkWrapper-TestProject.app */,
+				C9F56EB41D00A18D00DD0F82 /* NetworkWrapperExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,26 +126,26 @@
 			path = NetworkWrapperTests;
 			sourceTree = "<group>";
 		};
-		C9F56E981D009AE700DD0F82 /* NetworkWrapper-TestProject */ = {
+		C9F56EB51D00A18D00DD0F82 /* NetworkWrapperExample */ = {
 			isa = PBXGroup;
 			children = (
-				C9F56E9C1D009AE700DD0F82 /* AppDelegate.h */,
-				C9F56E9D1D009AE700DD0F82 /* AppDelegate.m */,
-				C9F56E9F1D009AE700DD0F82 /* ViewController.h */,
-				C9F56EA01D009AE700DD0F82 /* ViewController.m */,
-				C9F56EA21D009AE700DD0F82 /* Main.storyboard */,
-				C9F56EA51D009AE700DD0F82 /* Assets.xcassets */,
-				C9F56EA71D009AE700DD0F82 /* LaunchScreen.storyboard */,
-				C9F56EAA1D009AE700DD0F82 /* Info.plist */,
-				C9F56E991D009AE700DD0F82 /* Supporting Files */,
+				C9F56EB91D00A18D00DD0F82 /* AppDelegate.h */,
+				C9F56EBA1D00A18D00DD0F82 /* AppDelegate.m */,
+				C9F56EBC1D00A18D00DD0F82 /* ViewController.h */,
+				C9F56EBD1D00A18D00DD0F82 /* ViewController.m */,
+				C9F56EBF1D00A18D00DD0F82 /* Main.storyboard */,
+				C9F56EC21D00A18D00DD0F82 /* Assets.xcassets */,
+				C9F56EC41D00A18D00DD0F82 /* LaunchScreen.storyboard */,
+				C9F56EC71D00A18D00DD0F82 /* Info.plist */,
+				C9F56EB61D00A18D00DD0F82 /* Supporting Files */,
 			);
-			path = "NetworkWrapper-TestProject";
+			path = NetworkWrapperExample;
 			sourceTree = "<group>";
 		};
-		C9F56E991D009AE700DD0F82 /* Supporting Files */ = {
+		C9F56EB61D00A18D00DD0F82 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C9F56E9A1D009AE700DD0F82 /* main.m */,
+				C9F56EB71D00A18D00DD0F82 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -201,21 +188,21 @@
 			productReference = C9B3E7C71CFF1781000379C5 /* NetworkWrapperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C9F56E961D009AE700DD0F82 /* NetworkWrapper-TestProject */ = {
+		C9F56EB31D00A18D00DD0F82 /* NetworkWrapperExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9F56EAD1D009AE700DD0F82 /* Build configuration list for PBXNativeTarget "NetworkWrapper-TestProject" */;
+			buildConfigurationList = C9F56EC81D00A18D00DD0F82 /* Build configuration list for PBXNativeTarget "NetworkWrapperExample" */;
 			buildPhases = (
-				C9F56E931D009AE700DD0F82 /* Sources */,
-				C9F56E941D009AE700DD0F82 /* Frameworks */,
-				C9F56E951D009AE700DD0F82 /* Resources */,
+				C9F56EB01D00A18D00DD0F82 /* Sources */,
+				C9F56EB11D00A18D00DD0F82 /* Frameworks */,
+				C9F56EB21D00A18D00DD0F82 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "NetworkWrapper-TestProject";
-			productName = "NetworkWrapper-TestProject";
-			productReference = C9F56E971D009AE700DD0F82 /* NetworkWrapper-TestProject.app */;
+			name = NetworkWrapperExample;
+			productName = NetworkWrapperExample;
+			productReference = C9F56EB41D00A18D00DD0F82 /* NetworkWrapperExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -227,16 +214,13 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Matt S Becker";
 				TargetAttributes = {
-					C95E342E1CFFAF5500F016A9 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 					C9B3E7B31CFF0DFF000379C5 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					C9B3E7C61CFF1781000379C5 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
-					C9F56E961D009AE700DD0F82 = {
+					C9F56EB31D00A18D00DD0F82 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -256,7 +240,7 @@
 			targets = (
 				C9B3E7B31CFF0DFF000379C5 /* NetworkWrapper */,
 				C9B3E7C61CFF1781000379C5 /* NetworkWrapperTests */,
-				C9F56E961D009AE700DD0F82 /* NetworkWrapper-TestProject */,
+				C9F56EB31D00A18D00DD0F82 /* NetworkWrapperExample */,
 			);
 		};
 /* End PBXProject section */
@@ -269,33 +253,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9F56E951D009AE700DD0F82 /* Resources */ = {
+		C9F56EB21D00A18D00DD0F82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F56EA91D009AE700DD0F82 /* LaunchScreen.storyboard in Resources */,
-				C9F56EA61D009AE700DD0F82 /* Assets.xcassets in Resources */,
-				C9F56EA41D009AE700DD0F82 /* Main.storyboard in Resources */,
+				C9F56EC61D00A18D00DD0F82 /* LaunchScreen.storyboard in Resources */,
+				C9F56EC31D00A18D00DD0F82 /* Assets.xcassets in Resources */,
+				C9F56EC11D00A18D00DD0F82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C95E34321CFFAFA000F016A9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# workaround for bitcode generation problem with Xcode 7.3\nunset TOOLCHAINS\n\n# configure directories for intermediate and final builds\nUNIVERSAL_OUTPUTFOLDER=${SRCROOT}/${PROJECT_NAME}-universal\necho ${UNIVERSAL_OUTPUTFOLDER}\n\n# build device and simulator versions\nxcodebuild -target ${PROJECT_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target ${PROJECT_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# create universal binary file using lipo\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\"\n\n# copy the header files to the final output folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/include\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# remove the build folder\nrm -rf ${SRCROOT}/build";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C9B3E7B01CFF0DFF000379C5 /* Sources */ = {
@@ -314,13 +282,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9F56E931D009AE700DD0F82 /* Sources */ = {
+		C9F56EB01D00A18D00DD0F82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F56EA11D009AE700DD0F82 /* ViewController.m in Sources */,
-				C9F56E9E1D009AE700DD0F82 /* AppDelegate.m in Sources */,
-				C9F56E9B1D009AE700DD0F82 /* main.m in Sources */,
+				C9F56ECB1D00A1E400DD0F82 /* NetworkWrapper.m in Sources */,
+				C9F56EBE1D00A18D00DD0F82 /* ViewController.m in Sources */,
+				C9F56EBB1D00A18D00DD0F82 /* AppDelegate.m in Sources */,
+				C9F56EB81D00A18D00DD0F82 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,18 +304,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C9F56EA21D009AE700DD0F82 /* Main.storyboard */ = {
+		C9F56EBF1D00A18D00DD0F82 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C9F56EA31D009AE700DD0F82 /* Base */,
+				C9F56EC01D00A18D00DD0F82 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		C9F56EA71D009AE700DD0F82 /* LaunchScreen.storyboard */ = {
+		C9F56EC41D00A18D00DD0F82 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C9F56EA81D009AE700DD0F82 /* Base */,
+				C9F56EC51D00A18D00DD0F82 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -354,20 +323,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C95E34301CFFAF5500F016A9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C95E34311CFFAF5500F016A9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		C9B3E7BB1CFF0DFF000379C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,25 +443,25 @@
 			};
 			name = Release;
 		};
-		C9F56EAB1D009AE700DD0F82 /* Debug */ = {
+		C9F56EC91D00A18D00DD0F82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "NetworkWrapper-TestProject/Info.plist";
+				INFOPLIST_FILE = NetworkWrapperExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattsbecker.NetworkWrapper-TestProject";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattsbecker.NetworkWrapperExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		C9F56EAC1D009AE700DD0F82 /* Release */ = {
+		C9F56ECA1D00A18D00DD0F82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "NetworkWrapper-TestProject/Info.plist";
+				INFOPLIST_FILE = NetworkWrapperExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattsbecker.NetworkWrapper-TestProject";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattsbecker.NetworkWrapperExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -515,14 +470,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C95E342F1CFFAF5500F016A9 /* Build configuration list for PBXAggregateTarget "NetworkWrapperLib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C95E34301CFFAF5500F016A9 /* Debug */,
-				C95E34311CFFAF5500F016A9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		C9B3E7AF1CFF0DFF000379C5 /* Build configuration list for PBXProject "NetworkWrapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -550,11 +497,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C9F56EAD1D009AE700DD0F82 /* Build configuration list for PBXNativeTarget "NetworkWrapper-TestProject" */ = {
+		C9F56EC81D00A18D00DD0F82 /* Build configuration list for PBXNativeTarget "NetworkWrapperExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9F56EAB1D009AE700DD0F82 /* Debug */,
-				C9F56EAC1D009AE700DD0F82 /* Release */,
+				C9F56EC91D00A18D00DD0F82 /* Debug */,
+				C9F56ECA1D00A18D00DD0F82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
