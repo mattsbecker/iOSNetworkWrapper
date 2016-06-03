@@ -19,26 +19,10 @@ NSString *kTestNotification = @"TestNotification";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleResponse:) name:kTestNotification object:nil];
-    
     // Override point for customization after application launch.
     self.networkWrapper = [NetworkWrapper sharedWrapper];
-    self.networkWrapper.baseURL = @"agilezen.com";
-    self.networkWrapper.basePort = 443;
-    self.networkWrapper.scheme = @"https";
-    
-    NSURL *url = [self.networkWrapper createWebRequestURLWithPath:@"api/v1/projects"];
-    NSLog(@"Projects URL is: %@", url.absoluteString);
-    
-    NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:@"099c9ba364cf48e69d7d61b5c063b5c2", @"X-Zen-ApiKey", nil];
-    BOOL httpCallStatus = [self.networkWrapper performHTTPRequestWithPath:@"api/v1/projects" method:@"GET" requestBody:nil requestHeaders:headers context:kTestNotification];
     
     return YES;
-}
-
-- (void)handleResponse:(NSNotification *) notification {
-    NSLog(@"Handling notification");
-    NSLog(@"Notification data: %@", notification.object);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

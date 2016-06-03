@@ -78,14 +78,14 @@
     self.networkWrapper.baseURL = @"mattsbecker.com";
     self.networkWrapper.basePort = 80;
     self.networkWrapper.scheme = @"http";
-    XCTAssertTrue([self.networkWrapper performHTTPRequestWithPath:@"/" method:@"GET" requestBody:nil requestHeaders:nil context:@""]);
+    XCTAssertTrue([self.networkWrapper performHTTPRequestWithPath:@"/" method:@"GET" requestBody:nil requestHeaders:nil responseNotification:nil context:@""]);
 }
 
 - (void)testPerformHTTPRequestWithNilPath {
     self.networkWrapper.baseURL = nil;
     self.networkWrapper.basePort = 80;
     self.networkWrapper.scheme = @"http";
-    XCTAssertFalse([self.networkWrapper performHTTPRequestWithPath:nil method:@"GET" requestBody:nil requestHeaders:nil context:@""]);
+    XCTAssertFalse([self.networkWrapper performHTTPRequestWithPath:nil method:@"GET" requestBody:nil requestHeaders:nil responseNotification:nil context:@"TestCall"]);
 }
 
 

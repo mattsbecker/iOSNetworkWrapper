@@ -37,22 +37,34 @@
     return requestURL;
 }
 
-- (BOOL)performHTTPRequestWithPath:(NSString *) path
-                           method:(NSString *) method
-                      requestBody:(NSString *) body
-                   requestHeaders:(NSDictionary *) headers
-                          context: (NSString *) context
-{
-    
-    BOOL result = false;
+- (NSURL*)createWebRequestURLWithURI:(NSString *) uri {
+    NSURL *requestURL = nil;
+    if (uri) {
+        NSString *requestURI = uri;
+        NSLog(@"Request URI: %@", requestURI);
+        requestURL = [NSURL URLWithString:requestURI];
+    }
+    return requestURL;
+}
 
+
+- (NSMutableURLRequest *)createHTTPURLRequestWithPath:(NSString *) path
+                              method:(NSString *) method
+                         requestBody:(NSString *) body
+                      requestHeaders:(NSDictionary *) headers
+{
     NSURL *requestURL = [[NSURL alloc] init];
     
     // if there is no path, we cannot continue. Return false.
     if (!path) {
-        return result;
+        return nil;
     } else {
-        requestURL = [self createWebRequestURLWithPath:path];
+        if (([path containsString:@"http://"] || [path containsString:@"https://"]) && (!self.baseURL)) {
+            // user provided a path containing a full URL. We can deal with that!
+            requestURL = [self createWebRequestURLWithURI:path];
+        } else {
+            requestURL = [self createWebRequestURLWithPath:path];
+        }
     }
     
     // default to GET. Harmless.
@@ -64,7 +76,7 @@
     // create a mutable urlRequest for this action from the requestURL constructed earlier
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     [urlRequest setHTTPMethod:method];
-
+    
     // if present, convert the body data to an NSData object used for populating the contents of the request
     if (body) {
         NSData *bodyData = [body dataUsingEncoding:NSUTF8StringEncoding];
@@ -81,10 +93,45 @@
         NSDictionary *headerDict = [NSDictionary dictionaryWithObjectsAndKeys:@"text/html", @"Content-Type", nil];
         [urlRequest setAllHTTPHeaderFields:headerDict];
     }
+    
+    return urlRequest;
+}
+
+- (void)performHTTPRequestWithPath:(NSString *) path
+                                    method:(NSString *) method
+                               requestBody:(NSString *) body
+                            requestHeaders:(NSDictionary *) headers
+                completionHandler:(NetworkWrapperCompletionHandler) handler
+{
+    NSMutableURLRequest *urlRequest = [self createHTTPURLRequestWithPath:path method:method requestBody:body requestHeaders:headers];
+    
+    // Use an NSURLSession for our HTTP Request
+    NSURLSession *urlSession = [NSURLSession sharedSession];
+    
+    // perform the actual request with the session and the request that was created.
+    NSURLSessionTask *task = [urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (!error) {
+            NSLog(@"%@", response);
+            // post a notification that the request has been completed
+            handler(data, error);
+        }
+    }];
+    [task resume];
+}
+
+- (BOOL)performHTTPRequestWithPath:(NSString *) path
+                           method:(NSString *) method
+                      requestBody:(NSString *) body
+                   requestHeaders:(NSDictionary *) headers
+              responseNotification:(NSString *) notification
+                          context: (NSString *) context
+{
+    
+    BOOL result = false;
+
+    NSMutableURLRequest *urlRequest = [self createHTTPURLRequestWithPath:path method:method requestBody:body requestHeaders:headers];
 
     // Use an NSURLSession for our HTTP Request
-    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    //NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:sessionConfig delegate:self delegateQueue:nil];
     NSURLSession *urlSession = [NSURLSession sharedSession];
 
     // perform the actual request with the session and the request that was created.
@@ -94,7 +141,8 @@
             char *responseData = (char*)data.bytes;
             NSString *responseBody = [NSString stringWithUTF8String:responseData];
             if (context) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:context object:responseBody];
+                NSDictionary *responseDict = [NSDictionary dictionaryWithObjectsAndKeys:responseBody, @"response-body", context, @"context", nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:notification object:nil userInfo:responseDict];
             }
         } else {
                 [[NSNotificationCenter defaultCenter] postNotificationName:context object:error];
