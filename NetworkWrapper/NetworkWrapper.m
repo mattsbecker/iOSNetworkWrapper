@@ -103,18 +103,23 @@
                             requestHeaders:(NSDictionary *) headers
                 completionHandler:(NetworkWrapperCompletionHandler) handler
 {
+    if (!path) {
+        return;
+    }
     NSMutableURLRequest *urlRequest = [self createHTTPURLRequestWithPath:path method:method requestBody:body requestHeaders:headers];
     
     // Use an NSURLSession for our HTTP Request
     NSURLSession *urlSession = [NSURLSession sharedSession];
     
     // perform the actual request with the session and the request that was created.
-    NSURLSessionTask *task = [urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (!error) {
-            NSLog(@"%@", response);
-            // post a notification that the request has been completed
-            handler(data, error);
-        }
+    NSURLSessionDataTask *task = [urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!error) {
+                NSLog(@"%@", response);
+                // post a notification that the request has been completed
+                handler(data, error);
+            }
+        });
     }];
     [task resume];
 }
@@ -153,6 +158,10 @@
     return result;
 }
 
+
+-(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
+    NSLog(@"Did receive data: %@", [NSString stringWithUTF8String:[data bytes]]);
+}
 - (void)URLSession:(NSURLSession *)session
 didBecomeInvalidWithError:(NSError *)error {
     NSLog(@"Hit invalidation delegate method");

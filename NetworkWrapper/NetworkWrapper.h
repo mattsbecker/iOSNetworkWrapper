@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NetworkWrapper : NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate>
+@interface NetworkWrapper : NSObject<NSURLSessionDelegate, NSURLSessionDataDelegate, NSURLSessionTaskDelegate>
 
 //typedef void (^NetworkWrapperCompletionHandler)(NSData * resumeData, NSError * error) completionHandler;
 typedef void (^NetworkWrapperCompletionHandler)(NSData *responseData, NSError *error);

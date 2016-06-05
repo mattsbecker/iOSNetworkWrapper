@@ -7,10 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "AppDelegate.h"
 
 @interface ViewController ()
-
+@property (nonatomic,strong) NSString *responseBody;
+@property (nonatomic,strong) NSDictionary *responseDict;
 @end
 
 @implementation ViewController
@@ -19,9 +19,7 @@
     [super viewDidLoad];
     self.requestTestTableView.delegate = self;
     self.requestTestTableView.dataSource = self;
-    NSDictionary *token = [NSDictionary dictionaryWithObjectsAndKeys:@"099c9ba364cf48e69d7d61b5c063b5c2", @"X-Zen-ApiKey", nil];
-    self.requestHeaders = [NSMutableArray arrayWithObject:token];
-    
+    self.requestHeaders = [NSMutableArray array];
     // Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleResponse:) name:kTestNotification object:nil];
 }
@@ -35,7 +33,7 @@
     if (section == 0) {
         return 2; // return two cells for this section; Path and Method
     } else if (section == 1){
-        return self.requestHeaders.count + 1;
+        return self.headerCount + 1;
     } else if (section == 2) {
         return 1;
     } else if (section == 3) {
@@ -64,22 +62,24 @@
     // first section contains Path and Method rows
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestPathCell"];
+            NWRequestPathTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestPathCell"];
             return cell;
         } else if (indexPath.row == 1) {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestMethodCell"];
             return cell;
         }
     } else if (indexPath.section == 1) {
-        if (indexPath.row < self.requestHeaders.count) {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPHeaderKeyValueCell"];
+        if (indexPath.row < self.headerCount) {
+            NWRequestHeaderKeyValueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPHeaderKeyValueCell"];
+            cell.headerDictionary = [self.requestHeaders objectAtIndex:indexPath.row];
+            cell.indexPath = indexPath.row;
             return cell;
         } else {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPAddHeadersCell"];
             return cell;
         }
     } else if (indexPath.section == 2) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestBodyCell"];
+        HTTPRequestBodyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestBodyCell"];
         return cell;
     } else if (indexPath.section == 3) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PerformRequestCell"];
@@ -90,6 +90,15 @@
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        return 88;
+    } else if (indexPath.section == 2) {
+        return 176;
+    }
+    return 44;
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -97,26 +106,26 @@
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    [self handleTextFieldDismissal:textField];
+}
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField.tag == 1) {
-        self.requestPath = textField.text;
-        NSLog(@"Set Request Path to: %@", self.requestPath);
-    }
+    [self handleTextFieldDismissal:textField];
     [textField resignFirstResponder];
     return YES;
 }
 
-
-
 - (IBAction)newHTTPHeaderBtnPress:(id)sender {
-    NSInteger currentIdx = self.requestHeaders.count;
-    NSString *newHeaderKey = [NSString stringWithFormat:@"new-header-%ld", currentIdx];
-    NSDictionary *newHTTPHeader = [NSDictionary dictionaryWithObjectsAndKeys:@"", newHeaderKey, nil];
-    [self.requestHeaders addObject:newHTTPHeader];
+    // do not allow the user to create a new header row if there's already a blank one created
+    if (!self.requestHeaders && self.headerCount == 1) {
+        return;
+    }
+    self.headerCount += 1;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"", @"", nil];
+    [self.requestHeaders addObject:dict];
     [self.requestTestTableView reloadData];
 }
-
-
 
 - (IBAction)methodPOSTBtnPress:(id)sender {
     self.requestMethod = @"POST";
@@ -143,7 +152,19 @@
 }
 
 - (void)performRequestAction {
-    NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:@"", @"X-Zen-ApiKey", @"application/json", @"Content-Type", nil];
+    NSLog(@"Headers: %@", self.requestHeaders);
+    
+    // maintain a keys and values array. Later, we'll use this for populating a final dictionary of headers
+    NSMutableArray *keys = [NSMutableArray array];
+    NSMutableArray *values = [NSMutableArray array];
+    
+    // iterate through all keys and values from the dictionaries contained in the requestHeaders array;
+    for (NSDictionary *dictionary in self.requestHeaders) {
+        [keys addObjectsFromArray:[dictionary allKeys]];
+        [values addObjectsFromArray:[dictionary allValues]];
+    }
+    
+    NSDictionary *headers = [NSDictionary dictionaryWithObjects:values forKeys:keys];
     
     [[NetworkWrapper sharedWrapper] performHTTPRequestWithPath:self.requestPath
                                                         method:self.requestMethod
@@ -151,10 +172,47 @@
                                                 requestHeaders:headers
                                              completionHandler:^(NSData *responseData, NSError *error)
      {
-         NSString *responseBody = [NSString stringWithUTF8String:[responseData bytes]];
-         NSDictionary *responseDict = [NSDictionary dictionaryWithObjectsAndKeys:responseBody, @"response-body", nil];
-         NSLog(@"%@", responseDict);
-     }];
+         self.responseBody = [NSString stringWithUTF8String:[responseData bytes]];
+         self.responseDict = [NSDictionary dictionaryWithObjectsAndKeys:self.responseBody, @"response-body", nil];
+         NSLog(@"%@", self.responseDict);
+         /*dispatch_async(dispatch_get_main_queue(), ^{
+             [self performSegueWithIdentifier:@"ResponseDetailSegue" sender:self];
+         });*/
+    }];
+}
+
+- (void)handleTextFieldDismissal:(UITextField *) textField {
+    // This is the request path field; we shouldn't allow nil here!
+    if ([textField tag] == 1) {
+        self.requestPath = textField.text;
+        NSLog(@"Set Request Path to: %@", self.requestPath);
+    } else if ([textField tag] == 2) {
+        
+        // Request header key
+        NWRequestHeaderKeyValueTableViewCell *cell = (NWRequestHeaderKeyValueTableViewCell*)textField.superview.superview;
+        NSMutableDictionary *headerDictionary = [NSMutableDictionary dictionary];
+        [headerDictionary setObject:@"" forKey:textField.text];
+        [self.requestHeaders replaceObjectAtIndex:cell.indexPath withObject:headerDictionary];
+        [self.requestTestTableView reloadData];
+    } else if ([textField tag] == 3) {
+        
+        //Request header value
+        NWRequestHeaderKeyValueTableViewCell *cell = (NWRequestHeaderKeyValueTableViewCell*)textField.superview.superview;
+        NSMutableDictionary *headerDictionary = [self.requestHeaders objectAtIndex:cell.indexPath];
+        NSArray *key  =[headerDictionary allKeys];
+        [headerDictionary setObject:textField.text forKey:[key objectAtIndex:0]];
+        [self.requestHeaders replaceObjectAtIndex:cell.indexPath withObject:headerDictionary];
+        [self.requestTestTableView reloadData];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ResponseDetailSegue"]) {
+        ResponseViewController *responseViewController = segue.destinationViewController;
+        responseViewController.responseBody = self.responseBody;
+        responseViewController.responseDict = self.responseDict;
+        responseViewController.responseTxtView.text = [NSString stringWithFormat:@"%@ %@", responseViewController.responseBody, responseViewController.responseDict];
+    }
 }
 
 - (void)handleResponse:(NSNotification *) notification {
