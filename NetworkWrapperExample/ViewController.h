@@ -15,7 +15,7 @@
 #import "ResponseViewController.h"
 
 
-@interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, NWRequestHeaderKeyValueTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *requestTestTableView;
 
 @property (nonatomic, strong) NSMutableArray *requestHeaders; // array of dictionaries 

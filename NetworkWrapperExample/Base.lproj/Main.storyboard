@@ -167,9 +167,6 @@
                                                             <exclude reference="PG7-VZ-JlX"/>
                                                         </mask>
                                                     </variation>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="BYZ-38-t0r" id="Eh8-KL-1JM"/>
-                                                    </connections>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Header Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AMc-6E-kdo">
                                                     <rect key="frame" x="18" y="46" width="388" height="30"/>
@@ -185,9 +182,6 @@
                                                             <exclude reference="ijD-ei-oWD"/>
                                                         </mask>
                                                     </variation>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="BYZ-38-t0r" id="yWb-7c-0dV"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -244,10 +238,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="175.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="{&quot;xml&quot;:&quot;orJson&quot;, &quot;goes&quot;:&quot;here&quot;}" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C2e-O9-b3d">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2e-O9-b3d">
                                                     <rect key="frame" x="8" y="8" width="398" height="159.5"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textView>
                                             </subviews>

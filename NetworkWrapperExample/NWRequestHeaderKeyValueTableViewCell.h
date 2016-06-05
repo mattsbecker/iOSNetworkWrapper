@@ -14,7 +14,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *httpHeaderValueTxtField;
 @property (nonatomic, strong) NSMutableDictionary *headerDictionary;
 @property (nonatomic, assign) NSInteger indexPath;
+@property (nonatomic, strong) id delegate;
 
+@end
 
+@protocol NWRequestHeaderKeyValueTableViewCellDelegate <NSObject>
+
+-(void)tableViewCell:(NWRequestHeaderKeyValueTableViewCell*) cell didEnableHeaderValueTextField:(UITextField*) textField;
+-(void)tableViewCell:(NWRequestHeaderKeyValueTableViewCell *)cell didFinishHeaderValueInput:(UITextField *)textField;
 
 @end

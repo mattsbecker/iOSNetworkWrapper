@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.httpHeaderKeyTxtField.delegate = self;
+    self.httpHeaderValueTxtField.delegate = self;
     // Initialization code
 }
 
@@ -40,5 +42,34 @@
     NSString *value = [self.headerDictionary objectForKey:key];
     self.httpHeaderValueTxtField.text = value;
 }
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    [self handleTextFieldDismissal:textField];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self handleTextFieldDismissal:textField];
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)handleTextFieldDismissal:(UITextField *) textField {
+    // This is the request path field; we shouldn't allow nil here!
+    if ([textField tag] == 2) {
+        // Request header key
+        [textField resignFirstResponder];
+        [self.httpHeaderValueTxtField setEnabled:YES];
+        [self.httpHeaderValueTxtField becomeFirstResponder];
+        if (self.delegate != nil) {
+            [self.delegate tableViewCell:self didEnableHeaderValueTextField:textField];
+        }
+    } else if ([textField tag] == 3) {
+        [self.httpHeaderValueTxtField resignFirstResponder];
+        if (self.delegate != nil) {
+            [self.delegate tableViewCell:self didFinishHeaderValueInput:textField];
+        }
+    }
+}
+
 
 @end

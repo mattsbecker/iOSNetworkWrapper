@@ -29,6 +29,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark --- TableViewDataSource Methods ---
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return 2; // return two cells for this section; Path and Method
@@ -46,6 +47,9 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
 }
+
+#pragma mark --- UITableViewDelegate Methods ---
+
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
@@ -72,6 +76,7 @@
         if (indexPath.row < self.headerCount) {
             NWRequestHeaderKeyValueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPHeaderKeyValueCell"];
             cell.headerDictionary = [self.requestHeaders objectAtIndex:indexPath.row];
+            cell.delegate = self;
             cell.indexPath = indexPath.row;
             return cell;
         } else {
@@ -92,7 +97,9 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        return 88;
+        if (indexPath.row < self.headerCount) {
+            return 88;
+        }
     } else if (indexPath.section == 2) {
         return 176;
     }
@@ -106,6 +113,8 @@
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
+#pragma mark --- UITextFieldDelegate Methods ---
+
 -(void)textFieldDidEndEditing:(UITextField *)textField {
     [self handleTextFieldDismissal:textField];
 }
@@ -115,6 +124,21 @@
     [textField resignFirstResponder];
     return YES;
 }
+
+#pragma mark --- NWRequestHeaderKeyValueTableViewCellDelegate Methods ---
+
+
+-(void)tableViewCell:(NWRequestHeaderKeyValueTableViewCell*) cell didEnableHeaderValueTextField:(UITextField*) textField {
+    [self handleTextFieldDismissal:textField];
+}
+
+-(void)tableViewCell:(NWRequestHeaderKeyValueTableViewCell *)cell didFinishHeaderValueInput:(UITextField *)textField {
+    [self handleTextFieldDismissal:textField];
+}
+
+
+#pragma mark --- Class Methods ---
+
 
 - (IBAction)newHTTPHeaderBtnPress:(id)sender {
     // do not allow the user to create a new header row if there's already a blank one created
