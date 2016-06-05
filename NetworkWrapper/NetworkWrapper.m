@@ -109,13 +109,19 @@
     NSMutableURLRequest *urlRequest = [self createHTTPURLRequestWithPath:path method:method requestBody:body requestHeaders:headers];
     
     // Use an NSURLSession for our HTTP Request
-    NSURLSession *urlSession = [NSURLSession sharedSession];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    // We can receive delegate responses if we'd like this way, which is nice.
+    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     
     // perform the actual request with the session and the request that was created.
     NSURLSessionDataTask *task = [urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (!error) {
                 NSLog(@"%@", response);
+                
+                // Important! Using NSString initWithBytes/ASCIIStringEncoding is 10000% more reliable than stringWithUTF8String. Because we're outputting to the log here, we're just printing ASCII.
+                NSLog(@"Did receive data, handler::: %@", [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding: NSASCIIStringEncoding]);
                 // post a notification that the request has been completed
                 handler(data, error);
             }
@@ -135,18 +141,19 @@
     BOOL result = false;
 
     NSMutableURLRequest *urlRequest = [self createHTTPURLRequestWithPath:path method:method requestBody:body requestHeaders:headers];
-
+    
     // Use an NSURLSession for our HTTP Request
-    NSURLSession *urlSession = [NSURLSession sharedSession];
-
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    // We can receive delegate responses if we'd like this way, which is nice.
+    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    
     // perform the actual request with the session and the request that was created.
     NSURLSessionTask *task = [urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (!error) {
             // post a notification that the request has been completed
-            char *responseData = (char*)data.bytes;
-            NSString *responseBody = [NSString stringWithUTF8String:responseData];
             if (context) {
-                NSDictionary *responseDict = [NSDictionary dictionaryWithObjectsAndKeys:responseBody, @"response-body", context, @"context", nil];
+                NSDictionary *responseDict = [NSDictionary dictionaryWithObjectsAndKeys:data, @"response-body", context, @"context", nil];
                 [[NSNotificationCenter defaultCenter] postNotificationName:notification object:nil userInfo:responseDict];
             }
         } else {
@@ -160,17 +167,15 @@
 
 
 -(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
-    NSLog(@"Did receive data: %@", [NSString stringWithUTF8String:[data bytes]]);
+//    NSLog(@"Did receive data!!: %@", [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding: NSASCIIStringEncoding]);
 }
-- (void)URLSession:(NSURLSession *)session
-didBecomeInvalidWithError:(NSError *)error {
-    NSLog(@"Hit invalidation delegate method");
+
+-(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
+    NSLog(@"Did complete with error: %@", error.localizedDescription);
 }
 
 - (void)URLSession:(NSURLSession *)session
-didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
- completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition,
-                             NSURLCredential *credential))completionHandler {
+didBecomeInvalidWithError:(NSError *)error {
     NSLog(@"Hit invalidation delegate method");
 }
 
