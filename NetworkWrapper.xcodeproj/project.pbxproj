@@ -10,14 +10,15 @@
 		C9932B7D1D042EFB00A9A3E5 /* NWRequestPathCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9932B7C1D042EFB00A9A3E5 /* NWRequestPathCellTableViewCell.m */; };
 		C9932B801D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9932B7F1D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m */; };
 		C9932B831D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9932B821D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m */; };
-		C9932B871D04456300A9A3E5 /* ResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9932B861D04456300A9A3E5 /* ResponseViewController.m */; };
 		C9B3E7B81CFF0DFF000379C5 /* NetworkWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9B3E7B71CFF0DFF000379C5 /* NetworkWrapper.h */; };
 		C9B3E7BA1CFF0DFF000379C5 /* NetworkWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B3E7B91CFF0DFF000379C5 /* NetworkWrapper.m */; };
 		C9B3E7CA1CFF1781000379C5 /* NetworkWrapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B3E7C91CFF1781000379C5 /* NetworkWrapperTests.m */; };
 		C9B3E7CC1CFF1781000379C5 /* libNetworkWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B3E7B41CFF0DFF000379C5 /* libNetworkWrapper.a */; };
+		C9F2B1841D0AE14B00FD9138 /* ResponseDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1831D0AE14B00FD9138 /* ResponseDetailsTableViewController.m */; };
+		C9F2B1871D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1861D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m */; };
 		C9F56EB81D00A18D00DD0F82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EB71D00A18D00DD0F82 /* main.m */; };
 		C9F56EBB1D00A18D00DD0F82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EBA1D00A18D00DD0F82 /* AppDelegate.m */; };
-		C9F56EBE1D00A18D00DD0F82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EBD1D00A18D00DD0F82 /* ViewController.m */; };
+		C9F56EBE1D00A18D00DD0F82 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EBD1D00A18D00DD0F82 /* MainTableViewController.m */; };
 		C9F56EC11D00A18D00DD0F82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F56EBF1D00A18D00DD0F82 /* Main.storyboard */; };
 		C9F56EC31D00A18D00DD0F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F56EC21D00A18D00DD0F82 /* Assets.xcassets */; };
 		C9F56EC61D00A18D00DD0F82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F56EC41D00A18D00DD0F82 /* LaunchScreen.storyboard */; };
@@ -54,20 +55,22 @@
 		C9932B7F1D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWRequestHeaderKeyValueTableViewCell.m; sourceTree = "<group>"; };
 		C9932B811D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequestBodyTableViewCell.h; sourceTree = "<group>"; };
 		C9932B821D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestBodyTableViewCell.m; sourceTree = "<group>"; };
-		C9932B851D04456300A9A3E5 /* ResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseViewController.h; sourceTree = "<group>"; };
-		C9932B861D04456300A9A3E5 /* ResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseViewController.m; sourceTree = "<group>"; };
 		C9B3E7B41CFF0DFF000379C5 /* libNetworkWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNetworkWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B3E7B71CFF0DFF000379C5 /* NetworkWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkWrapper.h; sourceTree = "<group>"; };
 		C9B3E7B91CFF0DFF000379C5 /* NetworkWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkWrapper.m; sourceTree = "<group>"; };
 		C9B3E7C71CFF1781000379C5 /* NetworkWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B3E7C91CFF1781000379C5 /* NetworkWrapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkWrapperTests.m; sourceTree = "<group>"; };
 		C9B3E7CB1CFF1781000379C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9F2B1821D0AE14B00FD9138 /* ResponseDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseDetailsTableViewController.h; sourceTree = "<group>"; };
+		C9F2B1831D0AE14B00FD9138 /* ResponseDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseDetailsTableViewController.m; sourceTree = "<group>"; };
+		C9F2B1851D0AE30C00FD9138 /* NWResponseBodyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWResponseBodyTableViewCell.h; sourceTree = "<group>"; };
+		C9F2B1861D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWResponseBodyTableViewCell.m; sourceTree = "<group>"; };
 		C9F56EB41D00A18D00DD0F82 /* NetworkWrapperExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkWrapperExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F56EB71D00A18D00DD0F82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C9F56EB91D00A18D00DD0F82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C9F56EBA1D00A18D00DD0F82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C9F56EBC1D00A18D00DD0F82 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C9F56EBD1D00A18D00DD0F82 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C9F56EBC1D00A18D00DD0F82 /* MainTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		C9F56EBD1D00A18D00DD0F82 /* MainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		C9F56EC01D00A18D00DD0F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9F56EC21D00A18D00DD0F82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9F56EC51D00A18D00DD0F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				C9932B7F1D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m */,
 				C9932B811D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.h */,
 				C9932B821D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m */,
+				C9F2B1851D0AE30C00FD9138 /* NWResponseBodyTableViewCell.h */,
+				C9F2B1861D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -116,10 +121,10 @@
 		C9932B841D04449D00A9A3E5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C9F56EBC1D00A18D00DD0F82 /* ViewController.h */,
-				C9F56EBD1D00A18D00DD0F82 /* ViewController.m */,
-				C9932B851D04456300A9A3E5 /* ResponseViewController.h */,
-				C9932B861D04456300A9A3E5 /* ResponseViewController.m */,
+				C9F56EBC1D00A18D00DD0F82 /* MainTableViewController.h */,
+				C9F56EBD1D00A18D00DD0F82 /* MainTableViewController.m */,
+				C9F2B1821D0AE14B00FD9138 /* ResponseDetailsTableViewController.h */,
+				C9F2B1831D0AE14B00FD9138 /* ResponseDetailsTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -323,9 +328,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9932B7D1D042EFB00A9A3E5 /* NWRequestPathCellTableViewCell.m in Sources */,
-				C9932B871D04456300A9A3E5 /* ResponseViewController.m in Sources */,
 				C9F56ECB1D00A1E400DD0F82 /* NetworkWrapper.m in Sources */,
-				C9F56EBE1D00A18D00DD0F82 /* ViewController.m in Sources */,
+				C9F2B1871D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m in Sources */,
+				C9F56EBE1D00A18D00DD0F82 /* MainTableViewController.m in Sources */,
+				C9F2B1841D0AE14B00FD9138 /* ResponseDetailsTableViewController.m in Sources */,
 				C9932B801D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m in Sources */,
 				C9932B831D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m in Sources */,
 				C9F56EBB1D00A18D00DD0F82 /* AppDelegate.m in Sources */,

@@ -119,11 +119,13 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (!error) {
                 NSLog(@"%@", response);
+                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+                NSInteger statusCode = [httpResponse statusCode];
                 
                 // Important! Using NSString initWithBytes/ASCIIStringEncoding is 10000% more reliable than stringWithUTF8String. Because we're outputting to the log here, we're just printing ASCII.
                 NSLog(@"Did receive data, handler::: %@", [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding: NSASCIIStringEncoding]);
                 // post a notification that the request has been completed
-                handler(data, error);
+                handler(statusCode, data, error);
             }
         });
     }];

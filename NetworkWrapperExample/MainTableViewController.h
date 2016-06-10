@@ -12,10 +12,10 @@
 #import "NWRequestPathTableViewCell.h"
 #import "NWRequestHeaderKeyValueTableViewCell.h"
 #import "HTTPRequestBodyTableViewCell.h"
-#import "ResponseViewController.h"
+#import "ResponseDetailsTableViewController.h"
 
 
-@interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, NWRequestHeaderKeyValueTableViewCellDelegate>
+@interface MainTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, NWRequestHeaderKeyValueTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *requestTestTableView;
 
 @property (nonatomic, strong) NSMutableArray *requestHeaders; // array of dictionaries 
@@ -29,7 +29,6 @@
 - (IBAction)methodGETBtnPress:(id)sender;
 - (IBAction)methodPUTBtnPress:(id)sender;
 - (IBAction)methodDELETEBtnPress:(id)sender;
-- (IBAction)performHTTPRequestBtnPress:(id)sender;
 
 @end
 

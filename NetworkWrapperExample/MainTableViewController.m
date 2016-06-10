@@ -6,20 +6,22 @@
 //  Copyright © 2016 Matt S Becker. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainTableViewController.h"
 
-@interface ViewController ()
+@interface MainTableViewController ()
 @property (nonatomic,strong) NSString *responseBody;
-@property (nonatomic,strong) NSDictionary *responseDict;
+@property (nonatomic, assign) NSInteger responseStatusCode;
+@property (nonatomic, assign) NSData *responseData;
 @end
 
-@implementation ViewController
+@implementation MainTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.requestTestTableView.delegate = self;
     self.requestTestTableView.dataSource = self;
     self.requestHeaders = [NSMutableArray array];
+    [self setTitle:NSLocalizedString(@"Create Network Request", @"Create network request string")];
     // Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleResponse:) name:kTestNotification object:nil];
 }
@@ -107,6 +109,10 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Perform Request Button
+    if (indexPath.section == 3 && indexPath.row == 0) {
+        [self performRequestAction];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -171,10 +177,6 @@
     NSLog(@"Set Method to: %@", self.requestMethod);
 }
 
-- (IBAction)performHTTPRequestBtnPress:(id)sender {
-    [self performRequestAction];
-}
-
 - (void)performRequestAction {
     NSLog(@"Headers: %@", self.requestHeaders);
     
@@ -194,14 +196,14 @@
                                                         method:self.requestMethod
                                                    requestBody:nil
                                                 requestHeaders:headers
-                                             completionHandler:^(NSData *responseData, NSError *error)
+                                             completionHandler:^(NSInteger statusCode, NSData *responseData, NSError *error)
      {
          self.responseBody = [NSString stringWithUTF8String:[responseData bytes]];
-         self.responseDict = [NSDictionary dictionaryWithObjectsAndKeys:self.responseBody, @"response-body", nil];
-         NSLog(@"%@", self.responseDict);
-         /*dispatch_async(dispatch_get_main_queue(), ^{
-             [self performSegueWithIdentifier:@"ResponseDetailSegue" sender:self];
-         });*/
+         self.responseData = responseData;
+         self.responseStatusCode = statusCode;
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [self performSegueWithIdentifier:@"RequestResponseSegue" sender:self];
+         });
     }];
 }
 
@@ -231,11 +233,11 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"ResponseDetailSegue"]) {
-        ResponseViewController *responseViewController = segue.destinationViewController;
-        responseViewController.responseBody = self.responseBody;
-        responseViewController.responseDict = self.responseDict;
-        responseViewController.responseTxtView.text = [NSString stringWithFormat:@"%@ %@", responseViewController.responseBody, responseViewController.responseDict];
+    if ([[segue identifier] isEqualToString:@"RequestResponseSegue"]) {
+        ResponseDetailsTableViewController *responseViewController = (ResponseDetailsTableViewController*)[segue destinationViewController];
+        [responseViewController setResponseCode:[NSString stringWithFormat:@"%ld", self.responseStatusCode]];
+        NSString *responseJSON = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingAllowFragments error:nil];
+        [responseViewController setResponseBody:responseJSON];
     }
 }
 
