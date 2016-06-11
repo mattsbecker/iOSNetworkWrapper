@@ -12,6 +12,7 @@
 @property (nonatomic,strong) NSString *responseBody;
 @property (nonatomic, assign) NSInteger responseStatusCode;
 @property (nonatomic, assign) NSData *responseData;
+@property (nonatomic, assign) NSMutableDictionary *responseHeaders;
 @end
 
 @implementation MainTableViewController
@@ -21,6 +22,7 @@
     self.requestTestTableView.delegate = self;
     self.requestTestTableView.dataSource = self;
     self.requestHeaders = [NSMutableArray array];
+    self.responseHeaders = [NSMutableDictionary dictionary];
     [self setTitle:NSLocalizedString(@"Create Network Request", @"Create network request string")];
     // Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleResponse:) name:kTestNotification object:nil];
@@ -148,7 +150,7 @@
     if (button.method == RequestMethodPost) {
         self.requestMethod = @"POST";
     } else if (button.method == RequestMethodGet) {
-        self.requestMethod = @"POST";
+        self.requestMethod = @"GET";
     } else if (button.method == RequestMethodPut) {
         self.requestMethod = @"PUT";
     } else if (button.method == RequestMethodDelete) {
@@ -190,11 +192,13 @@
                                                         method:self.requestMethod
                                                    requestBody:nil
                                                 requestHeaders:headers
-                                             completionHandler:^(NSInteger statusCode, NSData *responseData, NSError *error)
+                                             completionHandler:^(NSInteger statusCode, NSDictionary *responseHeaders, NSData *responseData, NSError *error)
      {
          self.responseBody = [NSString stringWithUTF8String:[responseData bytes]];
          self.responseData = responseData;
          self.responseStatusCode = statusCode;
+         self.responseHeaders = [NSMutableDictionary dictionaryWithDictionary:responseHeaders];
+         
          dispatch_async(dispatch_get_main_queue(), ^{
              [self performSegueWithIdentifier:@"RequestResponseSegue" sender:self];
          });
@@ -230,6 +234,8 @@
     if ([[segue identifier] isEqualToString:@"RequestResponseSegue"]) {
         ResponseDetailsTableViewController *responseViewController = (ResponseDetailsTableViewController*)[segue destinationViewController];
         [responseViewController setResponseCode:[NSString stringWithFormat:@"%ld", self.responseStatusCode]];
+        NSString *responseHeaders = [NSString stringWithFormat:@"%@", self.responseHeaders];
+        [responseViewController setResponseHeaders:responseHeaders];
         NSString *responseJSON = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingAllowFragments error:nil];
         [responseViewController setResponseBody:responseJSON];
     }

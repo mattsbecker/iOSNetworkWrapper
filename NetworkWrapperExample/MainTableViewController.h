@@ -19,7 +19,7 @@
 @interface MainTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, NWRequestHeaderKeyValueTableViewCellDelegate, NWRequestMethodTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *requestTestTableView;
 
-@property (nonatomic, strong) NSMutableArray *requestHeaders; // array of dictionaries 
+@property (nonatomic, strong) NSMutableArray *requestHeaders; // array of dictionaries
 @property (nonatomic, assign) NSInteger headerCount;
 @property (nonatomic, strong) NSString *requestMethod;
 @property (nonatomic, strong) NSString *requestPath;

@@ -90,8 +90,8 @@
             return cell;
         } else if (indexPath.row == 1) {
             NWResponseBodyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPResponseBody" forIndexPath:indexPath];
-            cell.responseBodyTxtView.text = [NSString stringWithFormat:@"%@", self.responseHeaders];
-            
+            cell.responseBodyTxtView.text = self.responseHeaders;
+            return cell;
         }
         // row headers row
     } else if (indexPath.section == ResponseTableViewSectionBody && indexPath.row == 0) {
@@ -104,9 +104,16 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == ResponseTableViewSectionHeaders && indexPath.row == 0) {
-        self.headerRows = 2;
-        [tableView reloadData];
+        self.headerRows = self.headerRows == 1 ? 2:1;
+        [tableView beginUpdates];
+        if (self.headerRows == 2) {
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:ResponseTableViewSectionHeaders]] withRowAnimation:UITableViewRowAnimationTop];
+        } else if (self.headerRows == 1){
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:ResponseTableViewSectionHeaders]] withRowAnimation:UITableViewRowAnimationTop];
+        }
+        [tableView endUpdates];
     }
 }
 

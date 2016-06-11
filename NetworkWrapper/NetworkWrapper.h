@@ -11,7 +11,7 @@
 @interface NetworkWrapper : NSObject<NSURLSessionDelegate, NSURLSessionDataDelegate, NSURLSessionTaskDelegate>
 
 //typedef void (^NetworkWrapperCompletionHandler)(NSData * resumeData, NSError * error) completionHandler;
-typedef void (^NetworkWrapperCompletionHandler)(NSInteger statusCode, NSData *responseData, NSError *error);
+typedef void (^NetworkWrapperCompletionHandler)(NSInteger statusCode, NSDictionary *responseHeaders, NSData *responseData, NSError *error);
 
 @property (nonatomic, strong) NSString *baseURL;
 @property (nonatomic, assign) NSInteger basePort;

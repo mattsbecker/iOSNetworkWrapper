@@ -121,11 +121,12 @@
                 NSLog(@"%@", response);
                 NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
                 NSInteger statusCode = [httpResponse statusCode];
+                NSDictionary *headers = httpResponse.allHeaderFields;
                 
                 // Important! Using NSString initWithBytes/ASCIIStringEncoding is 10000% more reliable than stringWithUTF8String. Because we're outputting to the log here, we're just printing ASCII.
                 NSLog(@"Did receive data, handler::: %@", [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding: NSASCIIStringEncoding]);
                 // post a notification that the request has been completed
-                handler(statusCode, data, error);
+                handler(statusCode, headers, data, error);
             }
         });
     }];
