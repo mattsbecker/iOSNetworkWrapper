@@ -22,6 +22,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // by default, we only show the "show raw headers" cell
+    self.headerRows = 1;
     [self.responseDetailsTableView reloadData];
 }
 
@@ -33,18 +36,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1; // one per section right now
+    if (section != ResponseTableViewSectionHeaders) {
+        return 1; // one per section right now
+    } else {
+        return self.headerRows;
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     // response code section
-    if (section == 0) {
+    if (section == ResponseTableViewSectionCode) {
         return @"Response Code";
-    } else if (section == 1) {
+    } else if (section == ResponseTableViewSectionHeaders) {
+        return @"Response Headers";
+    } else if (section == ResponseTableViewSectionBody) {
     // response body section
         return @"Response Body";
     }
@@ -52,21 +61,40 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1 && indexPath.row == 0) {
-        return 352;
-    } else {
+    if (indexPath.section == ResponseTableViewSectionCode) {
         return 44;
+    } else if (indexPath.section == ResponseTableViewSectionHeaders) {
+        if (indexPath.row == 0) {
+            return 44;
+        } else {
+            return 352;
+        }
+    } else if (indexPath.section == ResponseTableViewSectionBody) {
+        return 352;
     }
+    return 44;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.section == 0 && indexPath.row == 0) {
+    if (indexPath.section == ResponseTableViewSectionCode && indexPath.row == 0) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPResponseStatusCodeCell" forIndexPath:indexPath];
         cell.textLabel.text = self.responseCode;
         return cell;
-    } else if (indexPath.section == 1 && indexPath.row == 0) {
+    } else if (indexPath.section == ResponseTableViewSectionHeaders) {
+        
+        // initial headers row
+        if (indexPath.row == 0) {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPShowHeadersCell" forIndexPath:indexPath];
+            return cell;
+        } else if (indexPath.row == 1) {
+            NWResponseBodyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPResponseBody" forIndexPath:indexPath];
+            cell.responseBodyTxtView.text = [NSString stringWithFormat:@"%@", self.responseHeaders];
+            
+        }
+        // row headers row
+    } else if (indexPath.section == ResponseTableViewSectionBody && indexPath.row == 0) {
         NWResponseBodyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPResponseBody" forIndexPath:indexPath];
         cell.responseBodyTxtView.text = [NSString stringWithFormat:@"%@", self.responseBody];
         return cell;
@@ -74,6 +102,13 @@
     return nil;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == ResponseTableViewSectionHeaders && indexPath.row == 0) {
+        self.headerRows = 2;
+        [tableView reloadData];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

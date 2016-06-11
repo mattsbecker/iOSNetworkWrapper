@@ -16,6 +16,8 @@
 		C9B3E7CC1CFF1781000379C5 /* libNetworkWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B3E7B41CFF0DFF000379C5 /* libNetworkWrapper.a */; };
 		C9F2B1841D0AE14B00FD9138 /* ResponseDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1831D0AE14B00FD9138 /* ResponseDetailsTableViewController.m */; };
 		C9F2B1871D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1861D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m */; };
+		C9F2B18A1D0C7B6D00FD9138 /* NWRequestMethodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1891D0C7B6D00FD9138 /* NWRequestMethodTableViewCell.m */; };
+		C9F2B18E1D0C7C8000FD9138 /* NWRequestMethodButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B18D1D0C7C8000FD9138 /* NWRequestMethodButton.m */; };
 		C9F56EB81D00A18D00DD0F82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EB71D00A18D00DD0F82 /* main.m */; };
 		C9F56EBB1D00A18D00DD0F82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EBA1D00A18D00DD0F82 /* AppDelegate.m */; };
 		C9F56EBE1D00A18D00DD0F82 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F56EBD1D00A18D00DD0F82 /* MainTableViewController.m */; };
@@ -65,6 +67,10 @@
 		C9F2B1831D0AE14B00FD9138 /* ResponseDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseDetailsTableViewController.m; sourceTree = "<group>"; };
 		C9F2B1851D0AE30C00FD9138 /* NWResponseBodyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWResponseBodyTableViewCell.h; sourceTree = "<group>"; };
 		C9F2B1861D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWResponseBodyTableViewCell.m; sourceTree = "<group>"; };
+		C9F2B1881D0C7B6D00FD9138 /* NWRequestMethodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWRequestMethodTableViewCell.h; sourceTree = "<group>"; };
+		C9F2B1891D0C7B6D00FD9138 /* NWRequestMethodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWRequestMethodTableViewCell.m; sourceTree = "<group>"; };
+		C9F2B18C1D0C7C8000FD9138 /* NWRequestMethodButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWRequestMethodButton.h; sourceTree = "<group>"; };
+		C9F2B18D1D0C7C8000FD9138 /* NWRequestMethodButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWRequestMethodButton.m; sourceTree = "<group>"; };
 		C9F56EB41D00A18D00DD0F82 /* NetworkWrapperExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkWrapperExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F56EB71D00A18D00DD0F82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C9F56EB91D00A18D00DD0F82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,6 +120,8 @@
 				C9932B821D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m */,
 				C9F2B1851D0AE30C00FD9138 /* NWResponseBodyTableViewCell.h */,
 				C9F2B1861D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m */,
+				C9F2B1881D0C7B6D00FD9138 /* NWRequestMethodTableViewCell.h */,
+				C9F2B1891D0C7B6D00FD9138 /* NWRequestMethodTableViewCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -167,9 +175,19 @@
 			path = NetworkWrapperTests;
 			sourceTree = "<group>";
 		};
+		C9F2B18B1D0C7C5E00FD9138 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C9F2B18C1D0C7C8000FD9138 /* NWRequestMethodButton.h */,
+				C9F2B18D1D0C7C8000FD9138 /* NWRequestMethodButton.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		C9F56EB51D00A18D00DD0F82 /* NetworkWrapperExample */ = {
 			isa = PBXGroup;
 			children = (
+				C9F2B18B1D0C7C5E00FD9138 /* UI */,
 				C9932B841D04449D00A9A3E5 /* View Controllers */,
 				C9932B7A1D042ECC00A9A3E5 /* Table View Cells */,
 				C9F56EB91D00A18D00DD0F82 /* AppDelegate.h */,
@@ -328,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9932B7D1D042EFB00A9A3E5 /* NWRequestPathCellTableViewCell.m in Sources */,
+				C9F2B18A1D0C7B6D00FD9138 /* NWRequestMethodTableViewCell.m in Sources */,
 				C9F56ECB1D00A1E400DD0F82 /* NetworkWrapper.m in Sources */,
 				C9F2B1871D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m in Sources */,
 				C9F56EBE1D00A18D00DD0F82 /* MainTableViewController.m in Sources */,
@@ -336,6 +355,7 @@
 				C9932B831D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m in Sources */,
 				C9F56EBB1D00A18D00DD0F82 /* AppDelegate.m in Sources */,
 				C9F56EB81D00A18D00DD0F82 /* main.m in Sources */,
+				C9F2B18E1D0C7C8000FD9138 /* NWRequestMethodButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

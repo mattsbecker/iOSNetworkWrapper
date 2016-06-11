@@ -71,7 +71,8 @@
             NWRequestPathTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestPathCell"];
             return cell;
         } else if (indexPath.row == 1) {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestMethodCell"];
+            NWRequestMethodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestMethodCell"];
+            cell.delegate = self;
             return cell;
         }
     } else if (indexPath.section == 1) {
@@ -142,6 +143,19 @@
     [self handleTextFieldDismissal:textField];
 }
 
+#pragma mark NWRequestMethodTableViewCellDelegate Methods
+-(void)tableViewCell:(NWRequestMethodTableViewCell*)cell didSelectMethodButton:(NWRequestMethodButton*)button {
+    if (button.method == RequestMethodPost) {
+        self.requestMethod = @"POST";
+    } else if (button.method == RequestMethodGet) {
+        self.requestMethod = @"POST";
+    } else if (button.method == RequestMethodPut) {
+        self.requestMethod = @"PUT";
+    } else if (button.method == RequestMethodDelete) {
+        self.requestMethod = @"DELETE";
+    }
+}
+
 
 #pragma mark --- Class Methods ---
 
@@ -157,25 +171,25 @@
     [self.requestTestTableView reloadData];
 }
 
-- (IBAction)methodPOSTBtnPress:(id)sender {
-    self.requestMethod = @"POST";
-    NSLog(@"Set Method to: %@", self.requestMethod);
-}
-
-- (IBAction)methodGETBtnPress:(id)sender {
-    self.requestMethod = @"GET";
-    NSLog(@"Set Method to: %@", self.requestMethod);
-}
-
-- (IBAction)methodPUTBtnPress:(id)sender {
-    self.requestMethod = @"PUT";
-    NSLog(@"Set Method to: %@", self.requestMethod);
-}
-
-- (IBAction)methodDELETEBtnPress:(id)sender {
-    self.requestMethod = @"DELETE";
-    NSLog(@"Set Method to: %@", self.requestMethod);
-}
+//- (IBAction)methodPOSTBtnPress:(id)sender {
+//    self.requestMethod = @"POST";
+//    NSLog(@"Set Method to: %@", self.requestMethod);
+//}
+//
+//- (IBAction)methodGETBtnPress:(id)sender {
+//    self.requestMethod = @"GET";
+//    NSLog(@"Set Method to: %@", self.requestMethod);
+//}
+//
+//- (IBAction)methodPUTBtnPress:(id)sender {
+//    self.requestMethod = @"PUT";
+//    NSLog(@"Set Method to: %@", self.requestMethod);
+//}
+//
+//- (IBAction)methodDELETEBtnPress:(id)sender {
+//    self.requestMethod = @"DELETE";
+//    NSLog(@"Set Method to: %@", self.requestMethod);
+//}
 
 - (void)performRequestAction {
     NSLog(@"Headers: %@", self.requestHeaders);
