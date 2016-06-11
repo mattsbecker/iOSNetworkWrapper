@@ -171,26 +171,6 @@
     [self.requestTestTableView reloadData];
 }
 
-//- (IBAction)methodPOSTBtnPress:(id)sender {
-//    self.requestMethod = @"POST";
-//    NSLog(@"Set Method to: %@", self.requestMethod);
-//}
-//
-//- (IBAction)methodGETBtnPress:(id)sender {
-//    self.requestMethod = @"GET";
-//    NSLog(@"Set Method to: %@", self.requestMethod);
-//}
-//
-//- (IBAction)methodPUTBtnPress:(id)sender {
-//    self.requestMethod = @"PUT";
-//    NSLog(@"Set Method to: %@", self.requestMethod);
-//}
-//
-//- (IBAction)methodDELETEBtnPress:(id)sender {
-//    self.requestMethod = @"DELETE";
-//    NSLog(@"Set Method to: %@", self.requestMethod);
-//}
-
 - (void)performRequestAction {
     NSLog(@"Headers: %@", self.requestHeaders);
     
