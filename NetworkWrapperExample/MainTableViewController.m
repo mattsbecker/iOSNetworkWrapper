@@ -11,8 +11,8 @@
 @interface MainTableViewController ()
 @property (nonatomic,strong) NSString *responseBody;
 @property (nonatomic, assign) NSInteger responseStatusCode;
-@property (nonatomic, assign) NSData *responseData;
-@property (nonatomic, assign) NSMutableDictionary *responseHeaders;
+@property (nonatomic, strong) NSData *responseData;
+@property (nonatomic, strong) NSMutableDictionary *responseHeaders;
 @end
 
 @implementation MainTableViewController
