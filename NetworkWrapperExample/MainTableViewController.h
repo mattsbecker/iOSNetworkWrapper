@@ -13,8 +13,15 @@
 #import "NWRequestHeaderKeyValueTableViewCell.h"
 #import "HTTPRequestBodyTableViewCell.h"
 #import "ResponseDetailsTableViewController.h"
+#import "RequestHistoryTableViewController.h"
 #import "NWRequestMethodTableViewCell.h"
 
+enum {
+    RequestTableViewSectionPath = 0,
+    RequestTableViewSectionHeaders,
+    RequestTableViewSectionBody,
+    RequestTableViewSectionPerformRequest
+};
 
 @interface MainTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, NWRequestHeaderKeyValueTableViewCellDelegate, NWRequestMethodTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *requestTestTableView;

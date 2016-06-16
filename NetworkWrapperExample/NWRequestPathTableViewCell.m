@@ -8,6 +8,8 @@
 
 #import "NWRequestPathTableViewCell.h"
 
+NSString *kHistoryRequestedNotification = @"HistoryRequestedNotification";
+
 @implementation NWRequestPathTableViewCell
 
 - (void)awakeFromNib {
@@ -19,6 +21,10 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (IBAction)requestHistoryBtnPress:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kHistoryRequestedNotification object:nil];
 }
 
 @end

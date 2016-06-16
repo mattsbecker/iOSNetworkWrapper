@@ -24,16 +24,8 @@
 }
 */
 
--(void)setEnabled:(BOOL)enabled {
-    self.primaryColor = self.titleLabel.textColor;
-    [super setEnabled:enabled];
-    if (self.enabled) {
-        self.titleLabel.textColor = [UIColor whiteColor];
-        self.backgroundColor = self.primaryColor;
-    } else {
-        self.titleLabel.textColor = self.primaryColor;
-        self.backgroundColor = [UIColor clearColor];
-    }
+-(void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
 }
 
 @end

@@ -26,6 +26,7 @@
     [self setTitle:NSLocalizedString(@"Create Network Request", @"Create network request string")];
     // Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleResponse:) name:kTestNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHistoryRequestedNotification:) name:kHistoryRequestedNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,13 +36,13 @@
 
 #pragma mark --- TableViewDataSource Methods ---
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == RequestTableViewSectionPath) {
         return 2; // return two cells for this section; Path and Method
-    } else if (section == 1){
+    } else if (section == RequestTableViewSectionHeaders){
         return self.headerCount + 1;
-    } else if (section == 2) {
+    } else if (section == RequestTableViewSectionBody) {
         return 1;
-    } else if (section == 3) {
+    } else if (section == RequestTableViewSectionPerformRequest) {
         return 1;
     } else {
         return 0;
@@ -68,16 +69,16 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // first section contains Path and Method rows
-    if (indexPath.section == 0) {
+    if (indexPath.section == RequestTableViewSectionPath) {
         if (indexPath.row == 0) {
             NWRequestPathTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestPathCell"];
             return cell;
-        } else if (indexPath.row == 1) {
+        } else if (indexPath.row == RequestTableViewSectionHeaders) {
             NWRequestMethodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestMethodCell"];
             cell.delegate = self;
             return cell;
         }
-    } else if (indexPath.section == 1) {
+    } else if (indexPath.section == RequestTableViewSectionHeaders) {
         if (indexPath.row < self.headerCount) {
             NWRequestHeaderKeyValueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPHeaderKeyValueCell"];
             cell.headerDictionary = [self.requestHeaders objectAtIndex:indexPath.row];
@@ -88,10 +89,10 @@
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPAddHeadersCell"];
             return cell;
         }
-    } else if (indexPath.section == 2) {
+    } else if (indexPath.section == RequestTableViewSectionBody) {
         HTTPRequestBodyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPRequestBodyCell"];
         return cell;
-    } else if (indexPath.section == 3) {
+    } else if (indexPath.section == RequestTableViewSectionPerformRequest) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PerformRequestCell"];
         return cell;
     }
@@ -101,11 +102,11 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1) {
+    if (indexPath.section == RequestTableViewSectionHeaders) {
         if (indexPath.row < self.headerCount) {
             return 88;
         }
-    } else if (indexPath.section == 2) {
+    } else if (indexPath.section == RequestTableViewSectionBody) {
         return 176;
     }
     return 44;
@@ -113,7 +114,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Perform Request Button
-    if (indexPath.section == 3 && indexPath.row == 0) {
+    if (indexPath.section == RequestTableViewSectionPerformRequest && indexPath.row == 0) {
         [self performRequestAction];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -167,10 +168,16 @@
     if (!self.requestHeaders && self.headerCount == 1) {
         return;
     }
+    
+    // increment the header count for reference; create a new dictionary entry for an empty header
     self.headerCount += 1;
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"", @"", nil];
     [self.requestHeaders addObject:dict];
-    [self.requestTestTableView reloadData];
+    
+    // begin updating the table view; insert the row at the bottom
+    [self.requestTestTableView beginUpdates];
+    [self.requestTestTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:(self.headerCount - 1) inSection:RequestTableViewSectionHeaders]] withRowAnimation:UITableViewRowAnimationFade];
+    [self.requestTestTableView endUpdates];
 }
 
 - (void)performRequestAction {
@@ -199,13 +206,18 @@
          self.responseStatusCode = statusCode;
          self.responseHeaders = [NSMutableDictionary dictionaryWithDictionary:responseHeaders];
          
+         // grab the last request we tried and store it so we can use it for next time
+         
+         // Start a segue to the Response View Controller, always do this on the main thread
          dispatch_async(dispatch_get_main_queue(), ^{
              [self performSegueWithIdentifier:@"RequestResponseSegue" sender:self];
          });
+         NSLog(@"%@", [NetworkWrapper sharedWrapper].requests);
     }];
 }
 
 - (void)handleTextFieldDismissal:(UITextField *) textField {
+    
     // This is the request path field; we shouldn't allow nil here!
     if ([textField tag] == 1) {
         self.requestPath = textField.text;
@@ -232,19 +244,38 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"RequestResponseSegue"]) {
+        
+        // handle the response segueue by preparing the response code, headers, and body
         ResponseDetailsTableViewController *responseViewController = (ResponseDetailsTableViewController*)[segue destinationViewController];
         [responseViewController setResponseCode:[NSString stringWithFormat:@"%ld", self.responseStatusCode]];
         NSString *responseHeaders = [NSString stringWithFormat:@"%@", self.responseHeaders];
         [responseViewController setResponseHeaders:responseHeaders];
         NSString *responseJSON = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingAllowFragments error:nil];
         [responseViewController setResponseBody:responseJSON];
+    } else if ([[segue identifier] isEqualToString:@"RequestHistorySegue"]) {
+        
+        // grab the requests from the wrapper (only application lifecycle history for right now) - gone once singleton is destroyed
+        
+        NSLog(@"%@", [NetworkWrapper sharedWrapper].requests);
+        
+        RequestHistoryTableViewController *requestHistoryViewController = (RequestHistoryTableViewController*)[segue destinationViewController];
+        NSMutableArray *recentRequests = [NetworkWrapper sharedWrapper].requests;
+        [requestHistoryViewController setRequests:recentRequests];
     }
+}
+
+- (void)handleHistoryRequestedNotification:(NSNotification*) notification {
+    // show a modal view controller
+    NSLog(@"Will show request history");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"RequestHistorySegue" sender:self];
+    });
+
 }
 
 - (void)handleResponse:(NSNotification *) notification {
     NSLog(@"Handling notification");
     NSLog(@"Notification data: %@", notification.userInfo);
 }
-
 
 @end

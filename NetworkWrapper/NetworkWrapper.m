@@ -18,13 +18,19 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        networkWrapper = [[NetworkWrapper alloc] init];
+        networkWrapper = [[self alloc] init];
     });
-    if (!networkWrapper) return nil;
-    networkWrapper.baseURL = nil; // no default. WE NEED THIS
-    networkWrapper.scheme = @"http"; // default to HTTP
-    networkWrapper.basePort = 0; // no default, WE NEED THIS
     return networkWrapper;
+}
+
+- (id)init {
+    if (self == [super init]) {
+        self.baseURL = nil; // no default. WE NEED THIS
+        self.scheme = @"http"; // default to HTTP
+        self.basePort = 0; // no default, WE NEED THIS
+        self.requests = [NSMutableArray array];
+    }
+    return self;
 }
 
 - (NSURL*)createWebRequestURLWithPath:(NSString *) path {
@@ -94,14 +100,17 @@
         [urlRequest setAllHTTPHeaderFields:headerDict];
     }
     
+    // we've gotten far enough to store the request; do so. This will eventually be our queue.
+    [self.requests addObject:urlRequest];
+    
     return urlRequest;
 }
 
 - (void)performHTTPRequestWithPath:(NSString *) path
-                                    method:(NSString *) method
-                               requestBody:(NSString *) body
-                            requestHeaders:(NSDictionary *) headers
-                completionHandler:(NetworkWrapperCompletionHandler) handler
+                            method:(NSString *) method
+                       requestBody:(NSString *) body
+                    requestHeaders:(NSDictionary *) headers
+                 completionHandler:(NetworkWrapperCompletionHandler) handler
 {
     if (!path) {
         return;
@@ -134,11 +143,11 @@
 }
 
 - (BOOL)performHTTPRequestWithPath:(NSString *) path
-                           method:(NSString *) method
-                      requestBody:(NSString *) body
-                   requestHeaders:(NSDictionary *) headers
+                            method:(NSString *) method
+                       requestBody:(NSString *) body
+                    requestHeaders:(NSDictionary *) headers
               responseNotification:(NSString *) notification
-                          context: (NSString *) context
+                           context: (NSString *) context
 {
     
     BOOL result = false;
@@ -156,7 +165,11 @@
         if (!error) {
             // post a notification that the request has been completed
             if (context) {
-                NSDictionary *responseDict = [NSDictionary dictionaryWithObjectsAndKeys:data, @"response-body", context, @"context", nil];
+                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+                NSInteger statusCode = [httpResponse statusCode];
+                NSDictionary *headers = httpResponse.allHeaderFields;
+
+                NSDictionary *responseDict = [NSDictionary dictionaryWithObjectsAndKeys:@(statusCode), @"status-code", headers, @"response-headers", data, @"response-body", context, @"context", nil];
                 [[NSNotificationCenter defaultCenter] postNotificationName:notification object:nil userInfo:responseDict];
             }
         } else {

@@ -16,6 +16,7 @@ typedef void (^NetworkWrapperCompletionHandler)(NSInteger statusCode, NSDictiona
 @property (nonatomic, strong) NSString *baseURL;
 @property (nonatomic, assign) NSInteger basePort;
 @property (nonatomic, assign) NSString *scheme;
+@property (nonatomic, strong) NSMutableArray *requests;
 
 /**
  @brief initializes a new NetworkWrapper (dispatched once)

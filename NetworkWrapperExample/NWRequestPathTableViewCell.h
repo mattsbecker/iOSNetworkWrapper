@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *kHistoryRequestedNotification;
+
 @interface NWRequestPathTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UITextField *requestPathTxtField;
+@property (weak, nonatomic) IBOutlet UIButton *requestHistoryBtn;
+
+- (IBAction)requestHistoryBtnPress:(id)sender;
+
 @end
