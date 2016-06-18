@@ -201,6 +201,13 @@
                                                 requestHeaders:headers
                                              completionHandler:^(NSInteger statusCode, NSDictionary *responseHeaders, NSData *responseData, NSError *error)
      {
+         if (error) {
+             NSLog(@"%@", error.localizedDescription);
+             NSString *errorDescription = [error.userInfo objectForKey:NSLocalizedDescriptionKey];
+             NSString *underlyingError = [NSString stringWithFormat:@"%@", [error.userInfo objectForKey:@"NSUnderlyingError"]];
+             [self buildAlertDialogWithTitle:errorDescription  message:underlyingError];
+             return;
+         }
          self.responseBody = [NSString stringWithUTF8String:[responseData bytes]];
          self.responseData = responseData;
          self.responseStatusCode = statusCode;
@@ -275,6 +282,17 @@
 - (void)handleResponse:(NSNotification *) notification {
     NSLog(@"Handling notification");
     NSLog(@"Notification data: %@", notification.userInfo);
+}
+
+- (void)buildAlertDialogWithTitle:(NSString *)title message:(NSString *)message {
+    if (!title || !message) {
+        return;
+    }
+    UIAlertController *alertController = [[UIAlertController alloc] init];
+    [alertController setTitle:title];
+    [alertController setMessage:message];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end
