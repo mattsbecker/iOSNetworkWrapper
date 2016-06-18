@@ -13,24 +13,36 @@
 
 @implementation NetworkWrapper
 
-+ (NetworkWrapper *)sharedWrapper {
-    static NetworkWrapper *networkWrapper = nil; // nil initially
-    static dispatch_once_t onceToken;
-    
+static NetworkWrapper *_networkWrapper = nil;
+static dispatch_once_t onceToken = 0;
+
++ (NetworkWrapper *)sharedWrapper {    
     dispatch_once(&onceToken, ^{
-        networkWrapper = [[self alloc] init];
+        if (_networkWrapper == nil) {
+            _networkWrapper = [[self alloc] init];
+        }
     });
-    return networkWrapper;
+    return _networkWrapper;
+}
+
++ (void)setSharedWrapper:(NetworkWrapper *)instance {
+    if (instance == nil) onceToken = 0;
+    _networkWrapper = instance;
+    
 }
 
 - (id)init {
     if (self == [super init]) {
-        self.baseURL = nil; // no default. WE NEED THIS
-        self.scheme = @"http"; // default to HTTP
-        self.basePort = 0; // no default, WE NEED THIS
-        self.requests = [NSMutableArray array];
+        [self setDefaultWrapperProperties];
     }
     return self;
+}
+
+- (void)setDefaultWrapperProperties {
+    self.baseURL = nil; // no default. WE NEED THIS
+    self.scheme = @"https"; // default to HTTPS (as of iOS 10, HTTPS using TLS is a hard requirement)
+    self.basePort = 0; // no default, WE NEED THIS
+    self.requests = [NSMutableArray array];
 }
 
 - (NSURL*)createWebRequestURLWithPath:(NSString *) path {
@@ -136,6 +148,8 @@
                 NSLog(@"Did receive data, handler::: %@", [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding: NSASCIIStringEncoding]);
                 // post a notification that the request has been completed
                 handler(statusCode, headers, data, error);
+            } else {
+                handler(NSIntegerMin, nil, nil, error);
             }
         });
     }];
@@ -151,6 +165,9 @@
 {
     
     BOOL result = false;
+    if (!path) {
+        return result;
+    }
 
     NSMutableURLRequest *urlRequest = [self createHTTPURLRequestWithPath:path method:method requestBody:body requestHeaders:headers];
     
@@ -196,6 +213,12 @@ didBecomeInvalidWithError:(NSError *)error {
 }
 
 #pragma mark --SETTERS--
+
+- (void) setBaseURL:(NSString *)baseURL {
+    if (baseURL != nil && baseURL != _baseURL && baseURL.length > 0) {
+        _baseURL = baseURL;
+    }
+}
 
 - (void)setScheme:(NSString *)scheme {
     if (scheme != nil && _scheme != scheme && scheme.length > 0) {

@@ -229,7 +229,7 @@
         NSMutableDictionary *headerDictionary = [NSMutableDictionary dictionary];
         [headerDictionary setObject:@"" forKey:textField.text];
         [self.requestHeaders replaceObjectAtIndex:cell.indexPath withObject:headerDictionary];
-        [self.requestTestTableView reloadData];
+        [cell.httpHeaderValueTxtField becomeFirstResponder];
     } else if ([textField tag] == 3) {
         
         //Request header value
@@ -238,7 +238,6 @@
         NSArray *key  =[headerDictionary allKeys];
         [headerDictionary setObject:textField.text forKey:[key objectAtIndex:0]];
         [self.requestHeaders replaceObjectAtIndex:cell.indexPath withObject:headerDictionary];
-        [self.requestTestTableView reloadData];
     }
 }
 

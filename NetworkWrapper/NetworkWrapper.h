@@ -57,4 +57,9 @@ typedef void (^NetworkWrapperCompletionHandler)(NSInteger statusCode, NSDictiona
                       requestBody:(NSString *) body
                    requestHeaders:(NSDictionary *) headers
                 completionHandler:(NetworkWrapperCompletionHandler) handler;
+
+/**
+ @brief Resets all wrapper properties to their default/empty values
+ **/
+-(void)setDefaultWrapperProperties;
 @end

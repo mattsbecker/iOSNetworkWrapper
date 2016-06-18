@@ -17,6 +17,7 @@
 
 - (void)setUp {
     [super setUp];
+    [[NetworkWrapper sharedWrapper] setDefaultWrapperProperties];
     self.networkWrapper = [NetworkWrapper sharedWrapper];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
@@ -28,22 +29,17 @@
 
 - (void)testSetInvalidHostLength {
     self.networkWrapper.baseURL = @"";
-    XCTAssertNil([NetworkWrapper sharedWrapper].baseURL);
+    XCTAssertNil(self.networkWrapper.baseURL);
 }
 
 - (void)testSetNilHost {
     self.networkWrapper.baseURL = nil;
-    XCTAssertNil([NetworkWrapper sharedWrapper].baseURL);
+    XCTAssertNil(self.networkWrapper.baseURL);
 }
 
 - (void)testSetValidHost {
     self.networkWrapper.baseURL = @"mattsbecker.com";
     XCTAssertEqual(self.networkWrapper.baseURL, @"mattsbecker.com");
-}
-
-- (void)testSetNilPort {
-    self.networkWrapper.basePort = nil; //basePort is an int and can't be nil, tested anyways
-    XCTAssertEqual(self.networkWrapper.basePort, 0);
 }
 
 - (void)testSetValidPort {
@@ -53,12 +49,12 @@
 
 - (void)testSetInvalidSchemeLength {
     self.networkWrapper.scheme = @"";
-    XCTAssertEqual(self.networkWrapper.scheme, @"http");
+    XCTAssertEqual(self.networkWrapper.scheme, @"https");
 }
 
 - (void)testSetNilScheme {
     self.networkWrapper.scheme = nil;
-    XCTAssertEqual(self.networkWrapper.scheme, @"http");
+    XCTAssertEqual(self.networkWrapper.scheme, @"https");
 }
 
 - (void)testSetValidScheme {
@@ -66,6 +62,7 @@
     XCTAssertEqual(self.networkWrapper.baseURL, @"https");
 }
 
+// we need a better way of ensuring request run after all of the getter/setter tests
 - (void)testCreateRequestValidPath {
     self.networkWrapper.baseURL = @"mattsbecker.com";
     self.networkWrapper.basePort = 80;
