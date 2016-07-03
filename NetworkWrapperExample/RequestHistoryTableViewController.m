@@ -51,6 +51,9 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // copy the textLabel's content to the pasteboard, so that we can use it later.
+    NSString *copyItem = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    [[UIPasteboard generalPasteboard] setString:copyItem];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
