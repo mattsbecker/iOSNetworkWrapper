@@ -10,7 +10,7 @@
 
 @interface NetworkWrapper : NSObject<NSURLSessionDelegate, NSURLSessionDataDelegate, NSURLSessionTaskDelegate>
 
-//typedef void (^NetworkWrapperCompletionHandler)(NSData * resumeData, NSError * error) completionHandler;
+typedef void (^NetworkWrapperImageCompletionHandler)(NSURL *location, NSURLResponse *response, NSError *error);
 typedef void (^NetworkWrapperCompletionHandler)(NSInteger statusCode, NSDictionary *responseHeaders, NSData *responseData, NSError *error);
 
 @property (nonatomic, strong) NSString *baseURL;
@@ -57,6 +57,17 @@ typedef void (^NetworkWrapperCompletionHandler)(NSInteger statusCode, NSDictiona
                       requestBody:(NSString *) body
                    requestHeaders:(NSDictionary *) headers
                 completionHandler:(NetworkWrapperCompletionHandler) handler;
+
+/**
+ @brief Performs an HTTP GET request, retrieving an image at the URL specified in path. Returns the results to the provided completion handler.
+ @param path - An NSString containing the path of desired HTTP request
+ @param requestHeaders - An NSDictionary containing any desired HTTP request headers
+ @param completionHandler - A NetworkWrapperImageCompletionHandler block which should receive the response
+ @return BOOL - indicating whether or not the request could be sent
+**/
+-(BOOL)getImageAtURL:(NSString*)path
+      requestHeaders:(NSDictionary*)headers
+   completionHandler:(NetworkWrapperImageCompletionHandler) completionHandler;
 
 /**
  @brief Resets all wrapper properties to their default/empty values

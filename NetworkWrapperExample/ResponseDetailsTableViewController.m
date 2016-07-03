@@ -9,7 +9,8 @@
 #import "ResponseDetailsTableViewController.h"
 
 @interface ResponseDetailsTableViewController ()
-
+@property (nonatomic, strong) UITextView *responseTxtView;
+@property (nonatomic, strong) UIImageView *responseImageView;
 @end
 
 @implementation ResponseDetailsTableViewController
@@ -25,7 +26,7 @@
     
     // by default, we only show the "show raw headers" cell
     self.headerRows = 1;
-    [self.responseDetailsTableView reloadData];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,13 +91,15 @@
             return cell;
         } else if (indexPath.row == 1) {
             NWResponseBodyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPResponseBody" forIndexPath:indexPath];
-            cell.responseBodyTxtView.text = self.responseHeaders;
+            cell.responseBodyTxtView.text = [NSString stringWithFormat:@"%@", self.responseHeaders];
             return cell;
         }
         // row headers row
     } else if (indexPath.section == ResponseTableViewSectionBody && indexPath.row == 0) {
         NWResponseBodyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTTPResponseBody" forIndexPath:indexPath];
-        cell.responseBodyTxtView.text = [NSString stringWithFormat:@"%@", self.responseBody];
+        self.responseTxtView = cell.responseBodyTxtView;
+        self.responseImageView = cell.responseImageView;
+        [self setImageOrTextData];
         return cell;
     }
     return nil;
@@ -114,6 +117,31 @@
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:ResponseTableViewSectionHeaders]] withRowAnimation:UITableViewRowAnimationTop];
         }
         [tableView endUpdates];
+    }
+}
+
+#pragma mark Property Setters
+
+#pragma mark Private Methods
+
+-(void)setImageOrTextData {
+    // determine if the response content-type is an image. If it is, then we'll just display the image here.
+    NSString *responseContentType = [self.responseHeaders objectForKey:@"Content-Type"];
+    if ([responseContentType containsString:@"image/"]) {
+        self.shouldDisplayImage = YES;
+    } else {
+        self.shouldDisplayImage = NO;
+    }
+    if (self.shouldDisplayImage) {
+        self.responseImageView.image = [[UIImage alloc] initWithData:self.responseData];
+        self.responseImageView.hidden = NO;
+        self.responseTxtView.hidden = YES;
+    } else {
+        NSString *responseBodyString = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
+        self.responseTxtView.text = [NSString stringWithFormat:@"%@", responseBodyString];
+        self.responseImageView.image = nil;
+        self.responseImageView.hidden = YES;
+        self.responseTxtView.hidden = NO;
     }
 }
 

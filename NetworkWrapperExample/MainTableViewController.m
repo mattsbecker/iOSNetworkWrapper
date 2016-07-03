@@ -254,10 +254,8 @@
         // handle the response segueue by preparing the response code, headers, and body
         ResponseDetailsTableViewController *responseViewController = (ResponseDetailsTableViewController*)[segue destinationViewController];
         [responseViewController setResponseCode:[NSString stringWithFormat:@"%ld", self.responseStatusCode]];
-        NSString *responseHeaders = [NSString stringWithFormat:@"%@", self.responseHeaders];
-        [responseViewController setResponseHeaders:responseHeaders];
-        NSString *responseJSON = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingAllowFragments error:nil];
-        [responseViewController setResponseBody:responseJSON];
+        [responseViewController setResponseHeaders:self.responseHeaders];
+        responseViewController.responseData = self.responseData;
     } else if ([[segue identifier] isEqualToString:@"RequestHistorySegue"]) {
         
         // grab the requests from the wrapper (only application lifecycle history for right now) - gone once singleton is destroyed

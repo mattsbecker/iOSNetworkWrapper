@@ -19,8 +19,13 @@ enum {
 
 @property (nonatomic, strong) NSString *responseCode;
 @property (nonatomic, strong) NSString *responseBody;
-@property (nonatomic, strong) NSString *responseHeaders;
+@property (nonatomic, strong) NSData *responseData;
+@property (nonatomic, strong) NSMutableDictionary *responseHeaders;
 @property (strong, nonatomic) IBOutlet UITableView *responseDetailsTableView;
 @property (nonatomic, assign) NSInteger headerRows;
+
+@property (nonatomic, weak) IBOutlet UIImageView *responseImage;
+
+@property (nonatomic, assign) BOOL shouldDisplayImage;
 
 @end

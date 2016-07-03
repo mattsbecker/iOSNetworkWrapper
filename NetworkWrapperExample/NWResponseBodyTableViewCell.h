@@ -10,5 +10,6 @@
 
 @interface NWResponseBodyTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextView *responseBodyTxtView;
+@property (weak, nonatomic) IBOutlet UIImageView *responseImageView;
 
 @end

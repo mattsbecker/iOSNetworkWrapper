@@ -118,6 +118,25 @@ static dispatch_once_t onceToken = 0;
     return urlRequest;
 }
 
+-(void)handleResponseData:(NSData*) data
+                 response:(NSURLResponse*) response
+                    error:(NSError*) error
+                  CompletionHandler:(NetworkWrapperCompletionHandler) handler {
+    if (!error) {
+        NSLog(@"%@", response);
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+        NSInteger statusCode = [httpResponse statusCode];
+        NSDictionary *headers = httpResponse.allHeaderFields;
+        
+        // Important! Using NSString initWithBytes/ASCIIStringEncoding is 10000% more reliable than stringWithUTF8String. Because we're outputting to the log here, we're just printing ASCII.
+        NSLog(@"Did receive data, handler::: %@", [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding: NSASCIIStringEncoding]);
+        // post a notification that the request has been completed
+        handler(statusCode, headers, data, error);
+    } else {
+        handler(NSIntegerMin, nil, nil, error);
+    }
+}
+
 - (void)performHTTPRequestWithPath:(NSString *) path
                             method:(NSString *) method
                        requestBody:(NSString *) body
@@ -127,33 +146,34 @@ static dispatch_once_t onceToken = 0;
     if (!path) {
         return;
     }
-    NSMutableURLRequest *urlRequest = [self createHTTPURLRequestWithPath:path method:method requestBody:body requestHeaders:headers];
     
-    // Use an NSURLSession for our HTTP Request
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    
-    // We can receive delegate responses if we'd like this way, which is nice.
-    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-    
-    // perform the actual request with the session and the request that was created.
-    NSURLSessionDataTask *task = [urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+    if ([path containsString:@"jpeg"] || [path containsString:@"png"] || [path containsString:@"jpg"]) {
+        [self getImageAtURL:path requestHeaders:headers completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (!error) {
-                NSLog(@"%@", response);
-                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
-                NSInteger statusCode = [httpResponse statusCode];
-                NSDictionary *headers = httpResponse.allHeaderFields;
-                
-                // Important! Using NSString initWithBytes/ASCIIStringEncoding is 10000% more reliable than stringWithUTF8String. Because we're outputting to the log here, we're just printing ASCII.
-                NSLog(@"Did receive data, handler::: %@", [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding: NSASCIIStringEncoding]);
-                // post a notification that the request has been completed
-                handler(statusCode, headers, data, error);
-            } else {
-                handler(NSIntegerMin, nil, nil, error);
+                // The image download task takes place using a download task, which returns to us of the newly downloaded image's file system location.
+                // handleResponseData can take a data, so we'll just initialize imagedata here with the contents of that URL
+                NSData *imageData = [[NSData alloc] initWithContentsOfURL:location];
+                [self handleResponseData:imageData response:response error:error CompletionHandler:handler];
             }
-        });
-    }];
-    [task resume];
+        }];
+    } else {
+        NSMutableURLRequest *urlRequest = [self createHTTPURLRequestWithPath:path method:method requestBody:body requestHeaders:headers];
+        
+        // Use an NSURLSession for our HTTP Request
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        // We can receive delegate responses if we'd like this way, which is nice.
+        NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+        
+        // perform the actual request with the session and the request that was created.
+        NSURLSessionDataTask *task = [urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            //dispatch_async(dispatch_get_main_queue(), ^{
+                [self handleResponseData:data response:response error:error CompletionHandler:handler];
+            
+            //});
+        }];
+        [task resume];
+    }
 }
 
 - (BOOL)performHTTPRequestWithPath:(NSString *) path
@@ -198,7 +218,27 @@ static dispatch_once_t onceToken = 0;
     return result;
 }
 
-
+-(BOOL)getImageAtURL:(NSString*)path
+      requestHeaders:(NSDictionary*)headers
+   completionHandler:(NetworkWrapperImageCompletionHandler) completionHandler
+{
+    if (!completionHandler) {
+        NSLog(@"getImageAtURL: did not have a completion handler provided");
+        return false;
+    }
+    
+    NSMutableURLRequest *urlReqest = [self createHTTPURLRequestWithPath:path method:@"GET" requestBody:nil requestHeaders:headers];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];
+    
+    NSURLSessionDownloadTask *downloadImageTask = [urlSession downloadTaskWithRequest:urlReqest completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        completionHandler(location, response, error);
+    }];
+    // start the download task
+    [downloadImageTask resume];
+    return true;
+}
 -(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
 //    NSLog(@"Did receive data!!: %@", [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding: NSASCIIStringEncoding]);
 }

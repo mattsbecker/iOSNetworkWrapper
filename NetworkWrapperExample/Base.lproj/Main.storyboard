@@ -15,10 +15,31 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="EKg-ZR-PRn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HTTPRequestMethodCell" id="TYH-Ov-ItP" customClass="NWRequestMethodTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HTTPRequestTypeCell" id="zyN-Pg-MNX">
                                 <frame key="frameInset" minY="120" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zyN-Pg-MNX" id="8Dt-RB-oXJ">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9m6-u7-nNy">
+                                            <segments>
+                                                <segment title="HTTP Request"/>
+                                                <segment title="Get Image"/>
+                                            </segments>
+                                            <color key="tintColor" red="0.3348535668" green="0.3348535668" blue="0.3348535668" alpha="1" colorSpace="calibratedRGB"/>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9m6-u7-nNy" firstAttribute="centerX" secondItem="8Dt-RB-oXJ" secondAttribute="centerX" id="92H-C5-AB5"/>
+                                        <constraint firstItem="9m6-u7-nNy" firstAttribute="centerY" secondItem="8Dt-RB-oXJ" secondAttribute="centerY" id="P3S-Kk-Jix"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HTTPRequestMethodCell" id="TYH-Ov-ItP" customClass="NWRequestMethodTableViewCell">
+                                <frame key="frameInset" minY="164" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYH-Ov-ItP" id="iHo-Aa-LcI">
                                     <frame key="frameInset" width="375" height="43"/>
@@ -98,7 +119,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PerformRequestCell" id="gVN-u3-FNw">
-                                <frame key="frameInset" minY="164" width="375" height="44"/>
+                                <frame key="frameInset" minY="208" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gVN-u3-FNw" id="dSh-Tb-0FT">
                                     <frame key="frameInset" width="375" height="43"/>
@@ -117,7 +138,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HTTPRequestBodyCell" rowHeight="176" id="BxH-Vk-JQd" customClass="HTTPRequestBodyTableViewCell">
-                                <frame key="frameInset" minY="208" width="375" height="176"/>
+                                <frame key="frameInset" minY="252" width="375" height="176"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BxH-Vk-JQd" id="tjT-ea-YZP">
                                     <frame key="frameInset" width="375" height="175"/>
@@ -152,7 +173,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HTTPAddHeadersCell" id="gHv-up-sa4">
-                                <frame key="frameInset" minY="384" width="375" height="44"/>
+                                <frame key="frameInset" minY="428" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gHv-up-sa4" id="TCj-L3-q3j">
                                     <frame key="frameInset" width="375" height="43"/>
@@ -179,7 +200,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequestBodyTVHeader" id="p9R-sa-FBu">
-                                <frame key="frameInset" minY="428" width="375" height="44"/>
+                                <frame key="frameInset" minY="472" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p9R-sa-FBu" id="eca-Dm-ZfQ">
                                     <frame key="frameInset" width="375" height="43"/>
@@ -199,7 +220,7 @@
                                 <color key="backgroundColor" red="0.94462941450000004" green="0.94462941450000004" blue="0.94462941450000004" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HTTPRequestPathCell" id="qgq-os-Wl7" customClass="NWRequestPathTableViewCell">
-                                <frame key="frameInset" minY="472" width="375" height="44"/>
+                                <frame key="frameInset" minY="516" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qgq-os-Wl7" id="avF-KQ-Jra">
                                     <frame key="frameInset" width="375" height="43"/>
@@ -239,7 +260,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HTTPHeaderKeyValueCell" rowHeight="88" id="5pd-qn-No0" customClass="NWRequestHeaderKeyValueTableViewCell">
-                                <frame key="frameInset" minY="516" width="375" height="88"/>
+                                <frame key="frameInset" minY="560" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5pd-qn-No0" id="wPh-kv-43p">
                                     <frame key="frameInset" width="375" height="87"/>
@@ -339,14 +360,14 @@
                                             <frame key="frameInset" minX="15" minY="5" width="30" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Pb-w4-teN">
                                             <frame key="frameInset" minX="15" minY="23" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -370,7 +391,7 @@
         <!--Create Network Request-->
         <scene sceneID="VnE-SM-S3I">
             <objects>
-                <navigationController title="Create Network Request" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Yoi-bU-8up" sceneMemberID="viewController">
+                <navigationController title="Create Network Request" automaticallyAdjustsScrollViewInsets="NO" id="Yoi-bU-8up" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IMG-Ox-1XF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -447,6 +468,7 @@
                                     <frame key="frameInset" width="375" height="351"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="38n-uX-fhN"/>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-vY-POD">
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -463,10 +485,14 @@
                                         </textView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="38n-uX-fhN" firstAttribute="width" secondItem="OWH-oW-oBm" secondAttribute="width" id="2CK-DF-bKs"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Rqb-vY-POD" secondAttribute="bottom" constant="10" id="6UM-lX-GOi"/>
                                         <constraint firstItem="Rqb-vY-POD" firstAttribute="top" secondItem="OWH-oW-oBm" secondAttribute="topMargin" id="JMG-sF-Evh"/>
+                                        <constraint firstItem="38n-uX-fhN" firstAttribute="height" secondItem="OWH-oW-oBm" secondAttribute="height" id="Mjp-6s-ysK"/>
                                         <constraint firstItem="Rqb-vY-POD" firstAttribute="width" secondItem="OWH-oW-oBm" secondAttribute="width" id="bjb-tp-d0q"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Rqb-vY-POD" secondAttribute="trailing" constant="10" id="fkX-cZ-ObA"/>
+                                        <constraint firstItem="38n-uX-fhN" firstAttribute="centerX" secondItem="OWH-oW-oBm" secondAttribute="centerX" id="jsi-Ea-hK8"/>
+                                        <constraint firstItem="38n-uX-fhN" firstAttribute="centerY" secondItem="OWH-oW-oBm" secondAttribute="centerY" id="paw-xp-bu3"/>
                                         <constraint firstItem="Rqb-vY-POD" firstAttribute="leading" secondItem="OWH-oW-oBm" secondAttribute="leadingMargin" constant="10" id="tYz-KL-KPW"/>
                                     </constraints>
                                     <variation key="default">
@@ -477,6 +503,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="responseBodyTxtView" destination="Rqb-vY-POD" id="Hzh-TK-0Ss"/>
+                                    <outlet property="responseImageView" destination="38n-uX-fhN" id="Qwy-mq-Eww"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

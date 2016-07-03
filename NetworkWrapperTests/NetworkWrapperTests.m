@@ -85,6 +85,19 @@
     XCTAssertFalse([self.networkWrapper performHTTPRequestWithPath:nil method:@"GET" requestBody:nil requestHeaders:nil responseNotification:nil context:@"TestCall"]);
 }
 
+-(void)testGetImageAtUrl {
+    NSString *imageURL = @"http://static1.squarespace.com/static/5738f10f27d4bd28d98cf114/5738f4cad210b8ad84923ccf/5739eb24c6fc0814567150d8/1463413622693/Beck.jpg";
+
+    XCTAssertTrue([self.networkWrapper getImageAtURL:imageURL requestHeaders:nil completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        // Make sure the data came back!
+        NSData *fileData = [NSData dataWithContentsOfURL:location];
+        UIImage *resultingImage = [[UIImage alloc] initWithData:fileData];
+        
+        // make sure the image isn't nil!
+        XCTAssertNotNil(resultingImage);
+    }]);
+    
+}
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
