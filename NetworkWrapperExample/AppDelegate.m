@@ -18,10 +18,8 @@ NSString *kTestNotification = @"TestNotification";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     // Override point for customization after application launch.
-    self.networkWrapper = [NetworkWrapper sharedWrapper];
-    
+    self.networkWrapper = [NetworkWrapper sharedWrapper]; 
     return YES;
 }
 

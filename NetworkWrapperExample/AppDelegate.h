@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NetworkWrapper.h"
+#import "NWSettingsWrapper.h"
 
 extern NSString *kTestNotification;
 

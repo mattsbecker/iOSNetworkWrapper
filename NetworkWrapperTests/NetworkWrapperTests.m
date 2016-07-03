@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "NetworkWrapper.h"
+#import "NWSettingsWrapper.h"
 
 @interface NetworkWrapperTests : XCTestCase
 @property (nonatomic, retain) NetworkWrapper *networkWrapper;
@@ -98,7 +99,15 @@
         // make sure the image isn't nil!
         XCTAssertNotNil(resultingImage);
     }]);
+}
+
+-(void)testSetPreferencesValidStringValue {
+    NSString *validString = @"ValidString";
+    NSString *key = @"TestKey";
+
+    [NWSettingsWrapper setStringValue:validString forKey:key];
     
+    XCTAssertTrue([[NWSettingsWrapper stringValueForKey:key] isEqualToString:validString]);
 }
 
 - (void)tearDown {

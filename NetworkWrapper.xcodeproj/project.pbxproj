@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C96B32E81D296F3D00B50F76 /* NWSettingsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F550F1D2967D900967B15 /* NWSettingsWrapper.m */; };
+		C96F55101D2967D900967B15 /* NWSettingsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F550F1D2967D900967B15 /* NWSettingsWrapper.m */; };
 		C9932B7D1D042EFB00A9A3E5 /* NWRequestPathTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9932B7C1D042EFB00A9A3E5 /* NWRequestPathTableViewCell.m */; };
 		C9932B801D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9932B7F1D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m */; };
 		C9932B831D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9932B821D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m */; };
@@ -52,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C96F550E1D2967D900967B15 /* NWSettingsWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWSettingsWrapper.h; sourceTree = "<group>"; };
+		C96F550F1D2967D900967B15 /* NWSettingsWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWSettingsWrapper.m; sourceTree = "<group>"; };
 		C9932B7B1D042EFB00A9A3E5 /* NWRequestPathTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWRequestPathTableViewCell.h; sourceTree = "<group>"; };
 		C9932B7C1D042EFB00A9A3E5 /* NWRequestPathTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWRequestPathTableViewCell.m; sourceTree = "<group>"; };
 		C9932B7E1D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWRequestHeaderKeyValueTableViewCell.h; sourceTree = "<group>"; };
@@ -112,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C96F550D1D29677400967B15 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				C96F550E1D2967D900967B15 /* NWSettingsWrapper.h */,
+				C96F550F1D2967D900967B15 /* NWSettingsWrapper.m */,
+			);
+			name = "User Defaults";
+			sourceTree = "<group>";
+		};
 		C9932B7A1D042ECC00A9A3E5 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +208,7 @@
 				C9F2B18B1D0C7C5E00FD9138 /* UI */,
 				C9932B841D04449D00A9A3E5 /* View Controllers */,
 				C9932B7A1D042ECC00A9A3E5 /* Table View Cells */,
+				C96F550D1D29677400967B15 /* User Defaults */,
 				C9F56EB91D00A18D00DD0F82 /* AppDelegate.h */,
 				C9F56EBA1D00A18D00DD0F82 /* AppDelegate.m */,
 				C9F56EBF1D00A18D00DD0F82 /* Main.storyboard */,
@@ -345,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B3E7CA1CFF1781000379C5 /* NetworkWrapperTests.m in Sources */,
+				C96B32E81D296F3D00B50F76 /* NWSettingsWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96F55101D2967D900967B15 /* NWSettingsWrapper.m in Sources */,
 				C9F2B1911D0DA1B200FD9138 /* RequestHistoryTableViewController.m in Sources */,
 				C9932B7D1D042EFB00A9A3E5 /* NWRequestPathTableViewCell.m in Sources */,
 				C9F2B18A1D0C7B6D00FD9138 /* NWRequestMethodTableViewCell.m in Sources */,
