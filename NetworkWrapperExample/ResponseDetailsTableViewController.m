@@ -129,6 +129,8 @@
     NSString *responseContentType = [self.responseHeaders objectForKey:@"Content-Type"];
     if ([responseContentType containsString:@"image/"]) {
         self.shouldDisplayImage = YES;
+    } else if ([responseContentType containsString:@"audio/"]) {
+        // do stuff!
     } else {
         self.shouldDisplayImage = NO;
     }

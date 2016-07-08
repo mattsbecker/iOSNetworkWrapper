@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C96B32E81D296F3D00B50F76 /* NWSettingsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F550F1D2967D900967B15 /* NWSettingsWrapper.m */; };
+		C96B32EB1D2A968400B50F76 /* NWRequestPathTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C96B32EA1D2A968400B50F76 /* NWRequestPathTextField.m */; };
 		C96F55101D2967D900967B15 /* NWSettingsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F550F1D2967D900967B15 /* NWSettingsWrapper.m */; };
 		C9932B7D1D042EFB00A9A3E5 /* NWRequestPathTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9932B7C1D042EFB00A9A3E5 /* NWRequestPathTableViewCell.m */; };
 		C9932B801D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9932B7F1D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m */; };
 		C9932B831D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9932B821D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m */; };
+		C9A53FCF1D2DD64B00498B93 /* NWUICommon.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A53FCE1D2DD64B00498B93 /* NWUICommon.m */; };
 		C9B3E7B81CFF0DFF000379C5 /* NetworkWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9B3E7B71CFF0DFF000379C5 /* NetworkWrapper.h */; };
 		C9B3E7BA1CFF0DFF000379C5 /* NetworkWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B3E7B91CFF0DFF000379C5 /* NetworkWrapper.m */; };
 		C9B3E7CA1CFF1781000379C5 /* NetworkWrapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B3E7C91CFF1781000379C5 /* NetworkWrapperTests.m */; };
@@ -54,6 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C96B32E91D2A968400B50F76 /* NWRequestPathTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWRequestPathTextField.h; sourceTree = "<group>"; };
+		C96B32EA1D2A968400B50F76 /* NWRequestPathTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWRequestPathTextField.m; sourceTree = "<group>"; };
 		C96F550E1D2967D900967B15 /* NWSettingsWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWSettingsWrapper.h; sourceTree = "<group>"; };
 		C96F550F1D2967D900967B15 /* NWSettingsWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWSettingsWrapper.m; sourceTree = "<group>"; };
 		C9932B7B1D042EFB00A9A3E5 /* NWRequestPathTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWRequestPathTableViewCell.h; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 		C9932B7F1D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWRequestHeaderKeyValueTableViewCell.m; sourceTree = "<group>"; };
 		C9932B811D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequestBodyTableViewCell.h; sourceTree = "<group>"; };
 		C9932B821D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestBodyTableViewCell.m; sourceTree = "<group>"; };
+		C9A53FCD1D2DD64B00498B93 /* NWUICommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWUICommon.h; sourceTree = "<group>"; };
+		C9A53FCE1D2DD64B00498B93 /* NWUICommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWUICommon.m; sourceTree = "<group>"; };
 		C9B3E7B41CFF0DFF000379C5 /* libNetworkWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNetworkWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B3E7B71CFF0DFF000379C5 /* NetworkWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkWrapper.h; sourceTree = "<group>"; };
 		C9B3E7B91CFF0DFF000379C5 /* NetworkWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkWrapper.m; sourceTree = "<group>"; };
@@ -198,6 +204,10 @@
 			children = (
 				C9F2B18C1D0C7C8000FD9138 /* NWRequestMethodButton.h */,
 				C9F2B18D1D0C7C8000FD9138 /* NWRequestMethodButton.m */,
+				C96B32E91D2A968400B50F76 /* NWRequestPathTextField.h */,
+				C96B32EA1D2A968400B50F76 /* NWRequestPathTextField.m */,
+				C9A53FCD1D2DD64B00498B93 /* NWUICommon.h */,
+				C9A53FCE1D2DD64B00498B93 /* NWUICommon.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -371,6 +381,7 @@
 				C9F2B1911D0DA1B200FD9138 /* RequestHistoryTableViewController.m in Sources */,
 				C9932B7D1D042EFB00A9A3E5 /* NWRequestPathTableViewCell.m in Sources */,
 				C9F2B18A1D0C7B6D00FD9138 /* NWRequestMethodTableViewCell.m in Sources */,
+				C9A53FCF1D2DD64B00498B93 /* NWUICommon.m in Sources */,
 				C9F56ECB1D00A1E400DD0F82 /* NetworkWrapper.m in Sources */,
 				C9F2B1871D0AE30C00FD9138 /* NWResponseBodyTableViewCell.m in Sources */,
 				C9F56EBE1D00A18D00DD0F82 /* MainTableViewController.m in Sources */,
@@ -378,6 +389,7 @@
 				C9932B801D042FB600A9A3E5 /* NWRequestHeaderKeyValueTableViewCell.m in Sources */,
 				C9932B831D04342D00A9A3E5 /* HTTPRequestBodyTableViewCell.m in Sources */,
 				C9F56EBB1D00A18D00DD0F82 /* AppDelegate.m in Sources */,
+				C96B32EB1D2A968400B50F76 /* NWRequestPathTextField.m in Sources */,
 				C9F56EB81D00A18D00DD0F82 /* main.m in Sources */,
 				C9F2B18E1D0C7C8000FD9138 /* NWRequestMethodButton.m in Sources */,
 			);

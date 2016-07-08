@@ -239,6 +239,7 @@ static dispatch_once_t onceToken = 0;
     [downloadImageTask resume];
     return true;
 }
+
 -(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
 //    NSLog(@"Did receive data!!: %@", [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding: NSASCIIStringEncoding]);
 }
