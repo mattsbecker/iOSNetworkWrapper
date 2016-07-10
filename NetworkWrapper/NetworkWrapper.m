@@ -113,7 +113,8 @@ static dispatch_once_t onceToken = 0;
     }
     
     // we've gotten far enough to store the request; do so. This will eventually be our queue.
-    [self.requests addObject:urlRequest];
+    NSDictionary *requestDictionary = [NSDictionary dictionaryWithObjectsAndKeys:urlRequest.allHTTPHeaderFields, @"Headers", [urlRequest.URL path], @"Path", nil];
+    [self.requests addObject:requestDictionary];
     
     return urlRequest;
 }

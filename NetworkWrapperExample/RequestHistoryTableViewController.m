@@ -43,9 +43,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ResponseHistoryCell" forIndexPath:indexPath];
     
-    NSMutableURLRequest *requestForCell = (NSMutableURLRequest*)[self.requests objectAtIndex:indexPath.row];
-    cell.textLabel.text = requestForCell.URL.absoluteString;
-    cell.detailTextLabel.text = requestForCell.HTTPMethod;
+    NSDictionary *requestDictionary = (NSDictionary*)[self.requests objectAtIndex:indexPath.row];
+    cell.textLabel.text = [requestDictionary objectForKey:@"Path"];
+    cell.detailTextLabel.text = @"";//[requestDictionary objectForKey:@"Request"];
     
     return cell;
 }

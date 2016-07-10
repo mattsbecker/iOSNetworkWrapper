@@ -212,14 +212,13 @@
          self.responseData = responseData;
          self.responseStatusCode = statusCode;
          self.responseHeaders = [NSMutableDictionary dictionaryWithDictionary:responseHeaders];
-         
+         [NWSettingsWrapper addObject:[NetworkWrapper sharedWrapper].requests.lastObject toArrayWithKey:kNWSettingsRecentRequentsKey];
          // grab the last request we tried and store it so we can use it for next time
          
          // Start a segue to the Response View Controller, always do this on the main thread
          dispatch_async(dispatch_get_main_queue(), ^{
              [self performSegueWithIdentifier:@"RequestResponseSegue" sender:self];
          });
-         NSLog(@"%@", [NetworkWrapper sharedWrapper].requests);
     }];
 }
 
@@ -263,7 +262,7 @@
         NSLog(@"%@", [NetworkWrapper sharedWrapper].requests);
         
         RequestHistoryTableViewController *requestHistoryViewController = (RequestHistoryTableViewController*)[segue destinationViewController];
-        NSMutableArray *recentRequests = [NetworkWrapper sharedWrapper].requests;
+        NSMutableArray *recentRequests = [NWSettingsWrapper mutableArrayValueForKey:kNWSettingsRecentRequentsKey];
         [requestHistoryViewController setRequests:recentRequests];
     }
 }

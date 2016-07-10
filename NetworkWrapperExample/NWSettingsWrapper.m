@@ -8,6 +8,8 @@
 
 #import "NWSettingsWrapper.h"
 
+NSString *kNWSettingsRecentRequentsKey = @"NWExampleSettingsRecentRequests";
+
 @interface NWSettingsWrapper()
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
 @end
@@ -20,6 +22,8 @@
         if (self == nil) {
             return nil;
         }
+        [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:kNWSettingsRecentRequentsKey, [NSMutableArray array],
+        nil]];
     }
     return self;
 }
@@ -57,6 +61,20 @@
     }
     [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(void)addObject:(id)object toArrayWithKey:(NSString *)key {
+    if (!object || !key) {
+        NSLog(@"Failed to add value for array key");
+    }
+    // if the temporary array doesn't exist yet, create it
+    NSMutableArray *tempArray = (NSMutableArray*)[NWSettingsWrapper mutableArrayValueForKey:key];
+    if (!tempArray) {
+        [NWSettingsWrapper setMutableArrayValue:[NSMutableArray array] forKey:kNWSettingsRecentRequentsKey];
+        tempArray = (NSMutableArray*)[NWSettingsWrapper mutableArrayValueForKey:key];
+    }
+    [tempArray addObject:object];
+    [NWSettingsWrapper setMutableArrayValue:tempArray forKey:key];
 }
 
 #pragma mark Getters
