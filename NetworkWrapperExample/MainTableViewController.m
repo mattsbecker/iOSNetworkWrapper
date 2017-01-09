@@ -201,19 +201,23 @@
                                                 requestHeaders:headers
                                              completionHandler:^(NSInteger statusCode, NSDictionary *responseHeaders, NSData *responseData, NSError *error)
      {
+         // grab the last request we tried and store it so we can use it for next time
+         //[NWSettingsWrapper addObject:[NetworkWrapper sharedWrapper].requests.lastObject toArrayWithKey:kNWSettingsRecentRequentsKey];
+
          if (error) {
              NSLog(@"%@", error.localizedDescription);
              NSString *errorDescription = [error.userInfo objectForKey:NSLocalizedDescriptionKey];
              NSString *underlyingError = [NSString stringWithFormat:@"%@", [error.userInfo objectForKey:@"NSUnderlyingError"]];
              [self buildAlertDialogWithTitle:errorDescription  message:underlyingError];
              return;
+         } else if (statusCode >= 400 && responseData.length == 0) {
+             [self buildAlertDialogWithTitle:[NSString stringWithFormat:@"Received: %ld", statusCode] message:[NSString stringWithFormat:@"Received a %ld message from the server with no response data. You may want to try a dirfferent request.", statusCode]];
+              return;
          }
          self.responseBody = [NSString stringWithUTF8String:[responseData bytes]];
          self.responseData = responseData;
          self.responseStatusCode = statusCode;
          self.responseHeaders = [NSMutableDictionary dictionaryWithDictionary:responseHeaders];
-         [NWSettingsWrapper addObject:[NetworkWrapper sharedWrapper].requests.lastObject toArrayWithKey:kNWSettingsRecentRequentsKey];
-         // grab the last request we tried and store it so we can use it for next time
          
          // Start a segue to the Response View Controller, always do this on the main thread
          dispatch_async(dispatch_get_main_queue(), ^{

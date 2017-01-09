@@ -30,6 +30,7 @@ enum {
 @property (nonatomic, assign) NSInteger headerCount;
 @property (nonatomic, strong) NSString *requestMethod;
 @property (nonatomic, strong) NSString *requestPath;
+@property (nonatomic, strong) UIActivityIndicatorView;
 
 - (IBAction)newHTTPHeaderBtnPress:(id)sender;
 

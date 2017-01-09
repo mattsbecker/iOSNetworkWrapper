@@ -71,7 +71,7 @@ static dispatch_once_t onceToken = 0;
                          requestBody:(NSString *) body
                       requestHeaders:(NSDictionary *) headers
 {
-    NSURL *requestURL = [[NSURL alloc] init];
+    NSURL *requestURL = [NSURL URLWithString:@"" relativeToURL:nil];
     
     // if there is no path, we cannot continue. Return false.
     if (!path) {
